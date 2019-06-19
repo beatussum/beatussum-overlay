@@ -1,0 +1,10 @@
+# Copyright 1999-2019 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# New entries go on top.
+
+# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (19 Jun 2019)
+# Feature not yet supported  due  to  AppImage  compatibility.  For
+# further information about the progress of its development, please
+# see https://github.com/X0rg/CPU-X/projects/4#card-16754064.
+sys-process/cpu-x check-update
