@@ -1,7 +1,22 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-# New entries go on top.
+####################################################################
+#
+# When you add an entry to the top of this file,  add your name,  the date,  and  an
+# explanation of why something is getting masked. Please be extremely careful not to
+# commit atoms that are not valid, as it can cause large-scale breakage,  especially
+# if it ends up in the daily snapshot.
+#
+## Example:
+##
+## # Foo Bar <foo@gentoo.org> (29 Mar 2003)
+## # Marked experimental,  needs build and runtime testing.  Due to non-
+## # available licenses for arnold and maya I can not test these addons.
+## # Build and functional tests and reports on issues are appreciated!
+## app-misc/some-package X doc
+#
+####################################################################
 
 # Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (19 Jun 2019)
 # Feature not yet supported  due  to  AppImage  compatibility.  For
