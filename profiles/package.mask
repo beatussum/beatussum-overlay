@@ -1,8 +1,0 @@
-# Copyright 1999-2019 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
-# New entries go on top.
-
-# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (19 Jun 2019)
-# The installation process has been updated: work in progress.
-x11-themes/tela-icon-theme
