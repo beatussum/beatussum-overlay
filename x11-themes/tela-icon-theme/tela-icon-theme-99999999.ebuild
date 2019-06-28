@@ -3,21 +3,26 @@
 
 EAPI=7
 
-inherit git-r3
+inherit git-r3 xdg
 
-MY_PN=${PN/tela/Tela}
+MY_PN="${PN/tela/Tela}"
 DESCRIPTION="A flat colorful Design icon theme"
 HOMEPAGE="https://www.pling.com/p/1279924 https://github.com/vinceliuice/Tela-icon-theme"
 EGIT_REPO_URI="https://github.com/vinceliuice/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"
-IUSE="black +blue brown green grey orange pink purple red yellow manjaro ubuntu"
-REQUIRED_USE="^^ ( black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
+IUSE="+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu"
+REQUIRED_USE="|| ( standard black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
 
 BDEPEND="dev-util/gtk-update-icon-cache"
 
+PATCHES=(
+	"${FILESDIR}/${P}-cache-update.patch"
+)
+
 src_install() {
 	local colorvariant=(
+		$(usev standard)
 		$(usev black)
 		$(usev blue)
 		$(usev brown)
@@ -35,5 +40,5 @@ src_install() {
 	einstalldocs
 
 	dodir /usr/share/icons
-	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]/#/-}" || die "The installation has failed"
+	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die "The installation has failed"
 }

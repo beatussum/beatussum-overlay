@@ -31,8 +31,3 @@
 ## app-misc/some-package
 #
 ####################################################################
-
-# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (27 Jun 2019)
-# Big issue with links which point to wrong destinations. The
-# installation process must be updated: work in progress.
-x11-themes/tela-icon-theme

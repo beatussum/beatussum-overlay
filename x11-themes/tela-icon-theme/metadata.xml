@@ -10,6 +10,7 @@
 		<name>Proxy Maintainers</name>
 	</maintainer>
 	<use>
+		<flag name='standard'>Install the standard color folder version</flag>
 		<flag name='black'>Install the black color folder version</flag>
 		<flag name='blue'>Install the blue color folder version</flag>
 		<flag name='brown'>Install the brown color folder version</flag>
@@ -24,6 +25,7 @@
 		<flag name='ubuntu'>Install the Ubuntu default color folder version</flag>
 	</use>
 	<use lang='fr'>
+		<flag name='standard'>Installer la variante de couleur des dossiers standard</flag>
 		<flag name='black'>Installer la variante de couleur des dossiers noire</flag>
 		<flag name='blue'>Installer la variante de couleur des dossiers bleue</flag>
 		<flag name='brown'>Installer la variante de couleur des dossiers marron</flag>
