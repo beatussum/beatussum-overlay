@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol--Laruelle</name>
+	</maintainer>
+	<longdescription>
+		This is a port of the popular GTK theme Arc for Plasma 5 with
+		a few additions. For better looking please use this pack with
+		<pkg>x11-themes/kvantum</pkg>.
+	</longdescription>
+	<longdescription lang="fr">
+		Il s'agit d'un portage du célèbre thème GTK Arc pour Plasma 5, avec
+		quelques suppléments. Pour un meilleur visuel, veuillez utiliser ce
+		pack avec <pkg>x11-themes/kvantum</pkg>.
+	</longdescription>
+	<use>
+		<flag name="aurorae">Intall the Aurorae themes</flag>
+		<flag name="color-schemes">Install the Plasma color schemes</flag>
+		<flag name="konsole">Install the <pkg>kde-apps/konsole</pkg> color schemes</flag>
+		<flag name="konversation">Install the <pkg>net-irc/konversation</pkg> themes</flag>
+		<flag name="kvantum">Install the <pkg>x11-themes/kvantum</pkg> themes</flag>
+		<flag name="plasma">Install the Plasma desktop themes and look-and-feel settings</flag>
+		<flag name="wallpapers">Install the wallpapers</flag>
+		<flag name="yakuake">Install the <pkg>kde-misc/yakuake</pkg> skins</flag>
+	</use>
+	<use lang="fr">
+		<flag name="aurorae">Intaller les thèmes Aurorae</flag>
+		<flag name="color-schemes">Installer les thèmes de couleurs</flag>
+		<flag name="konsole">Installer les thèmes de couleurs pour <pkg>kde-apps/konsole</pkg></flag>
+		<flag name="konversation">Installer les thèmes pour <pkg>net-irc/konversation</pkg></flag>
+		<flag name="kvantum">Installer les thèmes pour <pkg>x11-themes/kvantum</pkg></flag>
+		<flag name="plasma">Installer les thèmes pour Plasma et les paramètres look-and-feel</flag>
+		<flag name="wallpapers">Installer les fonds d'écran</flag>
+		<flag name="yakuake">Installer les apparences de <pkg>kde-misc/yakuake</pkg></flag>
+	</use>
+	<upstream>
+		<maintainer status="active">
+			<name>Papirus Development Team</name>
+		</maintainer>
+		<bugs-to>https://github.com/PapirusDevelopmentTeam/arc-kde/issues</bugs-to>
+		<remote-id type="github">PapirusDevelopmentTeam/arc-kde</remote-id>
+	</upstream>
+</pkgmetadata>
