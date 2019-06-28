@@ -31,3 +31,7 @@
 ## app-misc/some-package
 #
 ####################################################################
+
+# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (28 Jun 2019)
+# Masked for removal in 10 days: orphan package.
+=x11-themes/kde-plasma-chili-0.5.0
