@@ -35,7 +35,6 @@ RDEPEND="${DEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/${P}-custom-build-fix.patch"
-	"${FILESDIR}/${P}-static-libs-fix.patch"
 )
 
 src_prepare() {
