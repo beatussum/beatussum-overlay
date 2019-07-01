@@ -8,8 +8,10 @@ My **Gentoo** overlay aims to provide some packages that are not (yet) in the ma
 
 ## Add this overlay
 
-Just type, as _root_, the command below:
+Just use [Layman](https://wiki.gentoo.org/wiki/Project:Layman) as _root_:
 
-```
+```bash
+layman --list
 layman --add beatussum-overlay
+layman --sync beatussum-overlay
 ```
