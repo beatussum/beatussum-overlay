@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol</name>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<name>zsh-users</name>
+		</maintainer>
+		<changelog>https://raw.githubusercontent.com/zsh-users/zsh-autosuggestions/master/CHANGELOG.md</changelog>
+		<bugs-to>https://github.com/zsh-users/zsh-autosuggestions/issues</bugs-to>
+		<remote-id type="github">zsh-users/zsh-autosuggestions</remote-id>
+	</upstream>
+</pkgmetadata>
