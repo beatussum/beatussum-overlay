@@ -11,6 +11,7 @@ SLOT="0"
 KEYWORDS=" ~amd64 ~hppa ~m68k ~mips ~s390 ~sh ~sparc ~x86 ~ppc-aix ~x64-cygwin ~x86-cygwin ~x86-fbsd ~amd64-linux ~arm-linux ~arm64-linux ~ppc64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
 IUSE="aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake"
 REQUIRED_USE="|| ( aurorae color-schemes konsole konversation kvantum plasma wallpapers yakuake )"
+RESTRICT="primaryuri"
 
 RDEPEND="kvantum? ( x11-themes/kvantum )"
 
