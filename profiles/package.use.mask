@@ -18,10 +18,6 @@
 #
 ####################################################################
 
-# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (2019-07-01)
-# Dependency missing: work in progress.
-app-shells/zsh-autosuggestions test
-
 # Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (2019-06-19)
 # Feature not yet supported  due  to  AppImage  compatibility.  For
 # further information about the progress of its development, please
