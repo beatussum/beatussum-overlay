@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<email>team@grml.org</email>
+			<name>grml-team</name>
+		</maintainer>
+		<changelog>https://raw.githubusercontent.com/grml/grml-etc-core/master/debian/changelog</changelog>
+		<doc>https://grml.org/docs</doc>
+		<bugs-to>https://grml.org/bugs</bugs-to>
+		<remote-id type="github">grml/grml-etc-core</remote-id>
+	</upstream>
+</pkgmetadata>
