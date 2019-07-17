@@ -8,7 +8,7 @@ inherit xdg
 MY_PN="${PN/tela/Tela}"
 MY_PV=2019_06_28
 DESCRIPTION="A flat colorful Design icon theme"
-HOMEPAGE="https://www.pling.com/p/1279924 https://github.com/vinceliuice/Tela-icon-theme"
+HOMEPAGE="https://www.pling.com/p/1279924"
 SRC_URI="https://github.com/vinceliuice/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
