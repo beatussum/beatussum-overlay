@@ -18,6 +18,10 @@
 #
 ####################################################################
 
+# Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (2019-07-17)
+# x11-themes/kvantum not yet stable in the Gentoo's main tree.
+x11-themes/arc-kde kvantum
+
 # Mattéo Rossillol--Laruelle <beatussum@protonmail.com> (2019-06-19)
 # Feature not yet supported  due  to  AppImage  compatibility.  For
 # further information about the progress of its development, please
