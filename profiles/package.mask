@@ -10,7 +10,7 @@
 #
 ## Example:
 ##
-## # Foo Bar <foo@gentoo.org> (2003-03-29)
+## # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2003-03-29)
 ## # Masking these versions until we can get
 ## # the v4l stuff to work properly again.
 ## =media-video/mplayer-0.90_pre5
@@ -24,10 +24,14 @@
 #
 ## Example:
 ##
-## # Foo Bar <foo@gentoo.org> (2003-03-29)
-## # Masked for removal in 30 days.  Does not work
+## # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2003-03-29)
+## # Masked for removal in 15 days.  Does not work
 ## # with new libfoo. Upstream dead, gtk-1, smells
 ## # funny. (bug #987654)
 ## app-misc/some-package
 #
 ####################################################################
+
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2019-09-30)
+# Masked for removal in 15 days. No longer maintained.
+x11-themes/kde-plasma-chili
