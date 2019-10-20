@@ -31,7 +31,3 @@
 ## app-misc/some-package
 #
 ####################################################################
-
-# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2019-09-30)
-# Masked for removal in 15 days. No longer maintained.
-x11-themes/kde-plasma-chili
