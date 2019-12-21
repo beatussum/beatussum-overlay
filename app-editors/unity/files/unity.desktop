@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.1
+Name=Unity %SLOT%
+Comment=Editor to create games on the Unity engine
+Comment[fr]=Éditeur de création de jeux sur le moteur Unity
+Icon=%MY_PNS%
+Exec=%MY_PNS% %U
+Terminal=false
+MimeType=x-scheme-handler/com.unity3d.kharma;
+Categories=Development;IDE;
+Keywords=develop;engine;gamedev;unity3d;
+StartupNotify=true
