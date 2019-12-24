@@ -18,12 +18,13 @@ SRC_URI="
 
 LICENSE="Unity-EULA"
 SLOT="2019"
-KEYWORDS="-* ~amd64"
+KEYWORDS="~amd64"
 IUSE="android doc facebook ios mac webgl windows"
 REQUIRED_USE="facebook? ( webgl windows )"
 RESTRICT="bindist primaryuri strip test"
 
 RDEPEND="
+	dev-games/unityhub
 	dev-libs/nspr
 	dev-libs/nss
 	gnome-base/gconf:2
@@ -58,18 +59,21 @@ CHECKREQS_DISK_BUILD="3200M"
 
 src_prepare() {
 	sed -e "s/%SLOT%/${SLOT}/" -e "s/%MY_PNS%/${MY_PNS}/g" \
-		"${FILESDIR}/${PN}.desktop" > "${T}/${MY_PNS}.desktop"
+		"${FILESDIR}/${PN}.desktop" > "${T}/${MY_PNS}.desktop" || die
 
 	default
 }
 
 src_install() {
-	local unity_dir="/opt/${MY_PNS}"
+	local -r unity_dir="/opt/${MY_PNS}"
+	local -r unity_bin="${unity_dir}/Editor/Unity"
 
 	insinto "${unity_dir}"
 	doins -r Editor
 
-	make_wrapper "${MY_PNS}" "${unity_dir}/Editor/Unity"
+	fperms +x "${unity_bin}"
+
+	make_wrapper "${MY_PNS}" "${unity_bin}"
 	newicon -s 256 "Editor/Data/Resources/LargeUnityIcon.png" "${MY_PNS}.png"
 	domenu "${T}/${MY_PNS}.desktop"
 }
