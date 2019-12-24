@@ -33,5 +33,12 @@
 ####################################################################
 
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2019-12-21)
-# Masked because needs multilib.
+# Unity masked with its dependencies because needs multilib.
 app-editors/unity
+app-editors/unity-android
+app-editors/unity-doc
+app-editors/unity-facebook
+app-editors/unity-ios
+app-editors/unity-mac
+app-editors/unity-webgl
+app-editors/unity-windows

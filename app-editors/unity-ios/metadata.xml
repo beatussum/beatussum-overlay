@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
+	</maintainer>
+	<upstream>
+		<doc>https://docs.unity3d.com/Manual/iphone.html</doc>
+		<bugs-to>mailto:bugs@unity3d.com</bugs-to>
+	</upstream>
+</pkgmetadata>

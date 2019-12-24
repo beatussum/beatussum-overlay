@@ -35,3 +35,10 @@
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2019-12-21)
 # The dependency net-libs/nodejs is not supported.
 app-editors/unity
+app-editors/unity-android
+app-editors/unity-doc
+app-editors/unity-facebook
+app-editors/unity-ios
+app-editors/unity-mac
+app-editors/unity-webgl
+app-editors/unity-windows
