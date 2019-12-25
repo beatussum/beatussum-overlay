@@ -11,9 +11,7 @@ DESCRIPTION="A Unity plugin for developing on the WebGL platform"
 HOMEPAGE="https://unity3d.com"
 
 HASH="8e603399ca02"
-SRC_URI="
-	${SRC_URI_BASE}/${HASH}/LinuxEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-${MY_PV}.tar.xz -> ${P}.tar.xz
-"
+SRC_URI="${SRC_URI_BASE}/${HASH}/LinuxEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-${MY_PV}.tar.xz -> ${P}.tar.xz"
 
 LICENSE="Unity-EULA"
 SLOT="2019"
@@ -33,6 +31,7 @@ QA_PREBUILT="*"
 CHECKREQS_DISK_BUILD="1G"
 
 src_install() {
-	insinto "/opt/${UNITY_INS}"
-	doins -r *
+	# To avoid changing permissions
+	dodir "${UNITY_DIR}"
+	cp -ar * "${D}/${UNITY_DIR}" || die "The installation has failed"
 }

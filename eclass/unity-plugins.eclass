@@ -31,6 +31,18 @@ RDEPEND="~app-editors/unity-${PV}"
 # @DESCRIPTION: The name of the Unity installation
 UNITY_INS="${PN%-*}-${SLOT}"
 
+# @ECLASS-VARIABLE: UNITY_DIR
+# @DESCRIPTION: Location of the Unity installation directory
+UNITY_DIR="/opt/${UNITY_INS}"
+
+# @ECLASS-VARIABLE: UNITY_DIR
+# @DESCRIPTION: Location of the Unity data directory
+UNITY_DATA_DIR="${UNITY_DIR}/Editor/Data"
+
+# @ECLASS-VARIABLE: UNITY_DIR
+# @DESCRIPTION: Location of the Unity PlaybackEngines directory
+UNITY_ENGINES_DIR="${UNITY_DATA_DIR}/PlaybackEngines"
+
 # @FUNCTION: unity-plugins_unpack
 # @USAGE: <file to unpack>
 # @DESCRIPTION: A function that unpacks Unity '.pkg' plugins
