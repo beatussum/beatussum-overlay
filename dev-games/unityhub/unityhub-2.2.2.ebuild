@@ -8,9 +8,9 @@ inherit desktop eutils xdg
 DESCRIPTION="A tool to manage your Unity Projects and installations"
 HOMEPAGE="https://unity3d.com"
 SRC_URI="https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage -> ${P}.AppImage"
-LICENSE="Unity-EULA"
+LICENSE="Unity-EULA UnityHub-EULA"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 RESTRICT="bindist primaryuri strip test"
 
 S="${WORKDIR}"

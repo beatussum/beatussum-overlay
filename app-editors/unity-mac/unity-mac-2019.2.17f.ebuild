@@ -15,7 +15,7 @@ SRC_URI="${SRC_URI_BASE}/${HASH}/MacEditorTargetInstaller/UnitySetup-Mac-Mono-Su
 
 LICENSE="Unity-EULA"
 SLOT="2019"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 RESTRICT="bindist primaryuri strip test"
 
 BDEPEND="$(unity-plugins_src_uri_depends)"

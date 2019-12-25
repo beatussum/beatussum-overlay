@@ -16,7 +16,7 @@ SRC_URI="${SRC_URI_BASE}/LinuxEditorInstaller/Unity.tar.xz -> ${P}.tar.xz"
 
 LICENSE="Unity-EULA"
 SLOT="2019"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 IUSE="android doc facebook ios mac webgl windows"
 REQUIRED_USE="facebook? ( webgl windows )"
 RESTRICT="bindist primaryuri strip test"
