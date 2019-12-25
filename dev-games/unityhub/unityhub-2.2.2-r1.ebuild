@@ -34,6 +34,10 @@ src_prepare() {
 	rm squashfs-root/AppRun || die "The cleanup has failed"
 	rm "squashfs-root/${PN}".* || die "The cleanup has failed"
 
+	# Patch the permissions of dirs
+	find squashfs-root -type d -exec chmod 755 {} \; \
+		|| die "The permission patch has failed"
+
 	default
 }
 
