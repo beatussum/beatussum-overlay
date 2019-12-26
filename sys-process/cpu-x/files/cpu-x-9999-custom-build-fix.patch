@@ -1,5 +1,18 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index beae5d4..ea3d2f9 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -190,7 +190,7 @@ add_definitions(-DPRGVER="${PROJECT_VERSION}"
+ 	-DSYSTEM_NAME="${CMAKE_SYSTEM_NAME}"
+ 	-DSYSTEM_PROCESSOR="${CMAKE_SYSTEM_PROCESSOR}"
+ 	-DC_COMPILER_ID="${CMAKE_C_COMPILER_ID}"
+-	-DHAS_LIBSYSTEM="${LIBSYSTEM}"
++	-DHAS_LIBSYSTEM=${LIBSYSTEM}
+ 	-DGETTEXT_PACKAGE="${CMAKE_PROJECT_NAME}"
+ 	-DLOCALEDIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
+ 	-DTERMINFODIR="/lib/terminfo"
 diff --git a/src/core.c b/src/core.c
-index 18eef79..9974da9 100644
+index 9a7a3d7..6cc85a6 100644
 --- a/src/core.c
 +++ b/src/core.c
 @@ -73,10 +73,16 @@ int fill_labels(Labels *data)
@@ -19,7 +32,7 @@ index 18eef79..9974da9 100644
  	casprintf(&data->tab_cpu[VALUE][BUSSPEED], true, "%.2f MHz", data->bus_freq);
  
  	err += system_static       (data);
-@@ -101,15 +107,19 @@ int do_refresh(Labels *data)
+@@ -101,21 +107,29 @@ int do_refresh(Labels *data)
  	switch(opts->selected_page)
  	{
  		case NO_CPU:
@@ -36,10 +49,36 @@ index 18eef79..9974da9 100644
  			if(HAS_BANDWIDTH) err += err_func(call_bandwidth, data);
  			break;
 +#endif
++#if HAS_LIBSYSTEM
  		case NO_SYSTEM:
  			if(HAS_LIBSYSTEM) err += err_func(system_dynamic, data);
  			break;
-@@ -1339,11 +1349,13 @@ static int fallback_mode_static(Labels *data)
++#endif
++#if HAS_LIBPCI
+ 		case NO_GRAPHICS:
+ 			err += err_func(gpu_monitoring, data);
+ 			break;
++#endif
+ 		case NO_BENCH:
+ 			err += err_func(benchmark_status, data);
+ 			break;
+@@ -838,6 +852,7 @@ static bool sys_debug_ok(Labels *data)
+ }
+ #endif /* __linux__ */
+ 
++#if HAS_LIBPCI
+ /* Retrieve GPU temperature and clocks */
+ static int gpu_monitoring(Labels *data)
+ {
+@@ -991,6 +1006,7 @@ skip_clocks:
+ 	return 0;
+ #endif /* __linux__ */
+ }
++#endif /* HAS_LIBPCI */
+ 
+ /* Satic elements for System tab, OS specific */
+ static int system_static(Labels *data)
+@@ -1327,11 +1343,13 @@ static int fallback_mode_static(Labels *data)
  {
  	int err = 0;
  
@@ -54,10 +93,25 @@ index 18eef79..9974da9 100644
  	if(data->cpu_min_mult <= 0.0 || data->cpu_max_mult <= 0.0)
  		err += cputab_multipliers_fallback(data);
 diff --git a/src/core.h b/src/core.h
-index c461cf3..ab1a018 100644
+index 170323b..7bdae40 100644
 --- a/src/core.h
 +++ b/src/core.h
-@@ -54,21 +54,27 @@ static int cputab_fill_multipliers(Labels *data);
+@@ -33,6 +33,7 @@
+ /* Avoid to re-run a function if an error was occurred in previous call */
+ static int err_func(int (*func)(Labels *), Labels *data);
+ 
++#if HAS_LIBCPUID
+ /* Static elements provided by libcpuid */
+ static int call_libcpuid_static(Labels *data);
+ /* Required: HAS_LIBCPUID */
+@@ -48,39 +49,50 @@ static int call_libcpuid_msr_static(Labels *data);
+ /* MSRs dynamic values provided by libcpuid */
+ static int call_libcpuid_msr_dynamic(Labels *data);
+ /* Required: HAS_LIBCPUID && DAEMON_UP */
++#endif
+ 
+ /* Fill the Multiplier label with the most appropriate format */
+ static int cputab_fill_multipliers(Labels *data);
  /* Required: none
  Both normal and fallback mode provide CPU multipliers, need to be call after */
  
@@ -83,8 +137,25 @@ index c461cf3..ab1a018 100644
  /* Required: HAS_LIBPCI */
 +#endif
  
- /* Retrieve GPU temperature */
- static int gpu_temperature(Labels *data);
++#if HAS_LIBPCI
+ /* Retrieve GPU temperature and clocks */
+ static int gpu_monitoring(Labels *data);
+-/* Required: none */
++/* Required: HAS_LIBPCI */
++#endif
+ 
+ /* Satic elements for System tab, OS specific */
+ static int system_static(Labels *data);
+ /* Required: none */
+ 
++#if (HAS_LIBPROCPS || HAS_LIBSTATGRAB)
+ /* Dynamic elements for System tab, provided by libprocps/libstatgrab */
+ static int system_dynamic(Labels *data);
+ /* Required: HAS_LIBPROCPS || HAS_LIBSTATGRAB */
++#endif
+ 
+ /* Report score of benchmarks */
+ static int benchmark_status(Labels *data);
 diff --git a/src/daemon.c b/src/daemon.c
 index f4b77b8..ea9ef9b 100644
 --- a/src/daemon.c
@@ -118,15 +189,15 @@ index f4b77b8..ea9ef9b 100644
  	setvbuf(stdout, NULL, _IONBF, 0);
  	dup2(STDOUT_FILENO, STDERR_FILENO);
 diff --git a/src/main.c b/src/main.c
-index 1aba775..0ac605d 100644
+index 1aba775..6f97ffc 100644
 --- a/src/main.c
 +++ b/src/main.c
-@@ -557,7 +557,7 @@ static void help(char *binary_name)
- 	MSG_STDOUT(_("\nInfluenceable environment variables:"));
- 	for(i = 0; cpux_env_vars[i].var_name != NULL; i++)
+@@ -540,7 +540,7 @@ static void help(char *binary_name)
+ 	MSG_STDOUT(_("Available DISPLAY:"));
+ 	for(i = 0; cpux_options[i].long_opt != NULL; i++)
  	{
 -		if(!cpux_options[i].has_mod)
 +		if(!cpux_env_vars[i].has_mod)
  			continue;
- 		MSG_STDOUT("  %-20s %s", cpux_env_vars[i].var_name, _(cpux_env_vars[i].description));
- 	}
+ 
+ 		if(!options_header && islower(cpux_options[i].short_opt))
