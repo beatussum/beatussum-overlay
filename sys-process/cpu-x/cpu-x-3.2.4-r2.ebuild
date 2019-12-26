@@ -12,14 +12,10 @@ SRC_URI="https://github.com/X0rg/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="+bandwidth check-update +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +nls"
+IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +nls"
 RESTRICT="primaryuri"
 
 DEPEND="
-	check-update? (
-		dev-libs/json-c:=
-		net-misc/curl
-	)
 	force-libstatgrab? ( sys-libs/libstatgrab )
 	!force-libstatgrab? ( sys-process/procps:= )
 	gtk? ( >=x11-libs/gtk+-3.12:3 )
@@ -51,8 +47,8 @@ src_configure() {
 		-DWITH_GTK=$(usex gtk)
 		-DWITH_NCURSES=$(usex ncurses)
 		-DWITH_GETTEXT=$(usex nls)
-		-DWITH_LIBCURL=$(usex check-update)
-		-DWITH_LIBJSONC=$(usex check-update)
+		-DWITH_LIBCURL=OFF
+		-DWITH_LIBJSONC=OFF
 		-DWITH_LIBCPUID=$(usex libcpuid)
 		-DWITH_LIBPCI=$(usex libpci)
 		-DWITH_LIBSTATGRAB=OFF
