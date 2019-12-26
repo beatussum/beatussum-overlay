@@ -3,16 +3,15 @@
 
 EAPI=7
 
+HASH="8e603399ca02"
+
 inherit unity-plugins
 
 MY_PV="${PV}1"
 
 DESCRIPTION="A Unity plugin for developing on the Android platform"
 HOMEPAGE="https://unity3d.com"
-
-HASH="8e603399ca02"
-SRC_URI="${SRC_URI_BASE}/${HASH}/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-${MY_PV}.pkg -> ${P}.pkg"
-
+SRC_URI="${SRC_URI_BASE}/MacEditorTargetInstaller/UnitySetup-Windows-Mono-Support-for-Editor-${MY_PV}.pkg -> ${P}.pkg"
 LICENSE="Unity-EULA"
 SLOT="2019"
 KEYWORDS="-* ~amd64"

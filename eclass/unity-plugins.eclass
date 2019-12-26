@@ -23,7 +23,7 @@ EXPORT_FUNCTIONS src_unpack
 
 # @ECLASS-VARIABLE: SRC_URI_BASE
 # @DESCRIPTION: The URI base to the Unity source
-SRC_URI_BASE="https://beta.unity3d.com/download"
+SRC_URI_BASE="https://beta.unity3d.com/download/${HASH}"
 
 RDEPEND="~app-editors/unity-${PV}"
 
@@ -47,13 +47,16 @@ UNITY_ENGINES_DIR="${UNITY_DATA_DIR}/PlaybackEngines"
 # @USAGE: <file to unpack>
 # @DESCRIPTION: A function that unpacks Unity '.pkg' plugins
 unity-plugins_unpack() {
-	mkdir tmp || die
+	local -r tmp="${T}/$1.tmp"
 
-	xar -C tmp -xf "${DISTDIR}/$1" || die
-	mv tmp/*.pkg.tmp/Payload Payload.cpio.gz || die
+	mkdir "${tmp}" || die
+
+	xar -C "${tmp}" -xf "${DISTDIR}/$1" || die
+	mv "${tmp}"/*.pkg.tmp/Payload Payload.cpio.gz || die
+	rm -r "${tmp}" || die
+	
 	unpacker Payload.cpio.gz
-
-	rm -r tmp Payload.cpio.gz || die
+	rm -r Payload.cpio.gz || die
 }
 
 # @FUNCTION: unity-plugins_src_unpack

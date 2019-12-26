@@ -3,7 +3,7 @@
 
 EAPI=7
 
-HASH="8e603399ca02"
+HASH="05119b33d0b7"
 
 inherit unity-plugins
 
@@ -13,7 +13,7 @@ DESCRIPTION="A Unity plugin for developing on the macOS platform"
 HOMEPAGE="https://unity3d.com"
 SRC_URI="${SRC_URI_BASE}/MacEditorTargetInstaller/UnitySetup-Mac-Mono-Support-for-Editor-${MY_PV}.pkg -> ${P}.pkg"
 LICENSE="Unity-EULA"
-SLOT="2019"
+SLOT="lts-2018"
 KEYWORDS="-* ~amd64"
 RESTRICT="bindist primaryuri strip test"
 

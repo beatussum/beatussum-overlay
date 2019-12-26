@@ -3,7 +3,7 @@
 
 EAPI=7
 
-HASH="8e603399ca02"
+HASH="05119b33d0b7"
 
 inherit check-reqs unity-plugins
 
@@ -13,7 +13,7 @@ DESCRIPTION="A Unity plugin for developing on the WebGL platform"
 HOMEPAGE="https://unity3d.com"
 SRC_URI="${SRC_URI_BASE}/LinuxEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-${MY_PV}.tar.xz -> ${P}.tar.xz"
 LICENSE="Unity-EULA"
-SLOT="2019"
+SLOT="lts-2018"
 KEYWORDS="-* ~amd64"
 RESTRICT="bindist primaryuri strip test"
 
@@ -27,7 +27,7 @@ RDEPEND="
 
 QA_PREBUILT="*"
 
-CHECKREQS_DISK_BUILD="1G"
+CHECKREQS_DISK_BUILD="900M"
 
 src_install() {
 	# To avoid changing permissions

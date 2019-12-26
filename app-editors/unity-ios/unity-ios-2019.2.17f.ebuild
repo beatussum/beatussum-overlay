@@ -3,16 +3,15 @@
 
 EAPI=7
 
+HASH="8e603399ca02"
+
 inherit check-reqs unity-plugins
 
 MY_PV="${PV}1"
 
 DESCRIPTION="A Unity plugin for developing on the iOS platform"
 HOMEPAGE="https://unity3d.com"
-
-HASH="8e603399ca02"
-SRC_URI="${SRC_URI_BASE}/${HASH}/LinuxEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-${MY_PV}.tar.xz -> ${P}.tar.xz"
-
+SRC_URI="${SRC_URI_BASE}/LinuxEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-${MY_PV}.tar.xz -> ${P}.tar.xz"
 LICENSE="Unity-EULA"
 SLOT="2019"
 KEYWORDS="-* ~amd64"

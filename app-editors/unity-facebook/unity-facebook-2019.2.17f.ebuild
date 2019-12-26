@@ -3,16 +3,15 @@
 
 EAPI=7
 
+HASH="8e603399ca02"
+
 inherit unity-plugins
 
 MY_PV="${PV}1"
 
 DESCRIPTION="A Unity plugin for developing on the Facebook platform"
 HOMEPAGE="https://unity3d.com"
-
-HASH="8e603399ca02"
-SRC_URI="${SRC_URI_BASE}/${HASH}/MacEditorTargetInstaller/UnitySetup-Facebook-Games-Support-for-Editor-${MY_PV}.pkg -> ${P}.pkg"
-
+SRC_URI="${SRC_URI_BASE}/MacEditorTargetInstaller/UnitySetup-Facebook-Games-Support-for-Editor-${MY_PV}.pkg -> ${P}.pkg"
 LICENSE="Unity-EULA"
 SLOT="2019"
 KEYWORDS="-* ~amd64"
@@ -26,5 +25,6 @@ QA_PREBUILT="*"
 src_install() {
 	# To avoid changing permissions
 	dodir "${UNITY_ENGINES_DIR}"
-	cp -ar "${P}" "${D}/${UNITY_ENGINES_DIR}/Facebook" || die "The installation has failed"
+	cp -ar "${P}" "${D}/${UNITY_ENGINES_DIR}/Facebook" \
+		|| die "The installation has failed"
 }
