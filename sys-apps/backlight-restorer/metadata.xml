@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<name>Mattéo Rossillol‑‑Laruelle</name>
+			<email>beatussum@protonmail.com</email>
+		</maintainer>
+		<bugs-to>https://github.com/beatussum/backlight-restorer/issues</bugs-to>
+		<remote-id type="github">beatussum/backlight-restorer</remote-id>
+	</upstream>
+</pkgmetadata>
