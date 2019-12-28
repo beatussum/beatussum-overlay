@@ -3,9 +3,9 @@
 
 EAPI=7
 
-PYTHON_COMPAT=(python3_{5..7})
+PYTHON_COMPAT=(python{2_5,3_5,3_6,3_7})
 
-inherit autotools python-single-r1
+inherit autotools python-any-r1
 
 DESCRIPTION="A small C library for x86 (and x86_64) CPU detection and feature extraction"
 HOMEPAGE="http://libcpuid.sourceforge.net"
@@ -14,17 +14,20 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-REQUIRED_USE="test? ( ${PYTHON_REQUIRED_USE} )"
 RESTRICT="primaryuri !test? ( test )"
 
 DEPEND="test? ( ${PYTHON_DEPS} )"
 
-PATCHES=(
-	"${FILESDIR}/${PF}-python3-fix.patch"
-)
+pkg_setup() {
+	use test && python-any-r1_pkg_setup
+}
 
 src_prepare() {
-	default
+	if use test && python_is_python3; then
+		eapply "${FILESDIR}/${PF}-python3-fix.patch"
+	fi
+
+	eapply_user
 
 	eautoreconf
 }
