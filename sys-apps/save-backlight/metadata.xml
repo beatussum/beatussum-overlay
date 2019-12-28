@@ -10,7 +10,7 @@
 			<name>Mattéo Rossillol‑‑Laruelle</name>
 			<email>beatussum@protonmail.com</email>
 		</maintainer>
-		<bugs-to>https://github.com/beatussum/backlight-restorer/issues</bugs-to>
-		<remote-id type="github">beatussum/backlight-restorer</remote-id>
+		<bugs-to>https://github.com/beatussum/save-backlight/issues</bugs-to>
+		<remote-id type="github">beatussum/save-backlight</remote-id>
 	</upstream>
 </pkgmetadata>
