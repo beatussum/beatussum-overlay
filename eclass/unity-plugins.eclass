@@ -25,7 +25,7 @@ EXPORT_FUNCTIONS src_unpack
 # @DESCRIPTION: The URI base to the Unity source
 SRC_URI_BASE="https://beta.unity3d.com/download/${HASH}"
 
-RDEPEND="~app-editors/unity-${PV}"
+RDEPEND="~dev-games/unity-${PV}"
 
 # @ECLASS-VARIABLE: UNITY_INS
 # @DESCRIPTION: The name of the Unity installation

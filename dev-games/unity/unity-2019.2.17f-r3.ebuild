@@ -39,13 +39,13 @@ RDEPEND="
 "
 
 PDEPEND="
-	android? ( ~app-editors/${PN}-android-${PV} )
-	doc? ( ~app-editors/${PN}-doc-${PV} )
-	facebook? ( ~app-editors/${PN}-facebook-${PV} )
-	ios? ( ~app-editors/${PN}-ios-${PV} )
-	mac? ( ~app-editors/${PN}-mac-${PV} )
-	webgl? ( ~app-editors/${PN}-webgl-${PV} )
-	windows? ( ~app-editors/${PN}-windows-${PV} )
+	android? ( ~dev-games/${PN}-android-${PV} )
+	doc? ( ~dev-games/${PN}-doc-${PV} )
+	facebook? ( ~dev-games/${PN}-facebook-${PV} )
+	ios? ( ~dev-games/${PN}-ios-${PV} )
+	mac? ( ~dev-games/${PN}-mac-${PV} )
+	webgl? ( ~dev-games/${PN}-webgl-${PV} )
+	windows? ( ~dev-games/${PN}-windows-${PV} )
 "
 
 MY_PNS="${PN}-${SLOT}"

@@ -1,0 +1,8 @@
+move app-editors/unity dev-games/unity
+move app-editors/unity-android dev-games/unity-android
+move app-editors/unity-doc dev-games/unity-doc
+move app-editors/unity-facebook dev-games/unity-facebook
+move app-editors/unity-ios dev-games/unity-ios
+move app-editors/unity-mac dev-games/unity-mac
+move app-editors/unity-webgl dev-games/unity-webgl
+move app-editors/unity-windows dev-games/unity-windows

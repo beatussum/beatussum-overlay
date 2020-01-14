@@ -6,19 +6,18 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		<pkg>app-editors/unity</pkg> is a cross-platform game engine developed by
-		Unity Technologies.  As of 2018,  the engine had been extended
-		to support more than 25 platforms.  The engine can be used  to
-		create three-dimensional,  two-dimensional,  virtual  reality,
-		and augmented reality games,  as well as simulations and other
-		experiences
+		A cross-platform game engine developed by Unity Technologies.  As  of
+		2018, the engine had been extended to support more than 25 platforms.
+		The engine can be used to create three-dimensional,  two-dimensional,
+		virtual reality, and augmented reality games,  as well as simulations
+		and other experiences.
 	</longdescription>
 	<longdescription lang="fr">
-		<pkg>app-editors/unity</pkg> est un moteur de jeu multiplateforme  (smartphone,  ordinateur,
-		consoles de jeux vidéo et Web) développé par Unity Technologies.  Il est l'un des
-		plus répandus dans l'industrie du jeu vidéo,  aussi	bien pour les grands  studios
-		que pour les indépendants du fait de sa rapidité aux prototypages et qu'il permet
-		de sortir les jeux sur tous les supports.
+		Un moteur de jeu  multiplateforme  (smartphone,  ordinateur,  consoles
+		de jeux vidéo et Web)  développé par Unity Technologies.  Il est  l'un
+		des plus répandus dans l'industrie du jeu vidéo,  aussi bien pour  les
+		grands studios que pour les indépendants du fait de  sa  rapidité  aux
+		prototypages et qu'il permet de sortir les jeux sur tous les supports.
 	</longdescription>
 	<use>
 		<flag name="android">Enable Android target support</flag>
