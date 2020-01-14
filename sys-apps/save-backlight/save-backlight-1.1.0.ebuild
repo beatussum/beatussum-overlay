@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,9 +18,4 @@ src_compile() { :; }
 src_install() {
 	einstalldocs
 	emake PREFIX="" DESTDIR="${D}" install
-}
-
-pkg_postinst() {
-	ewarn "Please, do not start directly this service; but just"
-	ewarn "add it to the default runlevel."
 }
