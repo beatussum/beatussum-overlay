@@ -12,6 +12,14 @@ Just use [Layman](https://wiki.gentoo.org/wiki/Project:Layman) as _root_:
 
 ```bash
 layman --list
-layman --add  beatussum-overlay
+layman --add beatussum-overlay
 layman --sync beatussum-overlay
+```
+
+Or, with [eselect-repository](https://wiki.gentoo.org/wiki/Eselect/Repository):
+
+```bash
+eselect repository list
+eselect repository enable beatussum-overlay
+emaint sync --repo beatussum-overlay
 ```
