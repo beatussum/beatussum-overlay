@@ -16,6 +16,8 @@ KEYWORDS="~amd64"
 IUSE="+ayatana +system-ffmpeg"
 RESTRICT="bindist strip test"
 
+BDEPEND="dev-util/bsdiff"
+
 RDEPEND="
 	app-accessibility/at-spi2-core[X]
 	dev-libs/libffi
@@ -57,6 +59,19 @@ src_prepare() {
 	if use system-ffmpeg; then
 		rm "${MY_BIN}/libffmpeg.so" || die
 	fi
+
+	# Subject: patch the autostart creation by Discord
+	# Description:
+	# The execution needs a specific "LD_LIBRARY_PATH" (via a
+	# wrapper), and the icon file is not at the same place.
+	#
+	# -Exec=/opt/discord/Discord
+	# +Exec=discord
+	# -Icon=/opt/discord/discord.png
+	# +Icon=discord
+	#
+	local -r f="${MY_BIN}/resources/app.asar"
+	bspatch "${f}" "${f}" "${FILESDIR}/${P}-${f##*/}.bspatch" || die
 }
 
 src_install() {
