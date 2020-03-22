@@ -36,8 +36,8 @@
 			<name>X0rg</name>
 		</maintainer>
 		<changelog>https://raw.githubusercontent.com/X0rg/CPU-X/master/ChangeLog</changelog>
-		<doc>https://github.com/X0rg/CPU-X/wiki</doc>
-		<bugs-to>https://github.com/X0rg/CPU-X/issues</bugs-to>
+		<doc>https://github.com/X0rg/CPU-X/wiki/</doc>
+		<bugs-to>https://github.com/X0rg/CPU-X/issues/</bugs-to>
 		<remote-id type="github">X0rg/CPU-X</remote-id>
 	</upstream>
 </pkgmetadata>

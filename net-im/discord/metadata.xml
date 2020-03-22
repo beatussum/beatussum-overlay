@@ -17,7 +17,7 @@
 		<maintainer status="active">
 			<name>Discord Inc.</name>
 		</maintainer>
-		<doc>https://discordapp.com/developers/docs</doc>
+		<doc>https://discordapp.com/developers/docs/</doc>
 		<bugs-to>mailto:support@discordapp.com</bugs-to>
 	</upstream>
 </pkgmetadata>

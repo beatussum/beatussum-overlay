@@ -11,8 +11,8 @@
 			<name>grml-team</name>
 		</maintainer>
 		<changelog>https://raw.githubusercontent.com/grml/grml-etc-core/master/debian/changelog</changelog>
-		<doc>https://grml.org/docs</doc>
-		<bugs-to>https://grml.org/bugs</bugs-to>
+		<doc>https://grml.org/docs/</doc>
+		<bugs-to>https://grml.org/bugs/</bugs-to>
 		<remote-id type="github">grml/grml-etc-core</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="Fish shell like syntax highlighting for Zsh"
-HOMEPAGE="https://github.com/zsh-users/zsh-syntax-highlighting"
+HOMEPAGE="https://github.com/zsh-users/zsh-syntax-highlighting/"
 SRC_URI="https://github.com/zsh-users/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"

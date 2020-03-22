@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>beatussum@protonmail.com</email>
-		<name>Mattéo Rossillol</name>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
 		This is an x-cursor theme inspired by macOS and based on KDE Breeze. The source files
@@ -28,7 +28,7 @@
 			<name>Keefer Rourke</name>
 			<email>mail@krourke.org</email>
 		</maintainer>
-		<bugs-to>https://github.com/keeferrourke/capitaine-cursors/issues</bugs-to>
+		<bugs-to>https://github.com/keeferrourke/capitaine-cursors/issues/</bugs-to>
 		<remote-id type="github">keeferrourke/capitaine-cursors</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -3,9 +3,10 @@
 
 EAPI=7
 
-MY_PN="${PN/xcursors/cursors}"
+MY_PN="${PN#x}"
+
 DESCRIPTION="An x-cursor theme inspired by macOS and based on KDE Breeze"
-HOMEPAGE="https://github.com/keeferrourke/capitaine-cursors"
+HOMEPAGE="https://github.com/keeferrourke/capitaine-cursors/"
 SRC_URI="https://github.com/keeferrourke/${MY_PN}/archive/r${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"

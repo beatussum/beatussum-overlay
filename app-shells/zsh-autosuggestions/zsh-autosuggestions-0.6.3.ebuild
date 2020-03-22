@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="Fish-like fast/unobtrusive autosuggestions for zsh"
-HOMEPAGE="https://github.com/zsh-users/zsh-autosuggestions"
+HOMEPAGE="https://github.com/zsh-users/zsh-autosuggestions/"
 SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"

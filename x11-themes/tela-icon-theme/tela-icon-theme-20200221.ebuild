@@ -3,12 +3,13 @@
 
 EAPI=7
 
+MY_PN="${PN/t/T}"
+MY_PV="2020-02-21"
+
 inherit xdg
 
-MY_PN="${PN/tela/Tela}"
-MY_PV="2020-02-21"
 DESCRIPTION="A flat colorful Design icon theme"
-HOMEPAGE="https://www.pling.com/p/1279924"
+HOMEPAGE="https://www.pling.com/p/1279924/"
 SRC_URI="https://github.com/vinceliuice/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"

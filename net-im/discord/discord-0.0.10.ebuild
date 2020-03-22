@@ -3,18 +3,18 @@
 
 EAPI=7
 
-inherit desktop eutils xdg
-
 MY_BIN="${PN/d/D}"
 
+inherit desktop eutils xdg
+
 DESCRIPTION="All-in-one voice and text chat for gamers"
-HOMEPAGE="https://discordapp.com"
+HOMEPAGE="https://discordapp.com/"
 SRC_URI="https://dl.discordapp.net/apps/linux/${PV}/${P}.tar.gz"
 LICENSE="Discord-TOS"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+ayatana +system-ffmpeg"
-RESTRICT="bindist strip test"
+RESTRICT="bindist mirror strip"
 
 BDEPEND="dev-util/bsdiff"
 

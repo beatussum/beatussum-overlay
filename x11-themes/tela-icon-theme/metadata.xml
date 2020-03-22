@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>beatussum@protonmail.com</email>
-		<name>Mattéo Rossillol</name>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<use>
 		<flag name="standard">Install the standard color folder version</flag>
@@ -40,7 +40,7 @@
 			<name>Vince</name>
 			<email>vinceliuice@hotmail.com</email>
 		</maintainer>
-		<bugs-to>https://github.com/vinceliuice/Tela-icon-theme/issues</bugs-to>
+		<bugs-to>https://github.com/vinceliuice/Tela-icon-theme/issues/</bugs-to>
 		<remote-id type="github">vinceliuice/Tela-icon-theme</remote-id>
 	</upstream>
 </pkgmetadata>

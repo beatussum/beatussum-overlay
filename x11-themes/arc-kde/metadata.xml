@@ -39,7 +39,7 @@
 		<maintainer status="active">
 			<name>Papirus Development Team</name>
 		</maintainer>
-		<bugs-to>https://github.com/PapirusDevelopmentTeam/arc-kde/issues</bugs-to>
+		<bugs-to>https://github.com/PapirusDevelopmentTeam/arc-kde/issues/</bugs-to>
 		<remote-id type="github">PapirusDevelopmentTeam/arc-kde</remote-id>
 	</upstream>
 </pkgmetadata>

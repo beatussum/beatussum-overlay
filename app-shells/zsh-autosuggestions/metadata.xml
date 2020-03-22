@@ -3,14 +3,14 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>beatussum@protonmail.com</email>
-		<name>Mattéo Rossillol</name>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<upstream>
 		<maintainer status="active">
 			<name>zsh-users</name>
 		</maintainer>
 		<changelog>https://raw.githubusercontent.com/zsh-users/zsh-autosuggestions/master/CHANGELOG.md</changelog>
-		<bugs-to>https://github.com/zsh-users/zsh-autosuggestions/issues</bugs-to>
+		<bugs-to>https://github.com/zsh-users/zsh-autosuggestions/issues/</bugs-to>
 		<remote-id type="github">zsh-users/zsh-autosuggestions</remote-id>
 	</upstream>
 </pkgmetadata>

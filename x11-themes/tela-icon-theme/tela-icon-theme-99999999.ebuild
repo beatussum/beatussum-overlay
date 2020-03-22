@@ -3,11 +3,12 @@
 
 EAPI=7
 
+MY_PN="${PN/t/T}"
+
 inherit git-r3 xdg
 
-MY_PN="${PN/tela/Tela}"
 DESCRIPTION="A flat colorful Design icon theme"
-HOMEPAGE="https://www.pling.com/p/1279924"
+HOMEPAGE="https://www.pling.com/p/1279924/"
 EGIT_REPO_URI="https://github.com/vinceliuice/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"

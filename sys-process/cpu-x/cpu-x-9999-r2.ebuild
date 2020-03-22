@@ -3,11 +3,12 @@
 
 EAPI=7
 
+MY_PN="CPU-X"
+
 inherit cmake-utils git-r3 xdg
 
-MY_PN="CPU-X"
 DESCRIPTION="A Free software that gathers information on CPU, motherboard and more"
-HOMEPAGE="https://x0rg.github.io/CPU-X"
+HOMEPAGE="https://x0rg.github.io/CPU-X/"
 EGIT_REPO_URI="https://github.com/X0rg/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"

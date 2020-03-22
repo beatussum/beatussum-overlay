@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="Arc KDE customization"
-HOMEPAGE="https://github.com/PapirusDevelopmentTeam/arc-kde"
+HOMEPAGE="https://github.com/PapirusDevelopmentTeam/arc-kde/"
 SRC_URI="https://github.com/PapirusDevelopmentTeam/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+ wallpapers? ( CC-BY-SA-4.0 )"
 SLOT="0"
