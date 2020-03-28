@@ -13,10 +13,8 @@ SRC_URI="https://dl.discordapp.net/apps/linux/${PV}/${P}.tar.gz"
 LICENSE="Discord-TOS"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+ayatana +system-ffmpeg"
+IUSE="+ayatana"
 RESTRICT="bindist mirror strip"
-
-BDEPEND="dev-util/bsdiff"
 
 RDEPEND="
 	app-accessibility/at-spi2-core[X]
@@ -32,15 +30,13 @@ RDEPEND="
 	x11-libs/pango[X]
 	x11-libs/pixman
 	ayatana? ( dev-libs/libappindicator:3 )
-	system-ffmpeg? ( media-video/ffmpeg[chromium] )
 "
 
 S="${WORKDIR}"
-
 QA_PREBUILT="
-	opt/discord/${MY_BIN}
-	opt/discord/libVkICD_mock_icd.so
-	opt/discord/libffmpeg.so
+	opt/${PN}/${MY_BIN}
+	opt/${PN}/lib*
+	opt/${PN}/swiftshader/*
 "
 
 src_prepare() {
@@ -51,38 +47,20 @@ src_prepare() {
 		> "${T}/${PN}.desktop" || die
 	mv "${MY_BIN}/${PN}.png" "${T}" || die
 
-	rm "${MY_BIN}/${PN}.desktop" || die
-	rm "${MY_BIN}/postinst.sh" || die
-	rm "${MY_BIN}"/lib*GL*.so || die
-	rm -r "${MY_BIN}/swiftshader" || die
-
-	if use system-ffmpeg; then
-		rm "${MY_BIN}/libffmpeg.so" || die
-	fi
-
-	# Subject: patch the autostart creation by Discord
-	# Description:
-	# The execution needs a specific "LD_LIBRARY_PATH" (via a
-	# wrapper), and the icon file is not at the same place.
-	#
-	# -Exec=/opt/discord/Discord
-	# +Exec=discord
-	# -Icon=/opt/discord/discord.png
-	# +Icon=discord
-	#
-	local -r f="${MY_BIN}/resources/app.asar"
-	bspatch "${f}" "${f}" "${FILESDIR}/${P}-${f##*/}.bspatch" || die
+	rm "${MY_BIN}/${PN}.desktop" || die "The cleanup has failed"
+	rm "${MY_BIN}/postinst.sh" || die "The cleanup has failed"
 }
 
 src_install() {
+	local -r dir="/opt/${PN}"
+
 	doicon -s 256 "${T}/${PN}.png"
 	domenu "${T}/${PN}.desktop"
 
-	insinto "/opt/${PN}"
+	insinto "${dir}"
 	doins -r "${MY_BIN}"/*
-	fperms +x "/opt/${PN}/${MY_BIN}"
+	fperms +x "${dir}/${MY_BIN}"
+	fperms 4755 "${dir}/chrome-sandbox"
 
-	use system-ffmpeg && local -r libpath="/usr/lib64/chromium"
-	make_wrapper "${PN}" "/opt/${PN}/${MY_BIN}" "" \
-		"${libpath}"
+	make_wrapper "${PN}" "${dir}/${MY_BIN}" "" "${dir}"
 }
