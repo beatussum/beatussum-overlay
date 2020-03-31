@@ -28,6 +28,12 @@
 	<use lang="fr">
 		<flag name="dark">Installer le thème sombre des curseurs</flag>
 		<flag name="light">Installer le thème clair des curseurs</flag>
+		<flag name="lo">Le DPI maximum de rendu est LODPI</flag>
+		<flag name="tv">Le DPI maximum de rendu est TVDPI</flag>
+		<flag name="hd">Le DPI maximum de rendu est HDPI</flag>
+		<flag name="xhd">Le DPI maximum de rendu est XHDPI</flag>
+		<flag name="xxhd">Le DPI maximum de rendu est XXHDPI</flag>
+		<flag name="xxxhd">Le DPI maximum de rendu est XXXHDPI</flag>
 	</use>
 	<upstream>
 		<maintainer status="active">
