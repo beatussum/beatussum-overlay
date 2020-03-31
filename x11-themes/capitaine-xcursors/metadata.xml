@@ -16,12 +16,18 @@
 		avec le pack d'icônes de Keefer Rourke&#xA0;: La Capitaine.
 	</longdescription>
 	<use>
-		<flag name="standard">Install the standard theme cursors</flag>
-		<flag name="white">Install the white theme cursors</flag>
+		<flag name="dark">Install the dark theme cursors</flag>
+		<flag name="light">Install the light theme cursors</flag>
+		<flag name="lo">The max DPI to render is LODPI</flag>
+		<flag name="tv">The max DPI to render is TVDPI</flag>
+		<flag name="hd">The max DPI to render is HDPI</flag>
+		<flag name="xhd">The max DPI to render is XHDPI</flag>
+		<flag name="xxhd">The max DPI to render is XXHDPI</flag>
+		<flag name="xxxhd">The max DPI to render is XXXHDPI</flag>
 	</use>
 	<use lang="fr">
-		<flag name="standard">Installer le thème standard des curseurs</flag>
-		<flag name="white">Installer le thème blanc des curseurs</flag>
+		<flag name="dark">Installer le thème sombre des curseurs</flag>
+		<flag name="light">Installer le thème clair des curseurs</flag>
 	</use>
 	<upstream>
 		<maintainer status="active">
