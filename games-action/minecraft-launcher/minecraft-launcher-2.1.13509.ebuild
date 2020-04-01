@@ -38,6 +38,7 @@ RDEPEND="
 "
 
 S="${WORKDIR}"
+QA_PREBUILT="opt/${PN}"
 
 src_install() {
 	local -r dir="/opt/${PN}"
