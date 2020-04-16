@@ -12,7 +12,7 @@ HOMEPAGE="https://www.minecraft.net/"
 
 SRC_URI="
 	${SRC_URI_BASE}/linux/x86_64/${PN}_${PV}.tar.gz -> ${P}.tar.gz
-	${SRC_URI_BASE}/${PN}.svg -> ${P}.svg
+	${SRC_URI_BASE}/${PN}.svg
 "
 
 LICENSE="Mojang"
@@ -45,7 +45,7 @@ src_install() {
 
 	dodir "${dir}"
 	cp -ar "${PN}"/* "${D}/${dir}" || die
-	newicon "${DISTDIR}/${P}.svg" "${PN}.svg"
+	doicon "${DISTDIR}/${PN}.svg"
 
 	make_wrapper "${PN}" "${dir}/${PN}" "" "${dir}"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
