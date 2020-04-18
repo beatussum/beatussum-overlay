@@ -49,5 +49,6 @@ src_install() {
 
 	make_wrapper "${PN}" "${dir}/${PN}" '${HOME}/.minecraft' "${dir}"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
-		"Game;ActionGame;AdventureGame;Java"
+		"Game;ActionGame;AdventureGame;Java" \
+		"StartupWMClass=minecraft-launcher"
 }
