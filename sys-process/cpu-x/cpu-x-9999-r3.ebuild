@@ -30,10 +30,6 @@ BDEPEND="
 
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${P}-custom-build-fix.patch"
-)
-
 src_prepare() {
 	cmake-utils_src_prepare
 }
@@ -51,7 +47,18 @@ src_configure() {
 		-DWITH_DMIDECODE=$(usex dmidecode)
 		-DWITH_BANDWIDTH=$(usex bandwidth)
 		-DFORCE_LIBSTATGRAB=$(usex force-libstatgrab)
+		-DGSETTINGS_COMPILE=OFF
 	)
 
 	cmake-utils_src_configure
+}
+
+pkg_preinst() {
+	xdg_pkg_preinst
+	gnome2_schemas_update
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	gnome2_schemas_update
 }
