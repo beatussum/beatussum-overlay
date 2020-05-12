@@ -4,7 +4,7 @@
 EAPI=7
 
 MY_PN="${PN/t/T}"
-MY_PV="2020-05-06"
+MY_PV="2020-05-12"
 
 inherit xdg
 
