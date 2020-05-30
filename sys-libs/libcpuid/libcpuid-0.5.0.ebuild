@@ -3,21 +3,28 @@
 
 EAPI=7
 
-inherit autotools
+PYTHON_COMPAT=(python3_{6..9})
+
+inherit autotools python-any-r1
 
 DESCRIPTION="A small C library for x86 (and x86_64) CPU detection and feature extraction"
 HOMEPAGE="http://libcpuid.sourceforge.net/"
 SRC_URI="https://github.com/anrieff/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="test"
 RESTRICT="primaryuri !test? ( test )"
 
-DEPEND="test? ( dev-lang/python:2.7 )"
+DEPEND="test? ( ${PYTHON_DEPS} )"
+
+pkg_setup() {
+	use test && python-any-r1_pkg_setup
+}
 
 src_prepare() {
 	default
+
 	eautoreconf
 }
 
