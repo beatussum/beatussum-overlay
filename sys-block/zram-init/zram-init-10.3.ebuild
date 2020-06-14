@@ -38,16 +38,19 @@ using /tmp the following line:
 	rc_need="zram-init"'
 
 src_compile() {
-	emake GETTEXT=$(usex nls TRUE FALSE)
+	emake PREFIX="/usr" GETTEXT=$(usex nls TRUE FALSE)
 }
 
 src_install() {
 	readme.gentoo_create_doc
 	einstalldocs
 
-	local po
+	local man po
 	for i in "${MY_LINGUAS[@]}"; do
-		use "l10n_${i}" && po+="i18n/${i}.po "
+		if use "l10n_${i}"; then
+			man+="${i} "
+			po+="i18n/${i}.po "
+		fi
 	done; unset i
 
 	emake DESTDIR="${D}" PREFIX="/usr" SYSCONFDIR="/etc" \
@@ -55,7 +58,7 @@ src_install() {
 		ZSH_COMPLETION=$(usex zsh-completion TRUE FALSE) \
 		SYSTEMD=$(usex systemd TRUE FALSE) \
 		OPENRC=$(usex systemd FALSE TRUE) \
-		PO="${po}" install
+		PO="${po}" MANI18N="${man}" install
 }
 
 pkg_postinst() {
