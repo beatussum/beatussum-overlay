@@ -32,16 +32,22 @@ depend() {
 }
 
 start_pre() {
-	checkpath -d -o "${command_user}:${command_group}" -q "${minecraft_path}" "${minecraft_path_instance}"
+	checkpath -d -o "${command_user}:${command_group}" \
+		-q "${minecraft_path}" "${minecraft_path_instance}"
 
-	checkpath -f -o "${command_user}:${command_group}" -q "${minecraft_path_instance}/eula.txt"
+	checkpath -f -o "${command_user}:${command_group}" \
+		-q "${minecraft_path_instance}/eula.txt"
 	echo "eula=true" > "${minecraft_path_instance}/eula.txt"
 
-	checkpath -d -o "${command_user}:${command_group}" -q "${minecraft_logs}" "${minecraft_logs_instance}"/{,crash-reports}
+	checkpath -d -o "${command_user}:${command_group}" \
+		-q "${minecraft_logs}" "${minecraft_logs_instance}"/{,crash-reports}
 
 	if cd "${minecraft_path_instance}"; then
-		test ! -L logs && ln -sr "${minecraft_logs_instance}" logs
-		test ! -L crash-reports && ln -sr "${minecraft_logs_instance}/crash-reports" crash-reports
+		test ! -L logs && ln -rs "${minecraft_logs_instance}" logs
+
+		if [ ! -L crash-reports]; then
+			ln -rs "${minecraft_logs_instance}/crash-reports" crash-reports
+		fi
 	fi
 
 	if [ -z "${MINECRAFT_OPTS}" ]; then
