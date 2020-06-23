@@ -27,9 +27,9 @@ DISABLE_AUTOFORMATTING=true
 DOC_CONTENTS=\
 'To use zram-init, activate it in your kernel and add it to default runlevel:
 	rc-update add zram-init default
-If you use systemd enable zram_swap, zram_tmp, and/or zram_var_tmp with systemctl.
-You might need to modify /etc/modprobe.d/zram.conf depending on the number of
-devices that you want to create.
+If you use systemd enable zram_swap, zram_tmp, and/or zram_var_tmp with
+systemctl. You might need to modify /etc/modprobe.d/zram.conf depending
+on the number of devices that you want to create.
 If you use /tmp as zRAM device with OpenRC, you should add zram-init to the
 boot runlevel:
 	rc-update add zram-init boot

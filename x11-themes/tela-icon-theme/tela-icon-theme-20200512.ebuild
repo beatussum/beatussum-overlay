@@ -13,7 +13,7 @@ HOMEPAGE="https://www.pling.com/p/1279924/"
 SRC_URI="https://github.com/vinceliuice/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~ppc-aix ~x64-cygwin ~x86-cygwin ~amd64-linux ~arm-linux ~arm64-linux ~ppc64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
+KEYWORDS="~amd64"
 IUSE="+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu"
 REQUIRED_USE="|| ( standard black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
 RESTRICT="primaryuri"
@@ -42,6 +42,5 @@ src_install() {
 	einstalldocs
 
 	dodir /usr/share/icons
-	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" \
-		|| die "The installation has failed"
+	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
 }

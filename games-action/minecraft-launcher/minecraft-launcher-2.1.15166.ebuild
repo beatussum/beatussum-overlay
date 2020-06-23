@@ -3,16 +3,15 @@
 
 EAPI=7
 
-SRC_URI_BASE="https://launcher.mojang.com/download"
-
 inherit desktop eutils
 
 DESCRIPTION="Minecraft's official launcher"
 HOMEPAGE="https://www.minecraft.net/"
 
+MY_SRC_URI_BASE="https://launcher.mojang.com/download"
 SRC_URI="
-	${SRC_URI_BASE}/linux/x86_64/${PN}_${PV}.tar.gz -> ${P}.tar.gz
-	${SRC_URI_BASE}/${PN}.svg
+	${MY_SRC_URI_BASE}/linux/x86_64/${PN}_${PV}.tar.gz -> ${P}.tar.gz
+	${MY_SRC_URI_BASE}/${PN}.svg
 "
 
 LICENSE="Mojang"

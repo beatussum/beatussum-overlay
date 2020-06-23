@@ -41,6 +41,5 @@ src_install() {
 	einstalldocs
 
 	dodir /usr/share/icons
-	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" \
-		|| die "The installation has failed"
+	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
 }

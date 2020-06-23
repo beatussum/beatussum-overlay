@@ -10,14 +10,14 @@ HOMEPAGE="https://github.com/keeferrourke/capitaine-cursors/"
 SRC_URI="https://github.com/keeferrourke/${MY_PN}/archive/r${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-3+"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~m68k ~mips ~ppc ~ppc64 ~s390 ~x86 ~ppc-aix ~x64-cygwin ~x86-cygwin ~amd64-linux ~arm-linux ~arm64-linux ~ppc64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris ~x86-winnt"
-VARIANTS=(dark light)
-DPIS=(lo tv hd xhd xxhd xxxhd)
-IUSE="+dark light lo +tv hd xhd xxhd xxxhd"
+KEYWORDS="~amd64"
+MY_DPIS=(lo +tv hd xhd xxhd xxxhd)
+MY_VARIANTS=(+dark light)
+IUSE="${MY_DPIS[*]} ${MY_VARIANTS[*]}"
 
 REQUIRED_USE="
-	^^ ( ${VARIANTS[*]} )
-	^^ ( ${DPIS[*]} )
+	^^ ( ${MY_DPIS[*]/+} )
+	^^ ( ${MY_VARIANTS[*]/+} )
 "
 
 RESTRICT="primaryuri"
@@ -30,17 +30,15 @@ BDEPEND="
 S="${WORKDIR}/${MY_PN}-r${PV}"
 
 src_compile() {
-	for v in "${VARIANTS[@]}"; do
-		test -n "${variant}" || variant="$(usev $v)"
-	done
-	unset v
-
-	for d in "${DPIS[@]}"; do
+	for d in "${MY_DPIS[@]/+}"; do
 		test -n "${dpi}" || dpi="$(usev $d)"
-	done
-	unset d
+	done; unset d
 
-	./build.sh -t "${variant}" -d "${dpi}" || die
+	for v in "${MY_VARIANTS[@]/+}"; do
+		test -n "${variant}" || variant="$(usev $v)"
+	done; unset v
+
+	./build.sh -d "${dpi}" -t "${variant}" || die
 }
 
 src_install() {

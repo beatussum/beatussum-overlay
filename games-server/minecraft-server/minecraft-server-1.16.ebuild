@@ -3,13 +3,12 @@
 
 EAPI=7
 
-EGIT_COMMIT="7361a24df069a06748844cc7483c35d4abd2d80c"
-
 inherit readme.gentoo-r1 java-pkg-2
 
 DESCRIPTION="The official server for the sandbox video game"
 HOMEPAGE="https://www.minecraft.net/"
-SRC_URI="https://launcher.mojang.com/v1/objects/${EGIT_COMMIT}/server.jar -> ${P}.jar"
+MY_EGIT_COMMIT="7361a24df069a06748844cc7483c35d4abd2d80c"
+SRC_URI="https://launcher.mojang.com/v1/objects/${MY_EGIT_COMMIT}/server.jar -> ${P}.jar"
 LICENSE="Mojang"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -33,7 +32,8 @@ src_unpack() {
 
 src_install() {
 	java-pkg_newjar "${P}.jar" "${PN}.jar"
-	java-pkg_dolauncher "${PN}" --jar "${PN}.jar" --java_args '${JAVA_OPTS}'
+	java-pkg_dolauncher "${PN}" --jar "${PN}.jar" \
+		--java_args '${JAVA_OPTS}'
 
 	newinitd "${FILESDIR}/${PN}.initd-r1" "${PN}"
 	newconfd "${FILESDIR}/${PN}.confd-r1" "${PN}"

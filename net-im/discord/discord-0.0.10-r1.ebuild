@@ -3,9 +3,9 @@
 
 EAPI=7
 
-MY_BIN="${PN/d/D}"
-
 inherit desktop eutils xdg
+
+MY_BIN="${PN/d/D}"
 
 DESCRIPTION="All-in-one voice and text chat for gamers"
 HOMEPAGE="https://discordapp.com/"
@@ -44,11 +44,12 @@ src_prepare() {
 
 	sed "s:/usr/share/discord/Discord:${PN}:g" \
 		"${MY_BIN}/${PN}.desktop" \
-		> "${T}/${PN}.desktop" || die
+		> "${T}/${PN}.desktop" \
+		|| die "Unable to create the desktop file from the template"
 	mv "${MY_BIN}/${PN}.png" "${T}" || die
 
-	rm "${MY_BIN}/${PN}.desktop" || die "The cleanup has failed"
-	rm "${MY_BIN}/postinst.sh" || die "The cleanup has failed"
+	rm "${MY_BIN}/${PN}.desktop" || die "The cleaning has failed"
+	rm "${MY_BIN}/postinst.sh" || die "The cleaning has failed"
 }
 
 src_install() {
