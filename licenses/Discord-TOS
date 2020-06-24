@@ -1,8 +1,8 @@
-Retrieved from https://discordapp.com/terms/ (2020-03-28)
+Retrieved from https://discord.com/terms/ (2020-06-24)
 
 ****** Discord Terms of Service ******
 
-Last modified: October 19, 2018.
+Last modified: May 7, 2020.
 IMPORTANT NOTICE: THESE TERMS OF SERVICE CONTAIN A BINDING ARBITRATION
 PROVISION AND CLASS ACTION WAIVER. IT AFFECTS YOUR LEGAL RIGHTS AS DETAILED IN
 THE DISPUTE RESOLUTION AND CLASS ACTION WAIVER SECTION BELOW. PLEASE READ
@@ -11,16 +11,18 @@ CAREFULLY.
 ****** INTRODUCTION AND ACCEPTING THE TERMS ******
 
 Welcome to Discord! These Terms of Service (“Terms”), which include and
-hereby incorporate the Privacy Policy at https://discordapp.com/privacy/
+hereby incorporate the Privacy Policy at https://discord.com/privacy/
 (“Privacy Policy”), are a legal agreement between Discord Inc. and its
-related companies (the “Company,” “us,” “our,” or "we")
-and you ("you" or “your”). By using or accessing the Discord
-application (the “App”) or the website located at https://discordapp.com/
-(the "Site"), which are collectively referred to as the
-“Service,” you agree (i) that you are 13 years of age or older, (ii) if you
-are the age of majority in your jurisdiction or over, that you have read,
+related companies (the “Company,” “us,” “our,” or "we") and you
+("you" or “your”). By using or accessing the Discord application (the
+“App”) or the website located at https://discord.com/ (the "Site"), which
+are collectively referred to as the “Service,” you agree (i) that you are
+13 years of age and the minimum age of digital consent in your country, (ii) if
+you are the age of majority in your jurisdiction or over, that you have read,
 understood, and accept to be bound by the Terms, and (iii) if you are between
-13 and the age of majority in your jurisdiction, that your legal guardian has
+13 (or the minimum age of digital consent
+<https://support.discord.com/hc/en-us/articles/360040724612/>, as applicable)
+and the age of majority in your jurisdiction, that your legal guardian has
 reviewed and agrees to these Terms.
 
 The Company reserves the right to update these Terms, which we may do for
@@ -40,19 +42,18 @@ to communicate with other users of the Service. The Service may also allow you
 to access certain software and/or other content that is available to purchase
 from the Company. Subject to your compliance with these Terms, the Company
 grants you a limited, revocable, non-exclusive, non-transferable, non-
-sublicensable license to use and access the Service solely for your personal,
-non-commercial use, unless we agree to your commercial use in writing. You
-agree not to (and not to attempt to) (i) use the Service for any use or purpose
-other than as expressly permitted by these Terms;(ii) copy, adapt, modify,
-prepare derivative works based upon, distribute, license, sell, transfer,
-publicly display, publicly perform, transmit, stream, broadcast, attempt to
-discover any source code, reverse engineer, decompile, disassemble, or
-otherwise exploit the Service or any portion of the Service, except as
-expressly permitted in these Terms; or (iii) use data mining, robots, spiders,
-or similar data gathering and extraction tools on the Service. No licenses or
-rights are granted to you by implication or otherwise under any intellectual
-property rights owned or controlled by the Company or its licensors, except for
-the permissions and rights expressly granted in these Terms.
+sublicensable license to use and access the Service. You agree not to (and not
+to attempt to) (i) use the Service for any use or purpose other than as
+expressly permitted by these Terms;(ii) copy, adapt, modify, prepare derivative
+works based upon, distribute, license, sell, transfer, publicly display,
+publicly perform, transmit, stream, broadcast, attempt to discover any source
+code, reverse engineer, decompile, disassemble, or otherwise exploit the
+Service or any portion of the Service, except as expressly permitted in these
+Terms; or (iii) use data mining, robots, spiders, or similar data gathering and
+extraction tools on the Service. No licenses or rights are granted to you by
+implication or otherwise under any intellectual property rights owned or
+controlled by the Company or its licensors, except for the permissions and
+rights expressly granted in these Terms.
 
 The Company reserves the right to modify or discontinue, temporarily or
 permanently, the Service (or any part thereof) with or without notice. The
@@ -111,7 +112,7 @@ agree that your use of the Service will not include sending unsolicited
 marketing messages or broadcasts (i.e., spam). We may utilize a variety of
 means to block spammers and abusers from using the Service. If you believe spam
 originated from the Service, please email us immediately at
-support@discordapp.com.
+support@discord.com.
 
 ****** INTELLECTUAL PROPERTY RIGHTS ******
 
@@ -119,8 +120,8 @@ All rights, title and interest in and to all materials that are part of the
 Service (including, but not limited to, designs, text, graphics, pictures,
 video, information, applications, software, music, sound and other files, and
 their selection and arrangement), except for Your Content, collectively
-referred to as the "Service Materials,” are, as between the Company and
-you, owned by the Company and/or its third party licensors. You acknowledge and
+referred to as the "Service Materials,” are, as between the Company and you,
+owned by the Company and/or its third party licensors. You acknowledge and
 agree that you shall not acquire any ownership rights whatsoever by downloading
 Service Materials or by purchasing any Virtual Currency or Virtual Goods (each
 as defined below). You agree that you shall not modify, copy, distribute,
@@ -157,14 +158,14 @@ loss or damage incurred by use of user content. The Company reserves the right
 to remove and permanently delete Your Content from the Service with or without
 notice for any reason or no reason. You may notify the Company of any user
 content that you believe violates these Terms, or other inappropriate user
-behavior, by emailing abuse@discordapp.com.
+behavior, by emailing abuse@discord.com.
 
 ****** RULES OF CONDUCT AND USAGE ******
 
 The Service provides communication channels such as forums, communities, or
-chat areas ("Communication Channels") designed to enable you to
-communicate with other Service users. The Company has no obligation to monitor
-these communication channels but it may do so in connection with providing the
+chat areas ("Communication Channels") designed to enable you to communicate
+with other Service users. The Company has no obligation to monitor these
+communication channels but it may do so in connection with providing the
 Service. The Company may also terminate or suspend your access to any
 Communication Channels at any time, without notice, for any reason. You
 acknowledge that any user content (including without limitation chats,
@@ -178,36 +179,36 @@ these Terms, you agree to comply with the restrictions and rules of use set
 forth in these Terms and our Community Guidelines as well as any additional
 restrictions or rules (such as application-specific rules) set forth in the
 Service. As an example, you agree not to use the Service in order to:
-		* post, upload, transmit or otherwise disseminate information that is
-			objectionable as outlined in our Community Guidelines;
-		* defame, libel, ridicule, mock, stalk, threaten, harass, intimidate or
-			abuse anyone;
-		* engage in conduct that is fraudulent or illegal or otherwise harmful to
-			Discord or any other user;
-		* upload or transmit (or attempt to upload or transmit) files that contain
-			viruses, Trojan horses, worms, time bombs, cancelbots, corrupted files or
-			data, or any other similar software or programs or engage in any other
-			activity that may damage the operation of the Service or other
-			users' computers;
-		* violate the contractual, personal, intellectual property or other rights
-			of any party including using, uploading, transmitting, distributing, or
-			otherwise making available any information made available through the
-			Service in any manner that infringes any copyright, trademark, patent,
-			trade secret, or other right of any party (including rights of privacy or
-			publicity);
-		* attempt to obtain passwords or other private information from other
-			members;
-		* improperly use support channels or complaint buttons to make false
-			reports to us;
-		* develop, distribute, or publicly inform other members of "auto"
-			software programs, "macro" software programs or other
-			"cheat utility" software program or applications in violation
-			of the applicable license agreements; or
-		* exploit, distribute or publicly inform other members of any game error,
-			miscue or bug which gives an unintended advantage; violate any applicable
-			laws or regulations; or promote or encourage illegal activity including,
-			but not limited to, hacking, cracking or distribution of counterfeit
-			software, compromised accounts, or cheats or hacks for the Service.
+    * post, upload, transmit or otherwise disseminate information that is
+      objectionable as outlined in our Community Guidelines;
+    * defame, libel, ridicule, mock, stalk, threaten, harass, intimidate or
+      abuse anyone;
+    * engage in conduct that is fraudulent or illegal or otherwise harmful to
+      Discord or any other user;
+    * upload or transmit (or attempt to upload or transmit) files that contain
+      viruses, Trojan horses, worms, time bombs, cancelbots, corrupted files or
+      data, or any other similar software or programs or engage in any other
+      activity that may damage the operation of the Service or other users'
+      computers;
+    * violate the contractual, personal, intellectual property or other rights
+      of any party including using, uploading, transmitting, distributing, or
+      otherwise making available any information made available through the
+      Service in any manner that infringes any copyright, trademark, patent,
+      trade secret, or other right of any party (including rights of privacy or
+      publicity);
+    * attempt to obtain passwords or other private information from other
+      members;
+    * improperly use support channels or complaint buttons to make false
+      reports to us;
+    * develop, distribute, or publicly inform other members of "auto" software
+      programs, "macro" software programs or other "cheat utility" software
+      program or applications in violation of the applicable license
+      agreements; or
+    * exploit, distribute or publicly inform other members of any game error,
+      miscue or bug which gives an unintended advantage; violate any applicable
+      laws or regulations; or promote or encourage illegal activity including,
+      but not limited to, hacking, cracking or distribution of counterfeit
+      software, compromised accounts, or cheats or hacks for the Service.
 
 These rules of use are not meant to be exhaustive, and we reserve the right to
 determine what conduct we consider to be a violation of the Terms, Community
@@ -276,26 +277,26 @@ infringement and will take appropriate actions under the Digital Millennium
 Copyright Act (“DMCA”) and other applicable intellectual property laws with
 respect to any alleged or actual infringement. A notification of claimed
 copyright infringement should be emailed to the Company’s Copyright Agent at
-copyright@discordapp.com (Subject line: “DMCA Takedown Request”). You may
-also contact us by mail at: Discord, Attention: DMCA Takedown Request, 444 De
-Haro Street #200, San Francisco, CA 94107. To be effective, the notification
-must be in writing and contain the following information:
-		* an electronic or physical signature of the person authorized to act on
-			behalf of the owner of the copyright or other intellectual property
-			interest;
-		* a description of the copyrighted work or other intellectual property that
-			you claim has been infringed;
-		* a description of where the material that you claim is infringing is
-			located on the Service, with enough detail that we may find it on the
-			Service;
-		* your address, telephone number, and email address;
-		* a statement by you that you have a good faith belief that the disputed
-			use is not authorized by the copyright or intellectual property owner,
-			its agent, or the law;
-		* a statement by you, made under penalty of perjury, that the above
-			information in your Notice is accurate and that you are the copyright or
-			intellectual property owner or authorized to act on the copyright or
-			intellectual property owner’s behalf.
+copyright@discord.com (Subject line: “DMCA Takedown Request”). You may also
+contact us by mail at: Discord, Attention: DMCA Takedown Request, 444 De Haro
+Street #200, San Francisco, CA 94107. To be effective, the notification must be
+in writing and contain the following information:
+    * an electronic or physical signature of the person authorized to act on
+      behalf of the owner of the copyright or other intellectual property
+      interest;
+    * a description of the copyrighted work or other intellectual property that
+      you claim has been infringed;
+    * a description of where the material that you claim is infringing is
+      located on the Service, with enough detail that we may find it on the
+      Service;
+    * your address, telephone number, and email address;
+    * a statement by you that you have a good faith belief that the disputed
+      use is not authorized by the copyright or intellectual property owner,
+      its agent, or the law;
+    * a statement by you, made under penalty of perjury, that the above
+      information in your Notice is accurate and that you are the copyright or
+      intellectual property owner or authorized to act on the copyright or
+      intellectual property owner’s behalf.
 
 If you submit a notice of infringement that knowingly materially misrepresents
 that any Content, information, or communication on the Services is infringing
@@ -306,18 +307,18 @@ access was disabled) is not infringing, or that you have the authorization from
 the copyright owner, the copyright owner’s agent, or pursuant to the law, to
 upload and use the content in Your Content, you may send a written counter-
 notice containing the following information to the Copyright Agent:
-		* your physical or electronic signature;
-		* identification of the content that has been removed or to which access
-			has been disabled and the location at which the content appeared before
-			it was removed or disabled;
-		* a statement that you have a good faith belief that the content was
-			removed or disabled as a result of mistake or a misidentification of the
-			content; and
-		* your name, address, telephone number, and email address, a statement that
-			you consent to the jurisdiction of the federal court located within the
-			Northern District of California and a statement that you will accept
-			service of process from the person who provided notification of the
-			alleged infringement.
+    * your physical or electronic signature;
+    * identification of the content that has been removed or to which access
+      has been disabled and the location at which the content appeared before
+      it was removed or disabled;
+    * a statement that you have a good faith belief that the content was
+      removed or disabled as a result of mistake or a misidentification of the
+      content; and
+    * your name, address, telephone number, and email address, a statement that
+      you consent to the jurisdiction of the federal court located within the
+      Northern District of California and a statement that you will accept
+      service of process from the person who provided notification of the
+      alleged infringement.
 
 If a counter-notice is received by the Copyright Agent, the Company will send a
 copy of the counter-notice to the original complaining party informing that
@@ -339,13 +340,13 @@ infringement.
 
 You may terminate your Account at any time and for any reason by deleting your
 account through the User Settings page in the application . The Company may
-terminate your Account and your access to the Service (or, at the
-Company's sole option, applicable portions of the Service) at any time and
-for any reason. The Company is not required to provide you with any notice or
-warning prior to any such termination. You may, as the result of termination,
-lose your Account and all information and data associated therewith, including
-without limitation your Virtual Currency and Virtual Goods, as applicable, and
-the Company is under no obligation to compensate you for any such loss.
+terminate your Account and your access to the Service (or, at the Company's
+sole option, applicable portions of the Service) at any time and for any
+reason. The Company is not required to provide you with any notice or warning
+prior to any such termination. You may, as the result of termination, lose your
+Account and all information and data associated therewith, including without
+limitation your Virtual Currency and Virtual Goods, as applicable, and the
+Company is under no obligation to compensate you for any such loss.
 
 ****** DISCLAIMER OF WARRANTY ******
 
@@ -387,14 +388,13 @@ damage from the foregoing rests entirely with you.
 
 You agree to indemnify and hold the Company, harmless from and against any
 loss, liability, claim, demand, damages, costs and expenses, including
-reasonable attorney's fees, arising out of or in connection with (i) your
-use of and access to the Service; (ii) your violation of any term of these
-Terms; (iii) your violation of any third party right, including without
-limitation any copyright, property, or privacy right or any third party
-agreement; or (iv) any of Your Content or information in your Account or any
-other information you post or share on or through the Service. As used in this
-section, "you" shall include anyone accessing the Service using your
-password
+reasonable attorney's fees, arising out of or in connection with (i) your use
+of and access to the Service; (ii) your violation of any term of these Terms;
+(iii) your violation of any third party right, including without limitation any
+copyright, property, or privacy right or any third party agreement; or (iv) any
+of Your Content or information in your Account or any other information you
+post or share on or through the Service. As used in this section, "you" shall
+include anyone accessing the Service using your password
 
 ****** VIRTUAL CURRENCIES, VIRTUAL GOODS, AND TERMS OF SALE ******
 
@@ -403,24 +403,23 @@ fees may be charged for certain products and services. For additional terms
 regarding our Nitro subscription service, please see the “Nitro
 Subscriptions” section below.
 
-The Service may include an opportunity to obtain virtual currency
-("Virtual Currency") or virtual goods ("Virtual Goods")
-that may require you to pay a fee using legal tender (that is, "real
-money") to obtain the Virtual Currency or Virtual Goods. Your purchase of
-Virtual Currency is final and is not refundable, exchangeable, transferable,
-except in the Company’s or the platform provider’s sole discretion. You may
-not purchase, sell, or exchange Virtual Currency outside the Service. Doing so
-is a violation of the Terms and may result in termination of your Account with
-the Service and/or legal action. The Company retains the right to modify,
-manage, control and/or eliminate Virtual Currency and/or Virtual Goods at its
-sole discretion. Prices and availability of Virtual Goods are subject to change
-without notice. We shall have no liability to you or any third party for the
-exercise of such rights. You shall have a limited, personal, non-transferable,
-non-sublicensable permission to use solely within the Service Virtual Goods and
-Virtual Currency that you have earned, purchased or otherwise obtained in a
-manner authorized by the Company. You have no other right, title or interest in
-or to any such Virtual Goods or Virtual Currency appearing or originating in
-the Service.
+The Service may include an opportunity to obtain virtual currency ("Virtual
+Currency") or virtual goods ("Virtual Goods") that may require you to pay a fee
+using legal tender (that is, "real money") to obtain the Virtual Currency or
+Virtual Goods. Your purchase of Virtual Currency is final and is not
+refundable, exchangeable, transferable, except in the Company’s or the
+platform provider’s sole discretion. You may not purchase, sell, or exchange
+Virtual Currency outside the Service. Doing so is a violation of the Terms and
+may result in termination of your Account with the Service and/or legal action.
+The Company retains the right to modify, manage, control and/or eliminate
+Virtual Currency and/or Virtual Goods at its sole discretion. Prices and
+availability of Virtual Goods are subject to change without notice. We shall
+have no liability to you or any third party for the exercise of such rights.
+You shall have a limited, personal, non-transferable, non-sublicensable
+permission to use solely within the Service Virtual Goods and Virtual Currency
+that you have earned, purchased or otherwise obtained in a manner authorized by
+the Company. You have no other right, title or interest in or to any such
+Virtual Goods or Virtual Currency appearing or originating in the Service.
 
 Product Descriptions. We try to make the Service thorough, accurate, and
 helpful to our customers. Nonetheless, there may be times when certain
@@ -464,7 +463,7 @@ present a relatively high risk of losses; or (v) failure to cooperate in an
 investigation or provide additional information when requested.
 
 Refunds. You can find our refund policy here:
-https://support.discordapp.com/hc/en-us/articles/360012668071/
+https://support.discord.com/hc/en-us/articles/360012668071/
 
 Taxes. Stated prices may not include sales and use taxes. If they do not, you
 are responsible for the payment of such taxes related to your purchase. We have
@@ -506,12 +505,11 @@ continue to have access to Nitro through the end of the current subscription
 period. If you cancel your subscription before the end of the current
 subscription period, we will not refund any subscription fees already paid to
 us. At our sole discretion, however, we may provide a refund, discount, or
-other consideration to some or all of our members ("credits"). The
-provision of credits in one instance does not entitle you to credits in the
-future for similar instances, nor does it obligate us to provide credits in the
-future, under any circumstance. To cancel, go to the "User Settings"
-screen in the Discord desktop or mobile app and follow the instructions for
-cancellation.
+other consideration to some or all of our members ("credits"). The provision of
+credits in one instance does not entitle you to credits in the future for
+similar instances, nor does it obligate us to provide credits in the future,
+under any circumstance. To cancel, go to the "User Settings" screen in the
+Discord desktop or mobile app and follow the instructions for cancellation.
 
 ****** DISPUTE RESOLUTION ******
 
@@ -652,38 +650,38 @@ including as it concerns online conduct and acceptable content.
 The following additional terms and conditions apply with respect to any App
 that the Company provides to you designed for use on an Apple iOS-powered
 mobile device (an “iOS App”):
-		* You acknowledge that these Terms are between you and Discord only, and
-			not with Apple, Inc. (“Apple”).
-		* Your use of the Company’s iOS App must comply with Apple’s then-
-			current App Store Terms of Service.
-		* The Company, and not Apple, are solely responsible for our iOS App and
-			the Services and Content available thereon. You acknowledge that Apple
-			has no obligation to provide maintenance and support services with
-			respect to our iOS App. To the maximum extent permitted by applicable
-			law, Apple will have no warranty obligation whatsoever with respect to
-			our iOS App.
-		* You agree that the Company, and not Apple, are responsible for addressing
-			any claims by you or any third-party relating to our iOS App or your
-			possession and/or use of our iOS App.
-		* You agree that the Company, and not Apple, shall be responsible, to the
-			extent required by these Terms, for the investigation, defense,
-			settlement and discharge of any third-party intellectual property
-			infringement claim related to our iOS App or your possession and use of
-			our iOS App.
-		* You represent and warrant that (i) you are not located in a country that
-			is subject to a U.S. Government embargo, or that has been designated by
-			the U.S. Government as a “terrorist supporting” country; and (ii) You
-			are not listed on any U.S. Government list of prohibited or restricted
-			parties.
-		* You agree to comply with all applicable third-party terms of agreement
-			when using our iOS App (e.g., you must not be in violation of your
-			wireless data service terms of agreement when using the iOS App).
-		* The parties agree that Apple and Apple’s subsidiaries are third-party
-			beneficiaries to these Terms as they relate to your license of the
-			Company’s iOS App. Upon your acceptance of these Terms, Apple will have
-			the right (and will be deemed to have accepted the right) to enforce
-			these Terms against you as they relate to your license of the iOS App as
-			a third-party beneficiary thereof.
+    * You acknowledge that these Terms are between you and Discord only, and
+      not with Apple, Inc. (“Apple”).
+    * Your use of the Company’s iOS App must comply with Apple’s then-
+      current App Store Terms of Service.
+    * The Company, and not Apple, are solely responsible for our iOS App and
+      the Services and Content available thereon. You acknowledge that Apple
+      has no obligation to provide maintenance and support services with
+      respect to our iOS App. To the maximum extent permitted by applicable
+      law, Apple will have no warranty obligation whatsoever with respect to
+      our iOS App.
+    * You agree that the Company, and not Apple, are responsible for addressing
+      any claims by you or any third-party relating to our iOS App or your
+      possession and/or use of our iOS App.
+    * You agree that the Company, and not Apple, shall be responsible, to the
+      extent required by these Terms, for the investigation, defense,
+      settlement and discharge of any third-party intellectual property
+      infringement claim related to our iOS App or your possession and use of
+      our iOS App.
+    * You represent and warrant that (i) you are not located in a country that
+      is subject to a U.S. Government embargo, or that has been designated by
+      the U.S. Government as a “terrorist supporting” country; and (ii) You
+      are not listed on any U.S. Government list of prohibited or restricted
+      parties.
+    * You agree to comply with all applicable third-party terms of agreement
+      when using our iOS App (e.g., you must not be in violation of your
+      wireless data service terms of agreement when using the iOS App).
+    * The parties agree that Apple and Apple’s subsidiaries are third-party
+      beneficiaries to these Terms as they relate to your license of the
+      Company’s iOS App. Upon your acceptance of these Terms, Apple will have
+      the right (and will be deemed to have accepted the right) to enforce
+      these Terms against you as they relate to your license of the iOS App as
+      a third-party beneficiary thereof.
 
 ****** GENERAL ******
 
@@ -724,21 +722,21 @@ default.
 
 Severability. If any provision of these Terms is found by a court of competent
 jurisdiction to be invalid, the parties nevertheless agree that the court
-should endeavor to give effect to the parties' intentions as reflected in
-the provision, and the other provisions of these Terms shall remain in full
-force and effect.
+should endeavor to give effect to the parties' intentions as reflected in the
+provision, and the other provisions of these Terms shall remain in full force
+and effect.
 
 Course of Conduct/Trade Practice. Neither the course of conduct between the
 parties nor trade practice will act to modify these Terms.
 
-Assignment. These Terms may not be assigned by you without the Company's
-prior written consent, but are freely assignable by the Company. Subject to the
+Assignment. These Terms may not be assigned by you without the Company's prior
+written consent, but are freely assignable by the Company. Subject to the
 foregoing restriction, these Terms will be binding on, inure to, and
 enforceable against the parties and their respective successors and assigns.
 
-Documentation of Compliance. Upon the Company's request, you will furnish
-the Company with any documentation, substantiation or releases necessary to
-verify your compliance with these Terms.
+Documentation of Compliance. Upon the Company's request, you will furnish the
+Company with any documentation, substantiation or releases necessary to verify
+your compliance with these Terms.
 
 Interpretation. You agree that these Terms will not be construed against the
 Company by virtue of having drafted them.
