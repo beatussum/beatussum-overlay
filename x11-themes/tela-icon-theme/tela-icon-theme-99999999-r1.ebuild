@@ -5,7 +5,7 @@ EAPI=7
 
 MY_PN="${PN/t/T}"
 
-inherit git-r3 xdg-utils
+inherit git-r3 xdg
 
 DESCRIPTION="A flat colorful Design icon theme"
 HOMEPAGE="https://www.pling.com/p/1279924/"
@@ -16,6 +16,10 @@ IUSE="+standard black blue brown green grey orange pink purple red yellow manjar
 REQUIRED_USE="|| ( standard black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
 
 BDEPEND="dev-util/gtk-update-icon-cache"
+
+PATCHES=(
+	"${FILESDIR}/${P}-fix-cache-update.patch"
+)
 
 src_install() {
 	local colorvariant=(
@@ -38,8 +42,4 @@ src_install() {
 
 	dodir /usr/share/icons
 	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
-}
-
-pkg_postrm() {
-	xdg_icon_cache_update
 }

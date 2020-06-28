@@ -6,7 +6,7 @@ EAPI=7
 MY_PN="${PN/t/T}"
 MY_PV="2020-06-25"
 
-inherit xdg-utils
+inherit xdg
 
 DESCRIPTION="A flat colorful Design icon theme"
 HOMEPAGE="https://www.pling.com/p/1279924/"
@@ -21,6 +21,10 @@ RESTRICT="primaryuri"
 BDEPEND="dev-util/gtk-update-icon-cache"
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}"
+
+PATCHES=(
+	"${FILESDIR}/${P}-fix-cache-update.patch"
+)
 
 src_install() {
 	local colorvariant=(
@@ -43,8 +47,4 @@ src_install() {
 
 	dodir /usr/share/icons
 	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
-}
-
-pkg_postrm() {
-	xdg_icon_cache_update
 }
