@@ -43,6 +43,10 @@ src_prepare() {
 		|| die "Unable not to force the installation of the documentation" \
 			"into \`${MY_DOC_DIR%-*}\` instead of \`${MY_DOC_DIR}\`"
 
+	sed -i "/.*\.sh/d" doc/Makefile.am \
+		|| die "Unable to delete strange shell scripts from the installation" \
+			"of the documentation"
+
 	for i in doc examples newfont test; do
 		if ! use "${i}"; then
 			sed -E -i "s| ${i/newfont/fonts}(/Makefile)?||g" \
@@ -67,6 +71,7 @@ src_install() {
 
 	if use examples; then
 		examples="${MY_DOC_DIR}/examples"
+		docompress -x "${examples}"
 
 		for i in examples/.libs/*; do
 			base="$(basename "${i}")"
