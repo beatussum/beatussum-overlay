@@ -5,16 +5,17 @@ EAPI=7
 
 MY_PN="CPU-X"
 
-inherit cmake-utils git-r3 xdg
+inherit cmake git-r3 xdg
 
 DESCRIPTION="A Free software that gathers information on CPU, motherboard and more"
 HOMEPAGE="https://x0rg.github.io/CPU-X/"
 EGIT_REPO_URI="https://github.com/X0rg/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"
-IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +nls"
+IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +nls test"
+RESTRICT="!test? ( test )"
 
-DEPEND="
+COMMON_DEPEND="
 	force-libstatgrab? ( sys-libs/libstatgrab )
 	!force-libstatgrab? ( sys-process/procps:= )
 	gtk? ( >=x11-libs/gtk+-3.12:3 )
@@ -23,15 +24,23 @@ DEPEND="
 	ncurses? ( sys-libs/ncurses:= )
 "
 
+DEPEND="
+	test? (
+		sys-apps/mawk
+		sys-apps/nawk
+	)
+	${COMMON_DEPEND}
+"
+
 BDEPEND="
 	dev-lang/nasm
 	nls? ( sys-devel/gettext )
 "
 
-RDEPEND="${DEPEND}"
+RDEPEND="${COMMON_DEPEND}"
 
 src_prepare() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -39,8 +48,6 @@ src_configure() {
 		-DWITH_GTK=$(usex gtk)
 		-DWITH_NCURSES=$(usex ncurses)
 		-DWITH_GETTEXT=$(usex nls)
-		-DWITH_LIBCURL=OFF
-		-DWITH_LIBJSONC=OFF
 		-DWITH_LIBCPUID=$(usex libcpuid)
 		-DWITH_LIBPCI=$(usex libpci)
 		-DWITH_LIBSTATGRAB=OFF
@@ -50,7 +57,7 @@ src_configure() {
 		-DGSETTINGS_COMPILE=OFF
 	)
 
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 pkg_preinst() {
