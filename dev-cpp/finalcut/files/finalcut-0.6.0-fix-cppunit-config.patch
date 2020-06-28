@@ -1,0 +1,22 @@
+From: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+Subject: Drop `cppunit-config` in favor of `virtual/pkgconfig`
+See-also: https://cgit.freedesktop.org/libreoffice/cppunit/commit/?id=c81afa737307ef525258cfae24eb3f2845ce7208
+Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+Description:
+The upstream project of the `dev-util/cppunit` dependency has decided
+to switch to `virtual/pkgconfig`.
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -116,9 +116,8 @@ AC_ARG_WITH([unit-test],
+ if test "x$with_unit_test" = "xyes"
+ then
+   AC_MSG_NOTICE(enabled cppunit test)
+-  AM_PATH_CPPUNIT([1.12.0],
+-                  [],
+-                  [AC_MSG_ERROR([*** CppUnit not found! ***])])
++  PKG_CHECK_MODULES(CPPUNIT,
++                    [cppunit > 1.12.0])
+   AM_CONDITIONAL(CPPUNIT_TEST, [test "1" = "1"])
+ else
+   AM_CONDITIONAL(CPPUNIT_TEST, [test "1" = "0"])
