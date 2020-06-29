@@ -11,17 +11,19 @@ SRC_URI="https://github.com/gansm/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+gpm doc examples newfont test"
+MY_COMPONENTS=(doc examples newfont test)
+IUSE="+gpm ${MY_COMPONENTS[*]}"
 REQUIRED_USE="test? ( !examples )"
 RESTRICT="primaryuri !test? ( test )"
 
 DEPEND="
+	sys-libs/ncurses[tinfo]
 	gpm? ( sys-libs/gpm )
-	sys-libs/ncurses
 "
 
 BDEPEND="
 	virtual/pkgconfig
+
 	${DEPEND}
 "
 
@@ -47,7 +49,7 @@ src_prepare() {
 		|| die "Unable to delete strange shell scripts from the installation" \
 			"of the documentation"
 
-	for i in doc examples newfont test; do
+	for i in "${MY_COMPONENTS[*]}"; do
 		if ! use "${i}"; then
 			sed -E -i "s| ${i/newfont/fonts}(/Makefile)?||g" \
 				configure.ac Makefile.am \

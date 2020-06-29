@@ -27,10 +27,10 @@
 		lignes d'entrée, des barres d'état, et ainsi de suite.
 	</longdescription>
 	<use>
-		<flag name="newfont">A graphical text font for X11 and the Linux console</flag>
+		<flag name="newfont">Install a graphical text font for X11 and the Linux console</flag>
 	</use>
 	<use lang="fr">
-		<flag name="newfont">Une police de texte graphique pour X11 et la console Linux</flag>
+		<flag name="newfont">Installer une police de texte graphique pour X11 et la console Linux</flag>
 	</use>
 	<upstream>
 		<maintainer status="active">
