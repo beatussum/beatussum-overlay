@@ -17,7 +17,7 @@ REQUIRED_USE="test? ( !examples )"
 RESTRICT="primaryuri !test? ( test )"
 
 DEPEND="
-	sys-libs/ncurses[tinfo]
+	sys-libs/ncurses:=[tinfo]
 	gpm? ( sys-libs/gpm )
 "
 
