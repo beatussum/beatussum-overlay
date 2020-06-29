@@ -22,16 +22,13 @@ RESTRICT="bindist mirror strip"
 
 RDEPEND="
 	dev-libs/libbsd
-	dev-libs/libffi
-	dev-libs/libpcre
 	dev-libs/nss
 	gnome-base/gconf
 	media-libs/alsa-lib
-	media-libs/libglvnd
 	net-libs/gnutls[idn]
-	x11-libs/gtk+[X,cups]
+	x11-libs/gtk+:2[cups]
+	x11-libs/gtk+:3[cups,X]
 	x11-libs/libXScrnSaver
-	x11-libs/libXtst
 	virtual/jre
 	narrator? ( app-accessibility/flite )
 "
