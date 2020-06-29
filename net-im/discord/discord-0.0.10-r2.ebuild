@@ -17,18 +17,12 @@ IUSE="+ayatana"
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
-	app-accessibility/at-spi2-core[X]
-	dev-libs/libffi
-	dev-libs/libpcre
+	dev-libs/libbsd
 	dev-libs/nss
 	media-libs/alsa-lib
-	media-libs/harfbuzz[graphite]
-	net-dns/libidn2
-	net-libs/gnutls[idn]
+	net-libs/gnutls:=[idn]
 	x11-libs/gtk+:3[cups,X]
 	x11-libs/libXScrnSaver
-	x11-libs/pango[X]
-	x11-libs/pixman
 	ayatana? ( dev-libs/libappindicator:3 )
 "
 
