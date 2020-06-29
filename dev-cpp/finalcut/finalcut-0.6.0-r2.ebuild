@@ -49,7 +49,7 @@ src_prepare() {
 		|| die "Unable to delete strange shell scripts from the installation" \
 			"of the documentation"
 
-	for i in "${MY_COMPONENTS[*]}"; do
+	for i in "${MY_COMPONENTS[@]}"; do
 		if ! use "${i}"; then
 			sed -E -i "s| ${i/newfont/fonts}(/Makefile)?||g" \
 				configure.ac Makefile.am \
