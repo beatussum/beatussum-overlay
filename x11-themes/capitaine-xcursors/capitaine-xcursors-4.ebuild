@@ -27,6 +27,10 @@ BDEPEND="
 	x11-apps/xcursorgen
 "
 
+PATCHES=(
+    "${FILESDIR}"/${PN}-integer-size.diff
+)
+
 S="${WORKDIR}/${MY_PN}-r${PV}"
 
 src_compile() {

@@ -1,0 +1,13 @@
+--- a/build.sh	2020-02-20 05:12:38.000000000 +0300
++++ b/build.sh	2020-07-15 15:00:58.909448182 +0300
+@@ -104,8 +104,8 @@
+ function render {
+   name="x$1"
+   variant="$2"
+-  size=$(echo "$SVG_DIM*$1" | bc)
+-  dpi=$(echo "$SVG_DPI*$1" | bc)
++  size=$(echo "$SVG_DIM*$1" | bc | xargs printf %.0f)
++  dpi=$(echo "$SVG_DPI*$1" | bc | xargs printf %.0f)
+ 
+   mkdir -p "$BUILD_DIR/$variant/$name"
+   find "$SRC/svg/$variant" -name "*.svg" -type f \
