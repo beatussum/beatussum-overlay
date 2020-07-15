@@ -23,12 +23,13 @@ REQUIRED_USE="
 RESTRICT="primaryuri"
 
 BDEPEND="
-	media-gfx/inkscape
+	>=media-gfx/inkscape-1
 	x11-apps/xcursorgen
 "
 
 PATCHES=(
     "${FILESDIR}"/${PN}-integer-size.diff
+    "${FILESDIR}"/${PN}-inkscape-1.diff
 )
 
 S="${WORKDIR}/${MY_PN}-r${PV}"

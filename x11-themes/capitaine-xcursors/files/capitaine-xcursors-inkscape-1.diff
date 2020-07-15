@@ -1,0 +1,11 @@
+--- a/build.sh	2020-02-20 05:12:38.000000000 +0300
++++ b/build.sh	2020-07-15 14:59:39.281542096 +0300
+@@ -109,7 +109,7 @@
+ 
+   mkdir -p "$BUILD_DIR/$variant/$name"
+   find "$SRC/svg/$variant" -name "*.svg" -type f \
+-      -exec sh -c 'inkscape -z -e "$1/$2/$3/$(basename ${0%.svg}).png" -w $4 -h $4 -d $5 $0' {} "$BUILD_DIR" "$variant" "$name" "$size" "$dpi" \;
++      -exec sh -c 'inkscape --export-filename="$1/$2/$3/$(basename ${0%.svg}).png" -w $4 -h $4 -d $5 $0' {} "$BUILD_DIR" "$variant" "$name" "$size" "$dpi" \;
+ }
+ 
+ # Assembles rendered PNGs into a cursor distribution.
