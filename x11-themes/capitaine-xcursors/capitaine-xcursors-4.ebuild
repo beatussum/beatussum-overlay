@@ -23,11 +23,22 @@ REQUIRED_USE="
 RESTRICT="primaryuri"
 
 BDEPEND="
-	media-gfx/inkscape
+	>=media-gfx/inkscape-1
 	x11-apps/xcursorgen
 "
 
+PATCHES=(
+	"${FILESDIR}/${P}-fix-integer-size.patch"
+	"${FILESDIR}/${P}-fix-inkscape-cli.patch"
+)
+
 S="${WORKDIR}/${MY_PN}-r${PV}"
+
+src_prepare() {
+	default
+
+	addpredict "${EPREFIX}/usr/share/inkscape/fonts/.uuid.TMP-XXXXXX"
+}
 
 src_compile() {
 	for d in "${MY_DPIS[@]/+}"; do

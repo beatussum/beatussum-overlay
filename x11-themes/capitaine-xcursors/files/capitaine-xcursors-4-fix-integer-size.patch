@@ -1,0 +1,21 @@
+From: Drew <drew@localhost>
+Subject: Fix integer size
+Signed-off-by: Drew <drew@localhost>
+Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+Description:
+Round bc calculated cursor size to integer, prevent errors on '1.5' and
+'2.5' scales.
+
+--- a/build.sh
++++ b/build.sh
+@@ -104,8 +104,8 @@ function generate_in {
+ function render {
+   name="x$1"
+   variant="$2"
+-  size=$(echo "$SVG_DIM*$1" | bc)
+-  dpi=$(echo "$SVG_DPI*$1" | bc)
++  size=$(echo "$SVG_DIM*$1" | bc | xargs printf %.0f)
++  dpi=$(echo "$SVG_DPI*$1" | bc | xargs printf %.0f)
+ 
+   mkdir -p "$BUILD_DIR/$variant/$name"
+   find "$SRC/svg/$variant" -name "*.svg" -type f \

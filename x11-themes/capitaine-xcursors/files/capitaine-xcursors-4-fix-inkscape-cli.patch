@@ -1,0 +1,19 @@
+From: Drew <drew@localhost>
+Subject: Fix `inkscape` command line
+Signed-off-by: Drew <drew@localhost>
+Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+Description:
+Add `dbus-run-session` to avoid all warnings about D-Bus and bump command
+line options to v. 1.
+
+--- a/build.sh
++++ b/build.sh
+@@ -109,7 +109,7 @@ function render {
+ 
+   mkdir -p "$BUILD_DIR/$variant/$name"
+   find "$SRC/svg/$variant" -name "*.svg" -type f \
+-      -exec sh -c 'inkscape -z -e "$1/$2/$3/$(basename ${0%.svg}).png" -w $4 -h $4 -d $5 $0' {} "$BUILD_DIR" "$variant" "$name" "$size" "$dpi" \;
++      -exec sh -c 'dbus-run-session inkscape -o "$1/$2/$3/$(basename ${0%.svg}).png" -w $4 -h $4 -d $5 $0' {} "$BUILD_DIR" "$variant" "$name" "$size" "$dpi" \;
+ }
+ 
+ # Assembles rendered PNGs into a cursor distribution.
