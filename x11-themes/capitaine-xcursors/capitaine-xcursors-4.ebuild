@@ -34,6 +34,12 @@ PATCHES=(
 
 S="${WORKDIR}/${MY_PN}-r${PV}"
 
+
+src_prepare() {
+	default
+	addpredict "${EPREFIX}"/usr/share/inkscape/fonts/.uuid.TMP-XXXXXX
+}
+
 src_compile() {
 	for d in "${MY_DPIS[@]/+}"; do
 		test -n "${dpi}" || dpi="$(usev $d)"
