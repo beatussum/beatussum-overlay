@@ -1,0 +1,8 @@
+#!@GENTOO_PORTAGE_EPREFIX@/bin/sh
+
+
+readonly DIR="@GENTOO_PORTAGE_EPREFIX@/opt/minecraft-launcher"
+readonly CHDIR="${HOME}/.minecraft"
+
+test -d "${CHDIR}" || mkdir -p "${CHDIR}"
+cd "${CHDIR}" && exec "${DIR}/minecraft-launcher" "$@"
