@@ -9,13 +9,16 @@ SRC_URI="https://github.com/PapirusDevelopmentTeam/${PN}/archive/${PV}.tar.gz ->
 LICENSE="GPL-3+ wallpapers? ( CC-BY-SA-4.0 )"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake"
-REQUIRED_USE="|| ( aurorae color-schemes konsole konversation kvantum plasma wallpapers yakuake )"
+MY_COMPONENTS=(aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake)
+IUSE="${MY_COMPONENTS[*]/+}"
+REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
 RESTRICT="primaryuri"
 
 RDEPEND="kvantum? ( x11-themes/kvantum )"
 
 src_install() {
+	einstalldocs
+
 	local -r themes=(
 		$(usev aurorae)
 		$(usev color-schemes)
@@ -27,10 +30,8 @@ src_install() {
 		$(usev yakuake)
 	)
 
-	emake DESTDIR="${D}" THEMES="${themes[*]}" install
+	emake DESTDIR="${ED}" THEMES="${themes[*]}" install
 
-	find "${D}/usr/share" \( -name "AUTHORS" -o -name "LICENSE" \) -delete \
+	find "${ED}/usr/share" \( -name "AUTHORS" -o -name "LICENSE" \) -delete \
 		|| die "the cleaning has failed"
-
-	einstalldocs
 }
