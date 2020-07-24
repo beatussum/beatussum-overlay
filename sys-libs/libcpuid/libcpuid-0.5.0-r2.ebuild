@@ -13,7 +13,7 @@ SRC_URI="https://github.com/anrieff/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0/15"
 KEYWORDS="~amd64"
-IUSE="test"
+IUSE="static-libs test"
 RESTRICT="primaryuri !test? ( test )"
 
 DEPEND="test? ( ${PYTHON_DEPS} )"
@@ -28,6 +28,16 @@ src_prepare() {
 	eautoreconf
 }
 
+src_configure() {
+	econf $(use_enable static-libs static)
+}
+
 src_test() {
 	emake test
+}
+
+src_install() {
+	default
+
+	find "${ED}" -name "*.la" -delete || die
 }
