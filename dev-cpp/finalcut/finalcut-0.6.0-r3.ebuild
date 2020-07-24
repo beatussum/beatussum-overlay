@@ -12,7 +12,7 @@ LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 MY_COMPONENTS=(doc examples newfont test)
-IUSE="+gpm ${MY_COMPONENTS[*]}"
+IUSE="+gpm static-libs test ${MY_COMPONENTS[*]}"
 REQUIRED_USE="test? ( !examples )"
 RESTRICT="primaryuri !test? ( test )"
 
@@ -21,54 +21,66 @@ DEPEND="
 	gpm? ( sys-libs/gpm )
 "
 
-BDEPEND="
-	virtual/pkgconfig
+BDEPEND="virtual/pkgconfig"
 
-	${DEPEND}
-"
+RDEPEND="${DEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/${P}-fix-cppunit-config.patch"
-	"${FILESDIR}/${P}-fix-without-package.patch"
+	"${FILESDIR}/${P}-fix-with-pkg.patch"
 )
 
 MY_DOC_DIR="/usr/share/doc/${PF}"
 
+_delMakefile() {
+	local -r pattern="$1"; shift
+	local -r comp=("$@")
+
+	for i in "${comp[@]}"; do
+		f="${i}/Makefile.am"
+
+		if [[ "${i}" = "." ]] || use "${i/fonts/newfont}"; then
+			sed -i "/${pattern}/d" "${f}" \
+				|| die "Cannot delete '${pattern}' from '${f}'"
+		fi
+	done; unset i f
+}
+
 src_prepare() {
 	default
 
-	sed -i "/doc_DATA/d" Makefile.am \
-		|| die "Unable to assign the installation of the documentation" \
-			'to `einstalldocs`'
-
-	sed -i "/docdir/d" {,doc/,fonts/}Makefile.am \
-		|| die "Unable not to force the installation of the documentation" \
-			"into \`${MY_DOC_DIR%-*}\` instead of \`${MY_DOC_DIR}\`"
-
-	sed -i "/.*\.sh/d" doc/Makefile.am \
-		|| die "Unable to delete strange shell scripts from the installation" \
-			"of the documentation"
+	_delMakefile "doc_DATA" .
+	_delMakefile "docdir" . doc fonts
+	_delMakefile ".*\.sh" doc
 
 	for i in "${MY_COMPONENTS[@]}"; do
 		if ! use "${i}"; then
-			sed -E -i "s| ${i/newfont/fonts}(/Makefile)?||g" \
-				configure.ac Makefile.am \
-				|| die "Unable to unset the \`${i}\` component"
-		fi
+			comp="${i/newfont/fonts}"
+
+			(
+				sed -i "\|${comp}/Makefile|d" configure.ac && \
+				sed -i "s/ ${comp}//" Makefile.am
+			) || die "Unable to unset the component '${comp}'"
+		fi; unset comp
 	done; unset i
 
 	eautoreconf
 }
 
 src_configure() {
-	use test &&	append-cxxflags -g -O0 -DUNIT_TEST
+	# `-O0` to avoid inline expension and thus
+	# linkage errors
+	use test && append-cxxflags -O0 -DUNIT_TEST
 
-	econf $(use_with gpm) \
+	econf $(use_enable static-libs static) \
+		$(use_with gpm) \
 		$(use_with test unit-test) \
-		--docdir="${MY_DOC_DIR}"
+		--docdir="${EPREFIX}${MY_DOC_DIR}"
 }
 
 src_install() {
+	einstalldocs
+
 	emake DESTDIR="${D}" install
 
 	if use examples; then
@@ -85,5 +97,5 @@ src_install() {
 		done; unset i base
 	fi; unset examples
 
-	einstalldocs
+	find "${ED}" -name "*.la" -delete || die
 }
