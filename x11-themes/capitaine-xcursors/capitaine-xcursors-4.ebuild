@@ -37,7 +37,7 @@ S="${WORKDIR}/${MY_PN}-r${PV}"
 src_prepare() {
 	default
 
-	addpredict "${EPREFIX}/usr/share/inkscape/fonts/.uuid.TMP-XXXXXX"
+	addpredict "${BROOT}/usr/share/inkscape/fonts/.uuid.TMP-XXXXXX"
 }
 
 src_compile() {
