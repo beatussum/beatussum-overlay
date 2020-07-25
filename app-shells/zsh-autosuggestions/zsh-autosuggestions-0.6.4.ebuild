@@ -21,8 +21,8 @@ DOCS=(
 )
 
 DISABLE_AUTOFORMATTING=true
-DOC_CONTENTS=\
-"For use this script,   load it into your interactive ZSH session:
+DOC_CONTENTS="\
+For use this script,   load it into your interactive ZSH session:
   source ${EROOT}/usr/share/zsh/plugins/${PN}/${PN}.zsh
 For further information, please read the README.md file installed
 in ${EROOT}/usr/share/doc/${PF}."

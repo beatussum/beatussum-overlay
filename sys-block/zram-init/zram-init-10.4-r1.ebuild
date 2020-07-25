@@ -28,8 +28,8 @@ RDEPEND="
 "
 
 DISABLE_AUTOFORMATTING=true
-DOC_CONTENTS=\
-"To use zram-init,      activate it in your kernel and add it to the default
+DOC_CONTENTS="\
+To use zram-init,      activate it in your kernel and add it to the default
 runlevel:
 	rc-update add zram-init default
 If you use systemd enable zram_swap,   zram_tmp,   and/or zram_var_tmp with

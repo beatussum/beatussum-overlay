@@ -17,8 +17,8 @@ RESTRICT="primaryuri !test? ( test )"
 RDEPEND=">app-shells/zsh-4.3.11"
 
 DISABLE_AUTOFORMATTING=true
-DOC_CONTENTS=\
-"To use syntax highlighting,   enable it in the current
+DOC_CONTENTS="\
+To use syntax highlighting,   enable it in the current
 interactive shell:
   source ${EROOT}/usr/share/zsh/plugins/${PN}/${PN}.zsh
 For further information, please read the documentation

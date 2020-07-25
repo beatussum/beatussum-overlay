@@ -16,8 +16,8 @@ RESTRICT="primaryuri"
 RDEPEND=">=app-shells/zsh-4.3"
 
 DISABLE_AUTOFORMATTING=true
-DOC_CONTENTS=\
-"For use this script,    load it into your interactive ZSH session:
+DOC_CONTENTS="\
+For use this script,    load it into your interactive ZSH session:
   source ${EROOT}/usr/share/zsh/plugins/${PN}/${PN}.zsh
 If you want to use zsh-syntax-highlighting along with this script,
 then make sure that you load it before you load this script.
