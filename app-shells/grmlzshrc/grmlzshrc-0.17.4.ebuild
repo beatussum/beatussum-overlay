@@ -25,8 +25,7 @@ DOCS=(
 )
 
 src_compile() {
-	cd doc
-	emake
+	emake -C "${S}/doc"
 }
 
 src_install() {
