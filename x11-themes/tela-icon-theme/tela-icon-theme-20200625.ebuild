@@ -14,11 +14,10 @@ SRC_URI="https://github.com/vinceliuice/${MY_PN}/archive/${MY_PV}.tar.gz -> ${P}
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu"
-REQUIRED_USE="|| ( standard black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
+MY_COMPONENTS=(+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu)
+IUSE="${MY_COMPONENTS[*]}"
+REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
 RESTRICT="primaryuri"
-
-BDEPEND="dev-util/gtk-update-icon-cache"
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}"
 
@@ -46,5 +45,5 @@ src_install() {
 	einstalldocs
 
 	dodir /usr/share/icons
-	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
+	./install.sh -d "${ED}/usr/share/icons" "${colorvariant[@]}" || die
 }

@@ -1,10 +1,22 @@
-From: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
-Subject: Fix `gtk-update-icon-cache` call
-Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
-Description:
+From 5cc5bc13c73e57e4b537f9ec13788897a3b74345 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
+ <beatussum@protonmail.com>
+Date: Sat, 25 Jul 2020 10:58:59 +0200
+Subject: [PATCH] fix `gtk-update-icon-cache` call
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
 Call `gtk-update-icon-cache` during `pkg_postrm()` instead of during
 `src_compile()`.
 
+Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+---
+ install.sh | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/install.sh b/install.sh
+index e032fb27..4b0e5e04 100755
 --- a/install.sh
 +++ b/install.sh
 @@ -107,8 +107,6 @@ install_theme() {
@@ -14,5 +26,8 @@ Call `gtk-update-icon-cache` during `pkg_postrm()` instead of during
 -
 -  gtk-update-icon-cache "${THEME_DIR}"
  }
-
+ 
  while [ $# -gt 0 ]; do
+-- 
+2.26.2
+

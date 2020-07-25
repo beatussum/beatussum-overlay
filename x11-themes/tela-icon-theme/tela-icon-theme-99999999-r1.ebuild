@@ -12,10 +12,9 @@ HOMEPAGE="https://www.pling.com/p/1279924/"
 EGIT_REPO_URI="https://github.com/vinceliuice/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"
-IUSE="+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu"
-REQUIRED_USE="|| ( standard black blue brown green grey orange pink purple red yellow manjaro ubuntu )"
-
-BDEPEND="dev-util/gtk-update-icon-cache"
+MY_COMPONENTS=(+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu)
+IUSE="${MY_COMPONENTS[*]}"
+REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
 
 PATCHES=(
 	"${FILESDIR}/${P}-fix-cache-update.patch"
@@ -41,5 +40,5 @@ src_install() {
 	einstalldocs
 
 	dodir /usr/share/icons
-	./install.sh -d "${D}/usr/share/icons" "${colorvariant[@]}" || die
+	./install.sh -d "${ED}/usr/share/icons" "${colorvariant[@]}" || die
 }
