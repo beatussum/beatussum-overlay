@@ -16,12 +16,16 @@ IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +n
 RESTRICT="!test? ( test )"
 
 COMMON_DEPEND="
+	dev-libs/glib:2
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/pango
 	force-libstatgrab? ( sys-libs/libstatgrab )
 	!force-libstatgrab? ( sys-process/procps:= )
 	gtk? ( >=x11-libs/gtk+-3.12:3 )
 	libcpuid? ( >=sys-libs/libcpuid-0.3.0:= )
 	libpci? ( sys-apps/pciutils )
-	ncurses? ( sys-libs/ncurses:= )
+	ncurses? ( sys-libs/ncurses:=[tinfo,unicode] )
 "
 
 DEPEND="
