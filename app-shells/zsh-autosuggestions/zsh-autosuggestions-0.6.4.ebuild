@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit readme.gentoo-r1
+
 DESCRIPTION="Fish-like fast/unobtrusive autosuggestions for zsh"
 HOMEPAGE="https://github.com/zsh-users/zsh-autosuggestions/"
 SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
@@ -18,6 +20,13 @@ DOCS=(
 	README.md
 )
 
+DISABLE_AUTOFORMATTING=true
+DOC_CONTENTS=\
+"For use this script,   load it into your interactive ZSH session:
+  source ${EROOT}/usr/share/zsh/plugins/${PN}/${PN}.zsh
+For further information, please read the README.md file installed
+in ${EROOT}/usr/share/doc/${PF}."
+
 src_prepare() {
 	default
 
@@ -26,15 +35,12 @@ src_prepare() {
 
 src_install() {
 	einstalldocs
+	readme.gentoo_create_doc
 
 	insinto "/usr/share/zsh/plugins/${PN}"
 	doins "${PN}.zsh"
 }
 
 pkg_postinst() {
-	einfo "For use this script, load it into your interactive ZSH session:"
-	einfo "\tsource /usr/share/zsh/plugins/${PN}/${PN}.zsh"
-	einfo
-	einfo "For further information, please read the README.md file installed"
-	einfo "in /usr/share/doc/${PF}"
+	readme.gentoo_print_elog
 }
