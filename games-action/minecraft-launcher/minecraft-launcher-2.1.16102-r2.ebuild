@@ -69,9 +69,11 @@ src_install() {
 
 	dodir "${dir}"
 	cp -a * "${ED}/${dir}" || die
-	doicon -s scalable "${DISTDIR}/${PN}.svg"
 
-	newbin "${T}/${MY_WRAPPER}" "${PN}"
+	exeinto /opt/bin
+	newexe "${T}/${MY_WRAPPER}" "${PN}"
+
+	doicon -s scalable "${DISTDIR}/${PN}.svg"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
 		"Game;ActionGame;AdventureGame;Java" \
 		"StartupWMClass=minecraft-launcher"
