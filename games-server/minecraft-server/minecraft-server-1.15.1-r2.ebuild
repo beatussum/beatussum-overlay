@@ -3,14 +3,14 @@
 
 EAPI=7
 
-inherit readme.gentoo-r1 java-pkg-2
+inherit java-utils-2 prefix readme.gentoo-r1
 
 DESCRIPTION="The official server for the sandbox video game"
 HOMEPAGE="https://www.minecraft.net/"
 MY_EGIT_COMMIT="4d1826eebac84847c71a77f9349cc22afd0cf0a1"
 SRC_URI="https://launcher.mojang.com/v1/objects/${MY_EGIT_COMMIT}/server.jar -> ${P}.jar"
 LICENSE="Mojang"
-SLOT="0"
+SLOT="${PV}"
 KEYWORDS="~amd64"
 RESTRICT="bindist mirror"
 
@@ -18,6 +18,7 @@ RDEPEND="
 	acct-group/minecraft
 	acct-user/minecraft
 	app-misc/dtach
+	games-server/minecraft-server-common
 	|| (
 		>=virtual/jre-1.8
 		>=virtual/jdk-1.8
@@ -26,19 +27,26 @@ RDEPEND="
 
 S="${WORKDIR}"
 
-src_unpack() {
-	cp "${DISTDIR}/${A}" "${WORKDIR}" || die
+MY_CONFD="${PN}.confd-r1"
+MY_INITD="${PN}.initd-r2"
+
+src_unpack() { :; }
+
+src_prepare() {
+	default
+
+	prefixify_ro "${FILESDIR}/${MY_INITD}"
 }
 
 src_install() {
-	java-pkg_newjar "${P}.jar" "${PN}.jar"
-	java-pkg_dolauncher "${PN}" --jar "${PN}.jar" \
-		--java_args '${JAVA_OPTS}'
-
-	newinitd "${FILESDIR}/${PN}.initd-r1" "${PN}"
-	newconfd "${FILESDIR}/${PN}.confd-r1" "${PN}"
-
 	readme.gentoo_create_doc
+
+	java-pkg_newjar "${DISTDIR}/${P}.jar"
+	java-pkg_dolauncher "${P}" --java_args '${JAVA_OPTS}'
+	hprefixify -w 1 "${ED}/usr/bin/${P}"
+
+	newconfd "${FILESDIR}/${MY_CONFD}" "${P}"
+	newinitd "${T}/${MY_INITD}" "${P}"
 }
 
 pkg_postinst() {

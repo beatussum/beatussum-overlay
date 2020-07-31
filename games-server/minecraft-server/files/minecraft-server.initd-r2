@@ -1,0 +1,158 @@
+#!@GENTOO_PORTAGE_EPREFIX@/sbin/openrc-run
+# Copyright 1999-2020 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+_checkpath() {
+	checkpath -o "${command_user}:${command_group}" "$@"
+}
+
+_get_levelname() {
+	sed -E -n "s/^level-name=([[:alnum:]]+)/\1/p" \
+		"${properties}" 2>> /dev/null \
+		|| echo "world"
+}
+
+_grep() {
+	local -r pattern="$1"
+	local -r file="$2"
+
+	grep -Eqs "${pattern}" "${file}"
+}
+
+_veinfo() (
+	eindent 2
+	veinfo "$*"
+)
+
+_ln() {
+	local -r target="${minecraft_logs_instance}/$1"
+	local -r name="${minecraft_path_instance}/$2"
+
+	ln -frs "${target}" "${name}"
+}
+
+_wait() {
+	local -r expr="$*"
+
+	while eval "${expr}"; do sleep 1; done
+}
+
+SN="minecraft-server"
+SNV="${RC_SVCNAME%_*}"
+SW="${RC_SVCNAME##*_}"; [[ "${SW}" = "${SNV}" ]] && SW="main"
+SNW="${SN}_${SW}"
+
+run="/run/${SN}"
+minecraft_logs="@GENTOO_PORTAGE_EPREFIX@/var/log/${SN}"
+minecraft_logs_instance="${minecraft_logs}/${SNV}_${SW}"
+minecraft_path="@GENTOO_PORTAGE_EPREFIX@/var/lib/${SN}"
+minecraft_path_instance="${minecraft_path}/${SW}"
+
+properties="${minecraft_path_instance}/server.properties"
+lock_file="${minecraft_path_instance}/$(_get_levelname)/session.lock"
+eula_file="${minecraft_path_instance}/eula.txt"
+log_dirs=("${minecraft_logs_instance}"/{,crash-reports})
+latest_log="${minecraft_logs_instance}/latest.log"
+
+name="Minecraft server v. ${SNV##*-} (world: ${SW})"
+pidfile="${run}/${SNW}.pid"
+dtach_socket="${run}/${SNW}.sock"
+start_stop_daemon_args="--chdir '${minecraft_path_instance}' --env JAVA_OPTS='${MINECRAFT_OPTS}'"
+minecraft_command="@GENTOO_PORTAGE_EPREFIX@/usr/bin/${SNV}"
+command="@GENTOO_PORTAGE_EPREFIX@/usr/bin/dtach"
+command_background=true
+command_args="-N ${dtach_socket} ${minecraft_command}"
+command_group="minecraft"
+command_user="minecraft"
+
+extra_started_commands="attach"
+description_attach="Attach to the session of the Minecraft server"
+
+depend() {
+	use net
+}
+
+_check_instance() {
+	ebegin "Checking for the absence of another running instance"
+	[[ ! -f "${lock_file}" ]]
+	eend $? "You are trying to start a concurrent instance"
+}
+
+_accept_eula() {
+	ebegin "Accepting the EULA: see the license called 'Mojang' for" \
+		"more information"
+
+	(
+		local -r pattern="eula=true"
+
+		if ! _grep "${pattern}" "${eula_file}"; then
+			echo "${pattern}" > "${eula_file}" || exit $?
+		else
+			_veinfo "EULA already accepted" || exit $?
+		fi
+	)
+	eend $? "Cannot accept the EULA ($?)"
+}
+
+_link_log_dirs() {
+	ebegin "Linking log directories to \`${minecraft_logs}\`"
+	(
+		_checkpath -d -q "${minecraft_logs}" "${log_dirs[@]}" \
+			|| exit $?
+
+		_ln . logs || exit $?
+		_ln crash-reports crash-reports || exit $?
+	)
+	eend $? "Linking has failed ($?)"
+}
+
+start_pre() {
+	_checkpath -d "${minecraft_path}" \
+		"${minecraft_path_instance}" || return $?
+
+	_check_instance || return $?
+	_checkpath -F "${lock_file}" || return $?
+	_accept_eula || return $?
+	_link_log_dirs || return $?
+
+	mark_service_starting "${RC_SVCNAME}" || return $?
+}
+
+_is_started() {
+	_grep '\[[0-9:]+\] \[Server thread/INFO\]: Done \([0-9.s]+\)! For help, type "help"' \
+		"${latest_log}"
+}
+
+start_post() {
+	_wait "[[ '${latest_log}' -ot '${lock_file}' ]]" || return $?
+	_wait "! _is_started" || return $?
+
+	mark_service_started "${RC_SVCNAME}" || return $?
+}
+
+stop() {
+	ebegin "Stopping ${name}"
+	(
+		mark_service_stopping "${RC_SVCNAME}" || exit $?
+		echo "/stop" | eval "${command}" -p "${dtach_socket}" \
+			|| exit $?
+
+		_wait "[[ -S '${dtach_socket}' ]]" || exit $?
+
+		rm "${lock_file}" "${pidfile}" || exit $?
+		mark_service_stopped "${RC_SVCNAME}" || exit $?
+	)
+	eend $? "Failed to stop ${name}"
+}
+
+attach() {
+	local ret
+
+	eval "${command}" -a "${dtach_socket}" "${DTACH_OPTS}"
+
+	if (( ret=$?, ret != 0 )); then
+		eerror 'Attaching has failed: please check `${DTACH_OPTS}`'
+	fi
+
+	return ${ret}
+}
