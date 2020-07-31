@@ -28,7 +28,8 @@ _ln() {
 	local -r target="${minecraft_logs_instance}/$1"
 	local -r name="${minecraft_path_instance}/$2"
 
-	ln -frs "${target}" "${name}"
+	ln -fnrs "${target%/.}" "${name}" || return $?
+	chown -h "${command_user}:${command_group}" "${name}" || return $?
 }
 
 _wait() {
@@ -47,9 +48,10 @@ minecraft_logs="@GENTOO_PORTAGE_EPREFIX@/var/log/${SN}"
 minecraft_logs_instance="${minecraft_logs}/${SNV}_${SW}"
 minecraft_path="@GENTOO_PORTAGE_EPREFIX@/var/lib/${SN}"
 minecraft_path_instance="${minecraft_path}/${SW}"
+world_path="${minecraft_path_instance}/$(_get_levelname)"
 
 properties="${minecraft_path_instance}/server.properties"
-lock_file="${minecraft_path_instance}/$(_get_levelname)/session.lock"
+lock_file="${world_path}/session.lock"
 eula_file="${minecraft_path_instance}/eula.txt"
 log_dirs=("${minecraft_logs_instance}"/{,crash-reports})
 latest_log="${minecraft_logs_instance}/latest.log"
@@ -85,6 +87,8 @@ _accept_eula() {
 	(
 		local -r pattern="eula=true"
 
+		_checkpath -f -q "${eula_file}"
+
 		if ! _grep "${pattern}" "${eula_file}"; then
 			echo "${pattern}" > "${eula_file}" || exit $?
 		else
@@ -108,7 +112,8 @@ _link_log_dirs() {
 
 start_pre() {
 	_checkpath -d "${minecraft_path}" \
-		"${minecraft_path_instance}" || return $?
+		"${minecraft_path_instance}" "${world_path}" \
+		|| return $?
 
 	_check_instance || return $?
 	_checkpath -F "${lock_file}" || return $?
@@ -134,7 +139,7 @@ stop() {
 	ebegin "Stopping ${name}"
 	(
 		mark_service_stopping "${RC_SVCNAME}" || exit $?
-		echo "/stop" | eval "${command}" -p "${dtach_socket}" \
+		echo -e "\n/stop" | eval "${command}" -p "${dtach_socket}" \
 			|| exit $?
 
 		_wait "[[ -S '${dtach_socket}' ]]" || exit $?
