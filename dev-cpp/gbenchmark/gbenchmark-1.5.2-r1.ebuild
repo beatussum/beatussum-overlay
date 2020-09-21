@@ -27,7 +27,7 @@ BDEPEND="
 
 RDEPEND="
 	tools? (
-		sci-libs/scipy[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
 
 		${PYTHON_DEPS}
 	)
