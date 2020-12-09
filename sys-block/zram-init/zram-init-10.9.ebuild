@@ -13,7 +13,7 @@ if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://github.com/vaeth/${PN}.git"
 else
 	SRC_URI="https://github.com/vaeth/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~arm64 ~ppc ~ppc64 ~x86"
 fi
 
 LICENSE="GPL-2"
@@ -24,24 +24,23 @@ BDEPEND="sys-devel/gettext"
 RDEPEND="
 	>=app-shells/push-2.0
 	virtual/libintl
-	|| ( >=sys-apps/openrc-0.13 sys-apps/systemd )
+	|| ( sys-apps/openrc sys-apps/systemd )
 "
 
 DISABLE_AUTOFORMATTING=true
 DOC_CONTENTS="\
-To use zram-init,      activate it in your kernel and add it to the default
-runlevel:
-  rc-update add zram-init default
-If you use systemd enable zram_swap,   zram_tmp,   and/or zram_var_tmp with
-systemctl.     You might need to modify the following file depending on the
+To use zram-init, activate it in your kernel and add it to the default runlevel:
+	rc-update add zram-init default
+If you use systemd enable zram_swap, zram_tmp, and/or zram_var_tmp with
+systemctl. You might need to modify the following file depending on the
 number of devices that you want to create:
-  ${EROOT}/etc/modprobe.d/zram.conf.
-If you use the \$TMPDIR as zRAM device with OpenRC, you should add zram-init
+	/etc/modprobe.d/zram.conf.
+If you use the \$TMPDIR as zram device with OpenRC, you should add zram-init
 to the boot runlevel:
-  rc-update add zram-init boot
-Still for the same case,    you should add in the OpenRC configuration file
+	rc-update add zram-init boot
+Still for the same case, you should add in the OpenRC configuration file
 for the services using \$TMPDIR the following line:
-  rc_need=\"zram-init\""
+	rc_need=\"zram-init\""
 
 src_prepare() {
 	default
