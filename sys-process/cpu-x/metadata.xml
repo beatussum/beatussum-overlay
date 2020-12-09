@@ -6,16 +6,18 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		<pkg>sys-process/cpu-x</pkg> is similar to CPU-Z (Windows), but,  unlike the latter,  it is
-		a Free and Open Source software, written in C and designed for GNU/Linux. It can
-		also be used in graphical mode by using <pkg>x11-libs/gtk+</pkg>,   than in text-based mode
-		with the use of <pkg>sys-libs/ncurses</pkg>.
+		<pkg>sys-process/cpu-x</pkg> is similar to CPU-Z (Windows), but, unlike
+		the latter, it is a Free and Open Source software, written in C and
+		designed for GNU/Linux. It can also be used in graphical mode by using
+		<pkg>x11-libs/gtk+</pkg>, than in text-based mode with the use of
+		<pkg>sys-libs/ncurses</pkg>.
 	</longdescription>
 	<longdescription lang="fr">
-		<pkg>sys-process/cpu-x</pkg> est similaire à CPU-Z (Windows), mais, contrairement à ce
-		dernier,  c'est un logiciel Libre et Open Source,  écrit en C et concu pour
-		GNU/Linux.    Il peut être aussi bien utilisé en mode graphique en utlisant
-		<pkg>x11-libs/gtk+</pkg>, qu'en mode textuel avec l'utilisation de <pkg>sys-libs/ncurses</pkg>.
+		<pkg>sys-process/cpu-x</pkg> est similaire à CPU-Z (Windows), mais,
+		contrairement à ce dernier, c'est un logiciel Libre et Open Source,
+		écrit en C et concu pour GNU/Linux. Il peut être aussi bien utilisé en
+		mode graphique en utlisant <pkg>x11-libs/gtk+</pkg>, qu'en mode textuel
+		avec l'utilisation de <pkg>sys-libs/ncurses</pkg>.
 	</longdescription>
 	<use>
 		<flag name="bandwidth">Integrate bandwidth (recommended)</flag>

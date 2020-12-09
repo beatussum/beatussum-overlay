@@ -6,25 +6,26 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		<pkg>dev-cpp/finalcut</pkg> is a C++ class library and widget toolkit with full mouse
-		support for creating a text-based user interface. The library supports the
-		programmer to develop an application for the text console.   It allows the
-		simultaneous handling of multiple text windows on the screen.
-		The  structure of the Qt framework was originally the inspiration for  the
-		C++ class design of dev-cpp/finalcut.     It provides common controls like
-		dialog boxes, push buttons, check boxes, radio buttons, input lines,  list
-		boxes, status bars and so on.
+		<pkg>dev-cpp/finalcut</pkg> is a C++ class library and widget toolkit
+		with full mouse support for creating a text-based user interface. The
+		library supports the programmer to develop an application for the text
+		console. It allows the simultaneous handling of multiple text windows
+		on the screen. The structure of the Qt framework was originally the
+		inspiration for the C++ class design of dev-cpp/finalcut. It provides
+		common controls like dialog boxes, push buttons, check boxes, radio
+		buttons, input lines, list boxes, status bars and so on.
 	</longdescription>
 	<longdescription lang="fr">
-		<pkg>dev-cpp/finalcut</pkg>  est une bibliothèque C++ offrant la possibilité de  créer  un
-		environnement en mode texte.  Elle fournit des composants d'interface graphique
-		supportant pleinement l'usage de la souris.    Elle permet aux développeurs une
-		programmation plus aisée des applications de ce type.     Elle rend possible la
-		gestion de plusieurs fenêtres dans un même terminal.
-		L'interface de programmation applicative de dev-cpp/finalcut s'inspire de celle
-		de Qt. Celle-ci fournit également les composants de base tels que des boîtes de
-		dialogue,  des bouttons poussoirs,  des case à cocher,  des boutons radio,  des
-		lignes d'entrée, des barres d'état, et ainsi de suite.
+		<pkg>dev-cpp/finalcut</pkg> est une bibliothèque C++ offrant la
+		possibilité de créer un environnement en mode texte. Elle fournit des
+		composants d'interface graphique supportant pleinement l'usage de la
+		souris. Elle permet aux développeurs une programmation plus aisée des
+		applications de ce type. Elle rend possible la gestion de plusieurs
+		fenêtres dans un même terminal. L'interface de programmation
+		applicative de dev-cpp/finalcut s'inspire de celle de Qt. Celle-ci
+		fournit également les composants de base tels que des boîtes de
+		dialogue, des bouttons poussoirs, des case à cocher, des boutons radio,
+		des lignes d'entrée, des barres d'état, et ainsi de suite.
 	</longdescription>
 	<use>
 		<flag name="newfont">Install a graphical text font for X11 and the Linux console</flag>

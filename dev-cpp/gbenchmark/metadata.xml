@@ -6,31 +6,15 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<use>
-		<flag name="default-libcxx">
-			Use <pkg>sys-libs/libcxx</pkg> instead of libstdc++ as the default stdlib
-		</flag>
-		
+		<flag name="default-libcxx">Use <pkg>sys-libs/libcxx</pkg> instead of libstdc++ as the default stdlib</flag>
 		<flag name="lto">Enable Link Time Optimization (LTO)</flag>
-
-		<flag name="exceptions">
-			Enable the use of exceptions in the benchmark library
-		</flag>
-		
+		<flag name="exceptions">Enable the use of exceptions in the benchmark library</flag>
 		<flag name="tools">Install some additional Python tools</flag>
 	</use>
 	<use lang="fr">
-		<flag name="default-libcxx">
-			Utiliser <pkg>sys-libs/libcxx</pkg> à la place de libstdc++ comme bibliothèque standard
-		</flag>
-		
-		<flag name="lto">
-			Activer l'optimisation du temps d'édition de liens (LTO)
-		</flag>
-
-		<flag name="exceptions">
-			Utiliser les exceptions inclues dans la bibliothèque
-		</flag>
-		
+		<flag name="default-libcxx">Utiliser <pkg>sys-libs/libcxx</pkg> à la place de libstdc++ comme bibliothèque standard</flag>
+		<flag name="lto">Activer l'optimisation du temps d'édition de liens (LTO)</flag>
+		<flag name="exceptions">Utiliser les exceptions inclues dans la bibliothèque</flag>
 		<flag name="tools">Installer des outils Python additionnels</flag>
 	</use>
 	<upstream>

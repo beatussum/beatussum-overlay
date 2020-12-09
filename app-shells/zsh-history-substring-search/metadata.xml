@@ -6,15 +6,17 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		This is a clean-room implementation of the Fish shell's history search feature, where
-		you can type in any part of any command from history and then press chosen keys, such
-		as the UP and DOWN arrows, to cycle through matches.
+		This is a clean-room implementation of the Fish shell's history search
+		feature, where you can type in any part of any command from history and
+		then press chosen keys, such as the UP and DOWN arrows, to cycle
+		through matches.
 	</longdescription>
 	<longdescription lang="fr">
-		Il s'agit d'une implémentation de la fonctionnalité, propre au shell Fish,
-		de recherche dans l'historique, où l'on peut taper n'importe quelle partie
-		de n'importe quelle commande et puis appuyer sur des touches choisies, par
-		exemple les flèches HAUT et BAS, pour circuler parmis les correspondances.
+		Il s'agit d'une implémentation de la fonctionnalité, propre au shell
+		Fish, de recherche dans l'historique, où l'on peut taper n'importe
+		quelle partie de n'importe quelle commande et puis appuyer sur des
+		touches choisies, par exemple les flèches HAUT et BAS, pour circuler
+		parmis les correspondances.
 	</longdescription>
 	<upstream>
 		<maintainer>

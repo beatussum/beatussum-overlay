@@ -6,14 +6,14 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		It enables highlighting of commands whilst they are typed at a zsh prompt into
-		an interactive terminal. This helps in reviewing commands before running them,
-		particularly in catching syntax errors.
+		It enables highlighting of commands whilst they are typed at a zsh
+		prompt into an interactive terminal. This helps in reviewing commands
+		before running them, particularly in catching syntax errors.
 	</longdescription>
 	<longdescription lang="fr">
-		Il permet de mettre en surbrillance les commandes lorsqu'elles sont tapées dans une
-		invite zsh. Cela aide à réviser les commandes avant de les exécuter, en particulier
-		pour détecter les erreurs de syntaxe.
+		Il permet de mettre en surbrillance les commandes lorsqu'elles sont
+		tapées dans une invite zsh. Cela aide à réviser les commandes avant de
+		les exécuter, en particulier pour détecter les erreurs de syntaxe.
 	</longdescription>
 	<upstream>
 		<maintainer status="active">

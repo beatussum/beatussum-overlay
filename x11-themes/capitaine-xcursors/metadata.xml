@@ -6,14 +6,15 @@
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
 	<longdescription>
-		This is an x-cursor theme inspired by macOS and based on KDE Breeze. The source files
-		were made in Inkscape,   and the theme was designed to pair well with Keefer Rourke's
-		icon pack: La Capitaine.
+		This is an x-cursor theme inspired by macOS and based on KDE Breeze.
+		The source files were made in Inkscape, and the theme was designed to
+		pair well with Keefer Rourke's icon pack: La Capitaine.
 	</longdescription>
 	<longdescription lang="fr">
-		Ce thème x-cursor est inspiré par macOS et est basé sur KDE Breeze.  Les fichiers sources
-		ont été créés avec Inkscape, et le thème a été dessiné de façon à ce qu'il soit en accord
-		avec le pack d'icônes de Keefer Rourke&#xA0;: La Capitaine.
+		Ce thème x-cursor est inspiré par macOS et est basé sur KDE Breeze. Les
+		fichiers sources ont été créés avec Inkscape, et le thème a été dessiné
+		de façon à ce qu'il soit en accord avec le pack d'icônes de Keefer
+		Rourke : La Capitaine.
 	</longdescription>
 	<use>
 		<flag name="dark">Install the dark theme cursors</flag>
