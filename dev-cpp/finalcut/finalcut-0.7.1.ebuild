@@ -25,14 +25,9 @@ BDEPEND="virtual/pkgconfig"
 
 RDEPEND="${DEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${P}-fix-cppunit-config.patch"
-	"${FILESDIR}/${P}-fix-with-pkg.patch"
-)
-
 MY_DOC_DIR="/usr/share/doc/${PF}"
 
-_delMakefile() {
+_del_makefile() {
 	local -r pattern="$1"; shift
 	local -r comp=("$@")
 
@@ -49,9 +44,9 @@ _delMakefile() {
 src_prepare() {
 	default
 
-	_delMakefile "doc_DATA" .
-	_delMakefile "docdir" . doc fonts
-	_delMakefile ".*\.sh" doc
+	_del_makefile "doc_DATA" .
+	_del_makefile "docdir" . doc fonts
+	_del_makefile ".*\.sh" doc
 
 	for i in "${MY_COMPONENTS[@]}"; do
 		if ! use "${i}"; then
