@@ -1,7 +1,7 @@
-From 349dfe299aa442fc0f1dd2449907a13d2c39424f Mon Sep 17 00:00:00 2001
+From 3de8757c1dac6b4a24d70dc9fe32faf30bbbff07 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
  <beatussum@protonmail.com>
-Date: Sat, 25 Jul 2020 10:57:56 +0200
+Date: Wed, 9 Dec 2020 14:13:12 +0100
 Subject: [PATCH] fix `gtk-update-icon-cache` call
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

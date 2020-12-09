@@ -1,7 +1,7 @@
-From 5cc5bc13c73e57e4b537f9ec13788897a3b74345 Mon Sep 17 00:00:00 2001
+From eccc847fa2a6fff8680251bd651e625aa2710098 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
  <beatussum@protonmail.com>
-Date: Sat, 25 Jul 2020 10:58:59 +0200
+Date: Wed, 9 Dec 2020 14:07:35 +0100
 Subject: [PATCH] fix `gtk-update-icon-cache` call
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -16,13 +16,13 @@ Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
  1 file changed, 2 deletions(-)
 
 diff --git a/install.sh b/install.sh
-index e032fb27..4b0e5e04 100755
+index 4e6fce1d..18425607 100755
 --- a/install.sh
 +++ b/install.sh
-@@ -107,8 +107,6 @@ install_theme() {
-   ln -sr "${THEME_DIR}/24"                                                       "${THEME_DIR}/24@2x"
-   ln -sr "${THEME_DIR}/32"                                                       "${THEME_DIR}/32@2x"
-   ln -sr "${THEME_DIR}/scalable"                                                 "${THEME_DIR}/scalable@2x"
+@@ -113,8 +113,6 @@ install_theme() {
+   ln -sr "${THEME_DIR}/24"                                                       "${THEME_DIR}/24@3x"
+   ln -sr "${THEME_DIR}/32"                                                       "${THEME_DIR}/32@3x"
+   ln -sr "${THEME_DIR}/scalable"                                                 "${THEME_DIR}/scalable@3x"
 -
 -  gtk-update-icon-cache "${THEME_DIR}"
  }
