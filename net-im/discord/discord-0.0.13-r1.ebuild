@@ -57,16 +57,14 @@ src_prepare() {
 		"${PN}.desktop" \
 		> "${T}/${PN}.desktop" \
 		|| die
-	mv "${PN}.png" "${T}" || die
 
-	rm "${PN}.desktop" || die "The cleaning has failed"
-	rm postinst.sh || die "The cleaning has failed"
+	rm "${PN}.desktop" postinst.sh || die "The cleaning has failed"
 }
 
 src_install() {
 	local -r dir="/opt/${PN}"
 
-	doicon -s 256 "${T}/${PN}.png"
+	doicon -s 256 "${PN}.png"
 	domenu "${T}/${PN}.desktop"
 
 	dodir "${dir}"
