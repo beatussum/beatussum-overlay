@@ -54,12 +54,9 @@ RDEPEND="
 
 S="${WORKDIR}/${PN}"
 
-MY_WRAPPER="${PN}-r1"
-
 src_prepare() {
 	default
 
-	prefixify_ro "${FILESDIR}/${MY_WRAPPER}"
 	patchelf --set-rpath '$ORIGIN' libcef.so liblauncher.so "${PN}" \
 		|| die 'Unable to replace the insecure `RPATH`s'
 }
@@ -70,8 +67,7 @@ src_install() {
 	dodir "${dir}"
 	cp -a * "${ED}/${dir}" || die
 
-	exeinto /opt/bin
-	newexe "${T}/${MY_WRAPPER}" "${PN}"
+	dosym "../${PN}/${PN}" "/opt/bin/${PN}"
 
 	doicon -s scalable "${DISTDIR}/${PN}.svg"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
