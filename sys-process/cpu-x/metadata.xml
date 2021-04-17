@@ -20,18 +20,22 @@
 		avec l'utilisation de <pkg>sys-libs/ncurses</pkg>.
 	</longdescription>
 	<use>
-		<flag name="bandwidth">Integrate bandwidth (recommended)</flag>
-		<flag name="dmidecode">Integrate dmidecode (recommended)</flag>
+		<flag name="bandwidth">Integrate bandwidth</flag>
+		<flag name="dmidecode">Integrate dmidecode</flag>
 		<flag name="force-libstatgrab">Use <pkg>sys-libs/libstatgrab</pkg> to instead of <pkg>sys-process/procps</pkg></flag>
 		<flag name="libcpuid">Use the <pkg>sys-libs/libcpuid</pkg> library</flag>
+		<flag name="libglfw">Use the <pkg>media-libs/glfw</pkg> library</flag>
 		<flag name="libpci">Use the <pkg>sys-apps/pciutils</pkg> library</flag>
+		<flag name="opencl">Use the <pkg>virtual/opencl</pkg> library</flag>
 	</use>
 	<use lang="fr">
-		<flag name="bandwidth">Intégrer bandwidth (recommandé)</flag>
-		<flag name="dmidecode">Intégrer dmidecode (recommandé)</flag>
+		<flag name="bandwidth">Intégrer bandwidth</flag>
+		<flag name="dmidecode">Intégrer dmidecode</flag>
 		<flag name="force-libstatgrab">Utiliser <pkg>sys-libs/libstatgrab</pkg> à la place de <pkg>sys-process/procps</pkg></flag>
 		<flag name="libcpuid">Utiliser la bibliothèque <pkg>sys-libs/libcpuid</pkg></flag>
+		<flag name="libglfw">Utiliser la bibliothèque <pkg>media-libs/glfw</pkg></flag>
 		<flag name="libpci">Utiliser la bibliothèque <pkg>sys-apps/pciutils</pkg></flag>
+		<flag name="opencl">Utiliser la bibliothèque <pkg>virtual/opencl</pkg></flag>
 	</use>
 	<upstream>
 		<maintainer status="active">

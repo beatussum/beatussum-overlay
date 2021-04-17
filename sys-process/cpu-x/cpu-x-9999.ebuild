@@ -12,7 +12,7 @@ HOMEPAGE="https://x0rg.github.io/CPU-X/"
 EGIT_REPO_URI="https://github.com/X0rg/${MY_PN}.git"
 LICENSE="GPL-3+"
 SLOT="0"
-IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libpci +ncurses +nls test"
+IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libglfw +libpci +ncurses +nls +opencl test"
 RESTRICT="!test? ( test )"
 
 COMMON_DEPEND="
@@ -24,8 +24,10 @@ COMMON_DEPEND="
 	!force-libstatgrab? ( sys-process/procps:= )
 	gtk? ( >=x11-libs/gtk+-3.12:3 )
 	libcpuid? ( >=sys-libs/libcpuid-0.3.0:= )
+	libglfw? ( >=media-libs/glfw-3.3 )
 	libpci? ( sys-apps/pciutils )
 	ncurses? ( sys-libs/ncurses:=[tinfo,unicode] )
+	opencl? ( virtual/opencl )
 "
 
 DEPEND="
@@ -50,16 +52,18 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DWITH_GTK=$(usex gtk)
-		-DWITH_NCURSES=$(usex ncurses)
-		-DWITH_GETTEXT=$(usex nls)
-		-DWITH_LIBCPUID=$(usex libcpuid)
-		-DWITH_LIBPCI=$(usex libpci)
-		-DWITH_LIBSTATGRAB=OFF
-		-DWITH_DMIDECODE=$(usex dmidecode)
-		-DWITH_BANDWIDTH=$(usex bandwidth)
 		-DFORCE_LIBSTATGRAB=$(usex force-libstatgrab)
 		-DGSETTINGS_COMPILE=OFF
+		-DWITH_BANDWIDTH=$(usex bandwidth)
+		-DWITH_DMIDECODE=$(usex dmidecode)
+		-DWITH_GETTEXT=$(usex nls)
+		-DWITH_GTK=$(usex gtk)
+		-DWITH_LIBCPUID=$(usex libcpuid)
+		-DWITH_LIBGLFW=$(usex libglfw)
+		-DWITH_LIBPCI=$(usex libpci)
+		-DWITH_LIBSTATGRAB=OFF
+		-DWITH_NCURSES=$(usex ncurses)
+		-DWITH_OPENCL=$(usex opencl)
 	)
 
 	cmake_src_configure
