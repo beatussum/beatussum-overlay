@@ -64,8 +64,8 @@ src_install() {
 	einstalldocs
 	readme.gentoo_create_doc
 
-	emake DESTDIR="${ED}" PREFIX="/usr" SYSCONFDIR="/etc" \
-		BINDIR="${ED}/sbin" install
+	emake DESTDIR="${ED}" PREFIX="/usr" BINDIR="${ED}/sbin" SYSCONFDIR="/etc" \
+		SYSTEMDDIR="${ED}/lib/systemd/system" install
 }
 
 pkg_postinst() {
