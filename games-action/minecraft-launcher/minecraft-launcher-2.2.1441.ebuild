@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit desktop eutils prefix
+inherit desktop xdg
 
 DESCRIPTION="Minecraft's official launcher"
 HOMEPAGE="https://www.minecraft.net/"
@@ -55,7 +55,7 @@ RDEPEND="
 S="${WORKDIR}/${PN}"
 
 src_prepare() {
-	default
+	xdg_src_prepare
 
 	patchelf --set-rpath '$ORIGIN' libcef.so liblauncher.so "${PN}" \
 		|| die 'Unable to replace the insecure `RPATH`s'
@@ -72,5 +72,5 @@ src_install() {
 	doicon -s scalable "${DISTDIR}/${PN}.svg"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
 		"Game;ActionGame;AdventureGame;Java" \
-		"StartupWMClass=minecraft-launcher"
+		"StartupWMClass=${PN}"
 }
