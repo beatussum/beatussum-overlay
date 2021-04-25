@@ -1,7 +1,7 @@
-From 107fa72b92c976dd0b74701746c04e759a7b08a1 Mon Sep 17 00:00:00 2001
+From 1928937691be29a1360fa846ed4b9204421749b2 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
  <beatussum@protonmail.com>
-Date: Sun, 25 Apr 2021 16:44:46 +0200
+Date: Sun, 25 Apr 2021 17:11:59 +0200
 Subject: [PATCH] fix GTest
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -17,7 +17,7 @@ Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 1007254..5e6b8a8 100644
+index 1007254..99dac6b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -281,7 +281,7 @@ if (BENCHMARK_ENABLE_TESTING)
@@ -25,12 +25,12 @@ index 1007254..5e6b8a8 100644
        NOT (TARGET gtest AND TARGET gtest_main AND
             TARGET gmock AND TARGET gmock_main))
 -    include(GoogleTest)
-+		   find_package(GTest REQUIRED CONFIG)
++    find_package(GTest REQUIRED CONFIG)
    endif()
    add_subdirectory(test)
  endif()
 diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
-index c1a3a3f..64cca21 100644
+index c1a3a3f..581a48e 100644
 --- a/test/CMakeLists.txt
 +++ b/test/CMakeLists.txt
 @@ -183,7 +183,7 @@ if (BENCHMARK_ENABLE_GTEST_TESTS)
@@ -38,7 +38,7 @@ index c1a3a3f..64cca21 100644
      add_executable(${name} "${name}.cc")
      target_link_libraries(${name} benchmark::benchmark
 -        gmock_main ${CMAKE_THREAD_LIBS_INIT})
-+        GTest::gmock_main ${CMAKE_THREAD_LIBS_INIT})
++        Gtest::gmock_main ${CMAKE_THREAD_LIBS_INIT})
    endmacro(compile_gtest)
  
    macro(add_gtest name)
