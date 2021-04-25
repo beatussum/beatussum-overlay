@@ -1,14 +1,14 @@
-From cd8d4009678226ab39e8bdc6483d9d860b851495 Mon Sep 17 00:00:00 2001
+From 107fa72b92c976dd0b74701746c04e759a7b08a1 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
  <beatussum@protonmail.com>
-Date: Sun, 20 Sep 2020 19:30:56 +0200
+Date: Sun, 25 Apr 2021 16:44:46 +0200
 Subject: [PATCH] fix GTest
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-Use the system-wide Google testing framework (dev-cpp/gtest) instead
-of downloading and building the library.
+Use the system-wide Google testing framework (dev-cpp/gtest) instead of
+downloading and building the library.
 
 Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
 ---
@@ -17,15 +17,15 @@ Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a157666..bc2fd8f 100644
+index 1007254..5e6b8a8 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -280,7 +280,7 @@ if (BENCHMARK_ENABLE_TESTING)
+@@ -281,7 +281,7 @@ if (BENCHMARK_ENABLE_TESTING)
    if (BENCHMARK_ENABLE_GTEST_TESTS AND
        NOT (TARGET gtest AND TARGET gtest_main AND
             TARGET gmock AND TARGET gmock_main))
 -    include(GoogleTest)
-+    find_package(GTest REQUIRED CONFIG)
++		   find_package(GTest REQUIRED CONFIG)
    endif()
    add_subdirectory(test)
  endif()
@@ -43,5 +43,5 @@ index c1a3a3f..64cca21 100644
  
    macro(add_gtest name)
 -- 
-2.26.2
+2.26.3
 

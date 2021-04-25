@@ -42,6 +42,7 @@ DOCS=(
 	CONTRIBUTING.md
 	CONTRIBUTORS
 	README.md
+	docs/AssemblyTests.md
 	docs/tools.md
 )
 
@@ -51,11 +52,11 @@ PATCHES=(
 
 multilib_src_configure() {
 	local mycmakeargs=(
-		-DBENCHMARK_ENABLE_TESTING="$(usex test)"
 		-DBENCHMARK_ENABLE_EXCEPTIONS="$(usex exceptions)"
-		-DBENCHMARK_ENABLE_LTO="$(usex lto)"
-		-DBENCHMARK_USE_LIBCXX="$(usex default-libcxx)"
 		-DBENCHMARK_ENABLE_GTEST_TESTS="$(usex test)"
+		-DBENCHMARK_ENABLE_LTO="$(usex lto)"
+		-DBENCHMARK_ENABLE_TESTING="$(usex test)"
+		-DBENCHMARK_USE_LIBCXX="$(usex default-libcxx)"
 	)
 
 	cmake_src_configure
@@ -64,6 +65,7 @@ multilib_src_configure() {
 python_install() {
 	python_domodule "${S}/tools/gbench"
 	python_doscript "${S}/tools/compare.py"
+	python_doscript "${S}/tools/strip_asm.py"
 }
 
 multilib_src_install_all() {
