@@ -32,8 +32,3 @@
 ####################################################################
 
 
-# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2021-04-17)
-# Masked for removal in 15 days. The service provided by the main tree is
-# finally better.
-games-server/minecraft-server
-games-server/minecraft-server-common
