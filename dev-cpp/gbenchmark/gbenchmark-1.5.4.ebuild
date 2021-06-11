@@ -15,10 +15,13 @@ SRC_URI="https://github.com/google/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="default-libcxx lto +exceptions test +tools"
+IUSE="default-libcxx libpfm lto +exceptions test +tools"
 RESTRICT="primaryuri !test? ( test )"
 
-DEPEND="default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )"
+DEPEND="
+	default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
+	libpfm? ( dev-libs/libpfm:= )
+"
 
 BDEPEND="
 	>=dev-util/cmake-3.5.1
@@ -43,6 +46,8 @@ DOCS=(
 	CONTRIBUTORS
 	README.md
 	docs/AssemblyTests.md
+	docs/perf_counters.md
+	docs/random_interleaving.md
 	docs/tools.md
 )
 
@@ -55,6 +60,7 @@ multilib_src_configure() {
 		-DBENCHMARK_ENABLE_EXCEPTIONS="$(usex exceptions)"
 		-DBENCHMARK_ENABLE_GTEST_TESTS="$(usex test)"
 		-DBENCHMARK_ENABLE_LTO="$(usex lto)"
+		-DBENCHMARK_ENABLE_LIBPFM="$(usex libpfm)"
 		-DBENCHMARK_ENABLE_TESTING="$(usex test)"
 		-DBENCHMARK_USE_LIBCXX="$(usex default-libcxx)"
 	)
