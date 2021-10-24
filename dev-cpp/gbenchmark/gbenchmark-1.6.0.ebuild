@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 CMAKE_ECLASS="cmake"
 MY_PN="${PN#g}"
@@ -30,7 +30,7 @@ BDEPEND="
 
 RDEPEND="
 	tools? (
-		dev-python/scipy[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
 
 		${PYTHON_DEPS}
 	)
@@ -49,6 +49,7 @@ DOCS=(
 	docs/perf_counters.md
 	docs/random_interleaving.md
 	docs/tools.md
+	docs/user_guide.md
 )
 
 PATCHES=(
