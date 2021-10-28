@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit desktop xdg
+inherit desktop optfeature xdg
 
 DESCRIPTION="Minecraft's official launcher"
 HOMEPAGE="https://www.minecraft.net/"
@@ -17,36 +17,36 @@ SRC_URI="
 LICENSE="Mojang"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="narrator"
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
-	app-accessibility/at-spi2-atk:2
-	app-accessibility/at-spi2-core:2
-	dev-libs/atk
-	dev-libs/expat
-	dev-libs/glib:2
-	dev-libs/nspr
-	dev-libs/nss
-	media-libs/alsa-lib
-	media-libs/mesa
-	net-print/cups
-	sys-apps/dbus
-	x11-libs/gdk-pixbuf:2
-	x11-libs/gtk+:3[X]
-	x11-libs/libdrm
-	x11-libs/libX11
-	x11-libs/libxcb:*
-	x11-libs/libXcomposite
-	x11-libs/libXdamage
+	>=app-accessibility/at-spi2-atk-2.9.90:2
+	>=app-accessibility/at-spi2-core-2.9.90:2
+	>=dev-libs/atk-2.2.0
+	>=dev-libs/expat-2.0.1
+	>=dev-libs/glib-2.39.4:2
+	>=dev-libs/nspr-4.9.2
+	>=dev-libs/nss-3.22
+	>=media-libs/alsa-lib-1.0.23
+	>=media-libs/mesa-8.1
+	>=net-print/cups-1.4.0
+	>=sys-apps/dbus-1.5.12
+	virtual/jre
+	>=x11-libs/gdk-pixbuf-2.22.0:2
+	>=x11-libs/gtk+-3.18.9:3[X]
+	>=x11-libs/libdrm-2.4.38
+	>=x11-libs/libX11-1.4.99.1
+	>=x11-libs/libxcb-1.1:*
+	>=x11-libs/libXcomposite-0.3
+	>=x11-libs/libXdamage-1.1
 	x11-libs/libXext
 	x11-libs/libXfixes
-	x11-libs/libXrandr
-	x11-libs/pango
-	narrator? ( app-accessibility/flite )
+	>=x11-libs/libXrandr-1.2.99.3
+	>=x11-libs/pango-1.14.0
 "
 
 S="${WORKDIR}/${PN}"
+QA_PREBUILT="opt/bin/${PN}"
 
 src_install() {
 	exeinto "/opt/bin"
@@ -56,4 +56,10 @@ src_install() {
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
 		"Game;ActionGame;AdventureGame;Java" \
 		"StartupWMClass=${PN}"
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	optfeature "narrator support" app-accessibility/flite
 }
