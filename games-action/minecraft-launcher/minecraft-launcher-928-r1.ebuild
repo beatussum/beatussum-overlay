@@ -22,11 +22,14 @@ RESTRICT="bindist mirror strip"
 RDEPEND="
 	>=app-accessibility/at-spi2-atk-2.9.90:2
 	>=app-accessibility/at-spi2-core-2.9.90:2
+	app-accessibility/orca
+	app-crypt/libsecret
 	>=dev-libs/atk-2.2.0
 	>=dev-libs/expat-2.0.1
 	>=dev-libs/glib-2.39.4:2
 	>=dev-libs/nspr-4.9.2
 	>=dev-libs/nss-3.22
+	gnome-base/gnome-keyring
 	>=media-libs/alsa-lib-1.0.23
 	>=media-libs/mesa-8.1
 	>=net-print/cups-1.4.0
