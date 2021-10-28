@@ -1,11 +1,11 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-inherit desktop xdg
+inherit desktop linux-info optfeature xdg
 
-MY_PN="${PN/d/D}"
+MY_PN="${PN^}"
 
 DESCRIPTION="All-in-one voice and text chat for gamers"
 HOMEPAGE="https://discord.com/"
@@ -13,7 +13,6 @@ SRC_URI="https://dl.discordapp.net/apps/linux/${PV}/${P}.tar.gz"
 LICENSE="Discord-TOS"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+ayatana"
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
@@ -25,6 +24,7 @@ RDEPEND="
 	dev-libs/nspr
 	dev-libs/nss
 	media-libs/alsa-lib
+	media-libs/mesa[gbm(+)]
 	net-print/cups
 	sys-apps/dbus
 	x11-libs/cairo
@@ -34,23 +34,31 @@ RDEPEND="
 	x11-libs/libX11
 	x11-libs/libxcb:*
 	x11-libs/libXcomposite
-	x11-libs/libXcursor
 	x11-libs/libXdamage
 	x11-libs/libXext
 	x11-libs/libXfixes
-	x11-libs/libXi
+	x11-libs/libxkbcommon
 	x11-libs/libXrandr
-	x11-libs/libXrender
-	x11-libs/libXScrnSaver
-	x11-libs/libXtst
+	x11-libs/libxshmfence
 	x11-libs/pango
-	ayatana? ( dev-libs/libappindicator:3 )
+"
+
+QA_PREBUILT="
+	opt/${PN}/${MY_PN}
+	opt/${PN}/chrome-sandbox
+	opt/${PN}/libEGL.so
+	opt/${PN}/libffmpeg.so
+	opt/${PN}/libGLESv2.so
+	opt/${PN}/libvk_swiftshader.so
+	opt/${PN}/swiftshader/libEGL.so
+	opt/${PN}/swiftshader/libGLESv2.so
 "
 
 S="${WORKDIR}/${MY_PN}"
+CONFIG_CHECK="USER_NS"
 
 src_prepare() {
-	default
+	xdg_src_prepare
 
 	sed \
 		-e "s|/usr/share/discord/Discord|${PN}|g" \
@@ -58,8 +66,6 @@ src_prepare() {
 		"${PN}.desktop" \
 		> "${T}/${PN}.desktop" \
 		|| die
-
-	rm "${PN}.desktop" postinst.sh || die "The cleaning has failed"
 }
 
 src_install() {
@@ -68,7 +74,18 @@ src_install() {
 	doicon -s 256 "${PN}.png"
 	domenu "${T}/${PN}.desktop"
 
+	rm "${PN}.desktop" "${PN}.png" postinst.sh || die "The cleaning has failed"
+
 	dodir "${dir}"
 	cp -a * "${D}/${dir}" || die
 	dosym "../${PN}/${MY_PN}" "/opt/bin/${PN}"
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	optfeature "sound support" \
+		media-sound/pulseaudio media-sound/apulse[sdk] media-video/pipewire
+
+	optfeature "system tray support" dev-libs/libappindicator:3
 }
