@@ -58,7 +58,7 @@ S="${WORKDIR}/${MY_PN}"
 CONFIG_CHECK="USER_NS"
 
 src_prepare() {
-	xdg_src_prepare
+	default
 
 	sed \
 		-e "s|/usr/share/discord/Discord|${PN}|g" \
