@@ -13,7 +13,7 @@ SRC_URI="https://dl.discordapp.net/apps/linux/${PV}/${P}.tar.gz"
 LICENSE="Discord-TOS"
 SLOT="0"
 KEYWORDS="~amd64"
-RESTRICT="bindist mirror strip"
+RESTRICT="bindist mirror"
 
 RDEPEND="
 	app-accessibility/at-spi2-atk:2
