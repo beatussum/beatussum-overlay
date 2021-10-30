@@ -17,7 +17,7 @@ SRC_URI="
 LICENSE="Mojang"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-RESTRICT="bindist mirror strip"
+RESTRICT="bindist mirror"
 
 RDEPEND="
 	>=app-accessibility/at-spi2-atk-2.9.90:2
@@ -29,14 +29,13 @@ RDEPEND="
 	>=dev-libs/glib-2.39.4:2
 	>=dev-libs/nspr-4.9.2
 	>=dev-libs/nss-3.22
-	gnome-base/gnome-keyring
 	>=media-libs/alsa-lib-1.0.23
 	>=media-libs/mesa-8.1
 	>=net-print/cups-1.4.0
 	>=sys-apps/dbus-1.5.12
-	virtual/jre
+	virtual/secret-service
 	>=x11-libs/gdk-pixbuf-2.22.0:2
-	>=x11-libs/gtk+-3.18.9:3[X]
+	>=x11-libs/gtk+-3.18.9:3
 	>=x11-libs/libdrm-2.4.38
 	>=x11-libs/libX11-1.4.99.1
 	>=x11-libs/libxcb-1.1:*
@@ -57,7 +56,7 @@ src_install() {
 
 	doicon -s scalable "${DISTDIR}/${PN}.svg"
 	make_desktop_entry "${PN}" "Minecraft launcher" "${PN}" \
-		"Game;ActionGame;AdventureGame;Java" \
+		"ActionGame;AdventureGame;Game;Java" \
 		"StartupWMClass=${PN}"
 }
 
