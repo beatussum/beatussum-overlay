@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,7 +26,7 @@ COMMON_DEPEND="
 	libcpuid? ( >=sys-libs/libcpuid-0.3.0:= )
 	libglfw? ( >=media-libs/glfw-3.3 )
 	libpci? ( sys-apps/pciutils )
-	ncurses? ( sys-libs/ncurses:=[tinfo,unicode] )
+	ncurses? ( sys-libs/ncurses:=[tinfo] )
 	opencl? ( virtual/opencl )
 "
 

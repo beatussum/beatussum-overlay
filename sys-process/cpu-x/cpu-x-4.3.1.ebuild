@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/X0rg/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libglfw +libpci +ncurses +nls test"
+IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libglfw +libpci +ncurses +nls +opencl test"
 RESTRICT="primaryuri !test? ( test )"
 
 COMMON_DEPEND="
@@ -27,7 +27,8 @@ COMMON_DEPEND="
 	libcpuid? ( >=sys-libs/libcpuid-0.3.0:= )
 	libglfw? ( >=media-libs/glfw-3.3 )
 	libpci? ( sys-apps/pciutils )
-	ncurses? ( sys-libs/ncurses:=[tinfo,unicode] )
+	ncurses? ( sys-libs/ncurses:=[tinfo] )
+	opencl? ( virtual/opencl )
 "
 
 DEPEND="
@@ -65,6 +66,7 @@ src_configure() {
 		-DWITH_LIBPCI=$(usex libpci)
 		-DWITH_LIBSTATGRAB=OFF
 		-DWITH_NCURSES=$(usex ncurses)
+		-DWITH_OPENCL=$(usex opencl)
 	)
 
 	cmake_src_configure
