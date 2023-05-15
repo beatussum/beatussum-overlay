@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PN="CPU-X"
 
-inherit cmake git-r3 xdg
+inherit cmake git-r3 gnome2-utils xdg
 
 DESCRIPTION="A Free software that gathers information on CPU, motherboard and more"
 HOMEPAGE="https://x0rg.github.io/CPU-X/"

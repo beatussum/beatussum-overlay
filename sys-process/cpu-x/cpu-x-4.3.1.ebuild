@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PN="CPU-X"
 
-inherit cmake xdg
+inherit cmake gnome2-utils xdg
 
 DESCRIPTION="A Free software that gathers information on CPU, motherboard and more"
 HOMEPAGE="https://x0rg.github.io/CPU-X/"
@@ -14,7 +14,7 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 IUSE="+bandwidth +dmidecode force-libstatgrab +gtk +libcpuid +libglfw +libpci +ncurses +nls +opencl test"
-RESTRICT="primaryuri !test? ( test )"
+RESTRICT="!test? ( test )"
 
 COMMON_DEPEND="
 	dev-libs/glib:2

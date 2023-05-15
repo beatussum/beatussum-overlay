@@ -9,7 +9,6 @@ SRC_URI="https://github.com/beatussum/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-RESTRICT="primaryuri"
 
 RDEPEND="sys-apps/openrc"
 

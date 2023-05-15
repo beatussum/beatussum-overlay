@@ -11,7 +11,7 @@ SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-RESTRICT="primaryuri test"
+RESTRICT="test"
 
 RDEPEND=">=app-shells/zsh-4.3.11"
 

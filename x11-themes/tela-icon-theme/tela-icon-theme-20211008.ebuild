@@ -17,7 +17,6 @@ KEYWORDS="~amd64"
 MY_COMPONENTS=(+standard black blue brown green grey orange pink purple red yellow manjaro ubuntu)
 IUSE="${MY_COMPONENTS[*]}"
 REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
-RESTRICT="primaryuri"
 
 S="${WORKDIR}/${MY_PN}-${MY_PV}"
 

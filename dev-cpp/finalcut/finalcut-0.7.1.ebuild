@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 MY_COMPONENTS=(doc examples newfont test)
 IUSE="+gpm static-libs test ${MY_COMPONENTS[*]}"
 REQUIRED_USE="test? ( !examples )"
-RESTRICT="primaryuri !test? ( test )"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	sys-libs/ncurses:=[tinfo]

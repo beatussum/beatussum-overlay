@@ -20,8 +20,6 @@ REQUIRED_USE="
 	^^ ( ${MY_VARIANTS[*]/+} )
 "
 
-RESTRICT="primaryuri"
-
 BDEPEND="
 	>=media-gfx/inkscape-1
 	x11-apps/xcursorgen
