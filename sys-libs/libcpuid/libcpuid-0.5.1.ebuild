@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=(python3_{6..9})
+PYTHON_COMPAT=( python3_{6..11} )
 
 inherit autotools python-any-r1
 
@@ -14,7 +14,7 @@ LICENSE="BSD-2"
 SLOT="0/15"
 KEYWORDS="~amd64"
 IUSE="static-libs test"
-RESTRICT="primaryuri !test? ( test )"
+RESTRICT="!test? ( test )"
 
 DEPEND="test? ( ${PYTHON_DEPS} )"
 
