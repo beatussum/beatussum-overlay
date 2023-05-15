@@ -10,9 +10,8 @@ LICENSE="GPL-3+ wallpapers? ( CC-BY-SA-4.0 )"
 SLOT="0"
 KEYWORDS="~amd64"
 MY_COMPONENTS=(aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake)
-IUSE="${MY_COMPONENTS[*]/+}"
+IUSE="${MY_COMPONENTS[*]}"
 REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
-RESTRICT="primaryuri"
 
 RDEPEND="kvantum? ( x11-themes/kvantum )"
 

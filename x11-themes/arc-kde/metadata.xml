@@ -23,7 +23,7 @@
 		<flag name="kvantum">Install the <pkg>x11-themes/kvantum</pkg> themes</flag>
 		<flag name="plasma">Install the Plasma desktop themes and look-and-feel settings</flag>
 		<flag name="wallpapers">Install the wallpapers</flag>
-		<flag name="yakuake">Install the <pkg>kde-misc/yakuake</pkg> skins</flag>
+		<flag name="yakuake">Install the <pkg>kde-apps/yakuake</pkg> skins</flag>
 	</use>
 	<use lang="fr">
 		<flag name="aurorae">Intaller les thèmes Aurorae</flag>
@@ -33,7 +33,7 @@
 		<flag name="kvantum">Installer les thèmes pour <pkg>x11-themes/kvantum</pkg></flag>
 		<flag name="plasma">Installer les thèmes pour Plasma et les paramètres look-and-feel</flag>
 		<flag name="wallpapers">Installer les fonds d'écran</flag>
-		<flag name="yakuake">Installer les apparences de <pkg>kde-misc/yakuake</pkg></flag>
+		<flag name="yakuake">Installer les apparences de <pkg>kde-apps/yakuake</pkg></flag>
 	</use>
 	<upstream>
 		<maintainer status="active">
