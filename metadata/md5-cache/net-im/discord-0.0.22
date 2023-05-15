@@ -10,5 +10,5 @@ RDEPEND=app-accessibility/at-spi2-atk:2 app-accessibility/at-spi2-core:2 dev-lib
 RESTRICT=bindist mirror
 SLOT=0
 SRC_URI=https://dl.discordapp.net/apps/linux/0.0.22/discord-0.0.22.tar.gz
-_eclasses_=desktop	7eb20ad915a0a318176d51bc2508ff5c	toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157	linux-info	4b552625ebd741dfd2ac08637fd2436e	optfeature	1a2157392a869265b2afcb63a26c12ac	xdg-utils	ac0e315a3688929e34ac75b139e7349a	xdg	6024fbc93167fad782e2032933654857
-_md5_=4debfec3f26d7fe9a2f693838523378d
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	multilib	104e1332efb829e2f7cbf89307a474f1	linux-info	c4f1201b96a8a2c1f3b86cc8b2c71c91	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54	xdg-utils	baea6080dd821f5562d715887954c9d3	xdg	4a14c5c24f121e7da66e5aab4a168c6e
+_md5_=5cda1c490e87050910db2badff8dc760
