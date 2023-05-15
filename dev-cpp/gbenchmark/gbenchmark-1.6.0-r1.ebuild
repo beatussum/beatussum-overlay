@@ -3,9 +3,8 @@
 
 EAPI=8
 
-CMAKE_ECLASS="cmake"
 MY_PN="${PN#g}"
-PYTHON_COMPAT=( python3_{6..9} )
+PYTHON_COMPAT=( python3_{6..11} )
 
 inherit cmake-multilib python-r1
 
@@ -16,7 +15,8 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="default-libcxx libpfm lto +exceptions test +tools"
-RESTRICT="primaryuri !test? ( test )"
+RESTRICT="!test? ( test )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
 	default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
@@ -45,16 +45,18 @@ DOCS=(
 	CONTRIBUTING.md
 	CONTRIBUTORS
 	README.md
-	docs/AssemblyTests.md
-	docs/perf_counters.md
-	docs/random_interleaving.md
-	docs/tools.md
-	docs/user_guide.md
 )
 
 PATCHES=(
 	"${FILESDIR}/${P}-fix-gtest.patch"
 )
+
+src_prepare() {
+	sed -i "s|doc/\${PROJECT_NAME}|doc/${PF}|" "${S}/src/CMakeLists.txt" \
+		|| die "Cannot fix the documentation installation directory"
+
+	cmake_src_prepare
+}
 
 multilib_src_configure() {
 	local mycmakeargs=(
