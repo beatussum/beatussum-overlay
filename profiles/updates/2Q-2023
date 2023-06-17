@@ -1,1 +1,2 @@
 move sys-process/cpu-x sys-apps/cpu-x
+move sys-libs/libcpuid dev-libs/libcpuid
