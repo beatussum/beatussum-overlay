@@ -20,30 +20,30 @@
 		avec l'utilisation de <pkg>sys-libs/ncurses</pkg>.
 	</longdescription>
 	<use>
-		<flag name="bandwidth">Integrate bandwidth</flag>
-		<flag name="dmidecode">Integrate dmidecode</flag>
-		<flag name="force-libstatgrab">Use <pkg>sys-libs/libstatgrab</pkg> to instead of <pkg>sys-process/procps</pkg></flag>
+		<flag name="bandwidth">Built-in bandwidth</flag>
+		<flag name="dmidecode">Built-in dmidecode</flag>
+		<flag name="force-libstatgrab">Force use of <pkg>sys-libs/libstatgrab</pkg> instead of <pkg>sys-process/procps</pkg></flag>
 		<flag name="libcpuid">Use the <pkg>sys-libs/libcpuid</pkg> library</flag>
 		<flag name="libglfw">Use the <pkg>media-libs/glfw</pkg> library</flag>
-		<flag name="libpci">Use the <pkg>sys-apps/pciutils</pkg> library</flag>
 		<flag name="opencl">Use the <pkg>virtual/opencl</pkg> library</flag>
+		<flag name="pci">Use the <pkg>sys-apps/pciutils</pkg> library</flag>
 	</use>
 	<use lang="fr">
 		<flag name="bandwidth">Intégrer bandwidth</flag>
 		<flag name="dmidecode">Intégrer dmidecode</flag>
-		<flag name="force-libstatgrab">Utiliser <pkg>sys-libs/libstatgrab</pkg> à la place de <pkg>sys-process/procps</pkg></flag>
+		<flag name="force-libstatgrab">Forcer l'utilisation de <pkg>sys-libs/libstatgrab</pkg> à la place de <pkg>sys-process/procps</pkg></flag>
 		<flag name="libcpuid">Utiliser la bibliothèque <pkg>sys-libs/libcpuid</pkg></flag>
 		<flag name="libglfw">Utiliser la bibliothèque <pkg>media-libs/glfw</pkg></flag>
-		<flag name="libpci">Utiliser la bibliothèque <pkg>sys-apps/pciutils</pkg></flag>
 		<flag name="opencl">Utiliser la bibliothèque <pkg>virtual/opencl</pkg></flag>
+		<flag name="pci">Utiliser la bibliothèque <pkg>sys-apps/pciutils</pkg></flag>
 	</use>
 	<upstream>
 		<maintainer status="active">
-			<name>X0rg</name>
+			<name>TheTumultuousUnicornOfDarkness</name>
 		</maintainer>
-		<changelog>https://raw.githubusercontent.com/X0rg/CPU-X/master/ChangeLog</changelog>
-		<doc>https://github.com/X0rg/CPU-X/wiki/</doc>
-		<bugs-to>https://github.com/X0rg/CPU-X/issues/</bugs-to>
-		<remote-id type="github">X0rg/CPU-X</remote-id>
+		<changelog>https://raw.githubusercontent.com/TheTumultuousUnicornOfDarkness/CPU-X/master/ChangeLog.md</changelog>
+		<doc>https://github.com/TheTumultuousUnicornOfDarkness/CPU-X/wiki/</doc>
+		<bugs-to>https://github.com/TheTumultuousUnicornOfDarkness/CPU-X/issues/</bugs-to>
+		<remote-id type="github">TheTumultuousUnicornOfDarkness/CPU-X</remote-id>
 	</upstream>
 </pkgmetadata>
