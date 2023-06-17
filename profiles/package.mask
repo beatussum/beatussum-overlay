@@ -31,3 +31,9 @@
 #
 ####################################################################
 
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2023-06-17)
+# Present in the global Gentoo tree.
+#
+# Removal: 2023-07-02.
+x11-themes/tela-icon-theme
+
