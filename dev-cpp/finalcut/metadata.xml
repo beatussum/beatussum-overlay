@@ -27,6 +27,15 @@
 		dialogue, des bouttons poussoirs, des case à cocher, des boutons radio,
 		des lignes d'entrée, des barres d'état, et ainsi de suite.
 	</longdescription>
+	<slots>
+		<subslots>Reflect ABI compatibility for libfinal.so</subslots>
+	</slots>
+	<slots lang="fr">
+		<subslots>
+			Reflétent la compatibilité de l'interface binaire-programme
+			(A.B.I.) de libfinal.so
+		</subslots>
+	</slots>
 	<use>
 		<flag name="newfont">Install a graphical text font for X11 and the Linux console</flag>
 	</use>
