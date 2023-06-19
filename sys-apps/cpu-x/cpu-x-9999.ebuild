@@ -32,7 +32,7 @@ COMMON_DEPEND="
 	force-libstatgrab? ( sys-libs/libstatgrab )
 	!force-libstatgrab? ( sys-process/procps:= )
 	gui? ( >=x11-libs/gtk+-3.12:3 )
-	libcpuid? ( >=sys-libs/libcpuid-0.6.0:= )
+	libcpuid? ( >=dev-libs/libcpuid-0.6.0:= )
 
 	libglfw? (
 		>=media-libs/glfw-3.3
