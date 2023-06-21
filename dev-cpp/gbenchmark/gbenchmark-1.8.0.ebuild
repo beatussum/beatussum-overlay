@@ -14,28 +14,27 @@ SRC_URI="https://github.com/google/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="default-libcxx libpfm lto +exceptions test +tools"
+IUSE="default-libcxx doc libpfm lto +exceptions test +tools"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+MY_COMMON_DEPEND="tools? ( ${PYTHON_DEPS} )"
 
 DEPEND="
 	default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
 	libpfm? ( dev-libs/libpfm:= )
+
+	${MY_COMMON_DEPEND}
 "
 
 BDEPEND="
-	>=dev-util/cmake-3.5.1
+	>=dev-util/cmake-3.10
 	test? ( dev-cpp/gtest[${MULTILIB_USEDEP}] )
 "
 
 RDEPEND="
-	tools? (
-		>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
+	tools? ( >=dev-python/scipy-1.5.0[${PYTHON_USEDEP}] )
 
-		${PYTHON_DEPS}
-	)
-
-	${DEPEND}
+	${MY_COMMON_DEPEND}
 "
 
 S="${WORKDIR}/${MY_PN}-${PV}"
@@ -47,24 +46,28 @@ DOCS=(
 	README.md
 )
 
-PATCHES=(
-	"${FILESDIR}/${P}-fix-gtest.patch"
-)
-
 src_prepare() {
-	sed -i "s|doc/\${PROJECT_NAME}|doc/${PF}|" "${S}/src/CMakeLists.txt" \
-		|| die "Cannot fix the documentation installation directory"
+	if use doc; then
+		sed -i \
+			'162s|${CMAKE_INSTALL_DOCDIR}|${CMAKE_INSTALL_DOCDIR}/html|' \
+			"${S}/src/CMakeLists.txt" \
+			|| die "Cannot fix the HTML documentation installation directory"
+	fi
 
 	cmake_src_prepare
 }
 
 multilib_src_configure() {
 	local mycmakeargs=(
+		-DBENCHMARK_ENABLE_DOXYGEN="$(usex doc)"
 		-DBENCHMARK_ENABLE_EXCEPTIONS="$(usex exceptions)"
 		-DBENCHMARK_ENABLE_GTEST_TESTS="$(usex test)"
 		-DBENCHMARK_ENABLE_LTO="$(usex lto)"
 		-DBENCHMARK_ENABLE_LIBPFM="$(usex libpfm)"
 		-DBENCHMARK_ENABLE_TESTING="$(usex test)"
+		-DBENCHMARK_ENABLE_WERROR=OFF
+		-DBENCHMARK_INSTALL_DOCS="$(usex doc)"
+		-DBENCHMARK_USE_BUNDLED_GTEST=OFF
 		-DBENCHMARK_USE_LIBCXX="$(usex default-libcxx)"
 	)
 
