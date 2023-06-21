@@ -18,6 +18,7 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
+RESTRICT="binchecks strip test"
 
 BDEPEND="sys-devel/gettext"
 

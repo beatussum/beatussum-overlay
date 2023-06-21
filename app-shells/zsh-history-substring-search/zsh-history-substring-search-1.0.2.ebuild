@@ -11,6 +11,7 @@ SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
+RESTRICT="binchecks strip test"
 
 RDEPEND=">=app-shells/zsh-4.3"
 

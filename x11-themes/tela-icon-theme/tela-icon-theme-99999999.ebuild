@@ -43,6 +43,7 @@ MY_COMPONENTS=(
 
 IUSE="${MY_COMPONENTS[*]}"
 REQUIRED_USE="|| ( ${MY_COMPONENTS[*]//+} )"
+RESTRICT="binchecks strip test"
 PATCHES=( "${FILESDIR}/${P}-fix-cache-update.patch" )
 
 src_install() {

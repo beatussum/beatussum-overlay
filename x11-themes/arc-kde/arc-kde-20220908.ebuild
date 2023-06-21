@@ -12,6 +12,7 @@ KEYWORDS="~amd64"
 MY_COMPONENTS=(aurorae +color-schemes +konsole konversation +kvantum +plasma +wallpapers +yakuake)
 IUSE="${MY_COMPONENTS[*]}"
 REQUIRED_USE="|| ( ${MY_COMPONENTS[*]/+} )"
+RESTRICT="binchecks strip test"
 
 RDEPEND="kvantum? ( x11-themes/kvantum )"
 

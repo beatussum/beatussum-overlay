@@ -20,6 +20,8 @@ REQUIRED_USE="
 	^^ ( ${MY_VARIANTS[*]/+} )
 "
 
+RESTRICT="binchecks strip test"
+
 BDEPEND="
 	>=media-gfx/inkscape-1
 	x11-apps/xcursorgen

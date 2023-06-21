@@ -17,7 +17,7 @@ SRC_URI="
 LICENSE="Mojang"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-RESTRICT="bindist mirror"
+RESTRICT="bindist mirror test"
 
 RDEPEND="
 	>=app-accessibility/at-spi2-core-2.9.90:2

@@ -12,7 +12,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
-RESTRICT="!test? ( test )"
+RESTRICT="binchecks strip !test? ( test )"
 
 RDEPEND=">app-shells/zsh-4.3.11"
 
