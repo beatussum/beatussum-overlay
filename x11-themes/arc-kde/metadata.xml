@@ -5,6 +5,7 @@
 		<email>beatussum@protonmail.com</email>
 		<name>Mattéo Rossillol--Laruelle</name>
 	</maintainer>
+	<stabilize-allarches/>
 	<longdescription>
 		This is a port of the popular GTK theme Arc for Plasma 5 with a few
 		additions. For better looking please use this pack with

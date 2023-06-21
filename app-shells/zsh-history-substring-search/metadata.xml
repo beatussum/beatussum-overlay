@@ -5,6 +5,7 @@
 		<email>beatussum@protonmail.com</email>
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
+	<stabilize-allarches/>
 	<longdescription>
 		This is a clean-room implementation of the Fish shell's history search
 		feature, where you can type in any part of any command from history and

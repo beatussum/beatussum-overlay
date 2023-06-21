@@ -5,6 +5,7 @@
 		<email>beatussum@protonmail.com</email>
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
+	<stabilize-allarches/>
 	<use>
 		<flag name="black">Install the black color folder version</flag>
 		<flag name="blue">Install the blue color folder version</flag>

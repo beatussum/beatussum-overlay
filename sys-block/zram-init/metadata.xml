@@ -5,6 +5,7 @@
 		<email>beatussum@protonmail.com</email>
 		<name>Mattéo Rossillol‑‑Laruelle</name>
 	</maintainer>
+	<stabilize-allarches/>
 	<upstream>
 		<maintainer status="active">
 			<name>Martin Väth</name>
