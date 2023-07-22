@@ -10,7 +10,7 @@ inherit cmake-multilib python-r1
 
 DESCRIPTION="A microbenchmark support library"
 HOMEPAGE="https://github.com/google/benchmark/"
-SRC_URI="https://github.com/google/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/google/benchmark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -47,6 +47,10 @@ DOCS=(
 	CONTRIBUTING.md
 	CONTRIBUTORS
 	README.md
+	docs/random_interleaving.md
+	docs/reducing_variance.md
+	docs/tools.md
+	docs/user_guide.md
 )
 
 src_prepare() {
