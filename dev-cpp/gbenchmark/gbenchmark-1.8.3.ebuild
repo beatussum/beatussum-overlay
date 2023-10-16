@@ -34,7 +34,7 @@ BDEPEND="
 RDEPEND="
 	tools? (
 		dev-python/numpy[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.5.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
 	)
 
 	${MY_COMMON_DEPEND}
