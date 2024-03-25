@@ -27,7 +27,7 @@ DEPEND="
 "
 
 BDEPEND="
-	>=dev-util/cmake-3.10
+	>=dev-build/cmake-3.10
 	test? ( dev-cpp/gtest[${MULTILIB_USEDEP}] )
 "
 
