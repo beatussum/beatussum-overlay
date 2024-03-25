@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake xdg
+inherit cmake flag-o-matic xdg
 
 DESCRIPTION="A light GUI editor for SQLite databases"
 HOMEPAGE="https://sqlitebrowser.org/"
@@ -13,12 +13,12 @@ if [[ "${PV}" = *9999* ]]; then
 	EGIT_REPO_URI="https://github.com/${PN}/${PN}.git"
 else
 	SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
+	KEYWORDS="-* ~amd64"
 fi
 
 LICENSE="GPL-3+ MPL-2.0"
 SLOT="0"
-IUSE="test"
+IUSE="sqlcipher test"
 RESTRICT="!test? ( test )"
 
 DEPEND="
@@ -33,6 +33,7 @@ DEPEND="
 	>=dev-qt/qtwidgets-5.5:5
 	>=dev-qt/qtxml-5.5:5
 	>=x11-libs/qscintilla-2.8.10:=
+	sqlcipher? ( dev-db/sqlcipher )
 "
 
 BDEPEND="
@@ -44,6 +45,8 @@ RDEPEND="
 	${DEPEND}
 	>=dev-qt/qtsvg-5.5:5
 "
+
+PATCHES=("${FILESDIR}/${P}-fix-clang-build.patch")
 
 src_prepare() {
 	cmake_src_prepare
@@ -61,7 +64,12 @@ src_configure() {
 		-DENABLE_TESTING=$(usex test)
 		-DFORCE_INTERNAL_QCUSTOMPLOT=OFF
 		-DFORCE_INTERNAL_QHEXEDIT=OFF
+		-Dsqlcipher=$(usex sqlcipher)
 	)
+
+	# https://bugs.gentoo.org/855254
+	append-flags -fno-strict-aliasing
+	filter-lto
 
 	cmake_src_configure
 }
