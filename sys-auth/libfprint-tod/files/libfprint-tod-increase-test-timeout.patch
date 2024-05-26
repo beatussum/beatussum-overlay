@@ -1,0 +1,37 @@
+From 8bc9aa1da0f39eac005d55c4a12b418e6c585dab Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
+ <beatussum@protonmail.com>
+Date: Sun, 26 May 2024 18:11:00 +0200
+Subject: [PATCH] increase test timeout
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Although most libfprint tests are very quick, several of the VirtualImage ones
+come very close to the default time-out threshold of 30 seconds. Increase the
+relevant threshold to 45 seconds to make those tests less sensitive to CPU
+frequency, system load etc..
+
+This patch is mainly based on the one written for sys-auth/libfprint in the
+main Gentoo tree.
+
+Signed-off-by: Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com>
+---
+ tests/meson.build | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/tests/meson.build b/tests/meson.build
+index db61c1b..4dc4eba 100644
+--- a/tests/meson.build
++++ b/tests/meson.build
+@@ -128,6 +128,7 @@ if get_option('introspection')
+                     suite: ut_suite,
+                     depends: libfprint_typelib,
+                     env: envs,
++                    timeout: 45,
+                 )
+             endforeach
+ 
+-- 
+2.44.1
+
