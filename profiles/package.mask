@@ -31,3 +31,7 @@
 #
 ####################################################################
 
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2024-05-27)
+# Masked for removal in 15 days. I do not use this package anymore and the
+# upstream seems to be dead.
+x11-themes/capitaine-xcursors
