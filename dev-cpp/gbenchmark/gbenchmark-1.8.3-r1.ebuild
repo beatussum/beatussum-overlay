@@ -4,7 +4,7 @@
 EAPI=8
 
 MY_PN="${PN#g}"
-PYTHON_COMPAT=( python3_{6..11} )
+PYTHON_COMPAT=( python3_{8..12} )
 
 inherit cmake-multilib python-r1
 
