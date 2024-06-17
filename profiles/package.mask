@@ -30,3 +30,6 @@
 ## app-misc/some-package
 #
 ####################################################################
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2024-06-17)
+# Masked for removal in 15 days. I do not use this package anymore.
+sys-auth/libfprint-tod
