@@ -23,7 +23,7 @@ DEPEND="
 	dev-libs/glib:2
 	dev-libs/libffi:=
 	dev-libs/libpcre2:=
-	gui-libs/gtk-layer-shell
+	gui-libs/gtk-layer-shell[introspection]
 	media-libs/flac:=
 	media-libs/libogg
 	media-libs/libpulse
