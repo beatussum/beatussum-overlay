@@ -30,6 +30,13 @@
 ## app-misc/some-package
 #
 ####################################################################
+
+# --- END OF EXAMPLES --- #
+
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2024-06-19)
+# Masked for removal in 15 days. I do not use this package anymore.
+x11-themes/arc-kde
+
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2024-06-17)
 # Masked for removal in 15 days. I do not use this package anymore.
 sys-auth/libfprint-tod
