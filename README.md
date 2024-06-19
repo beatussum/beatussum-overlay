@@ -7,15 +7,7 @@ main **Gentoo** tree.
 
 ## Add this overlay
 
-Just use [Layman](https://wiki.gentoo.org/wiki/Project:Layman) as _root_:
-
-```bash
-layman --list
-layman --add beatussum-overlay
-layman --sync beatussum-overlay
-```
-
-Or, with [eselect-repository](https://wiki.gentoo.org/wiki/Eselect/Repository):
+Just use with [eselect-repository](https://wiki.gentoo.org/wiki/Eselect/Repository) as _root_:
 
 ```bash
 eselect repository list
