@@ -10,7 +10,24 @@ LICENSE="MIT-with-advertising"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc example test"
-RESTRICT="test? ( test )"
+RESTRICT="!test? ( test )"
+
+DEPEND="
+	|| (
+		>=app-shells/bash-2.03
+		>=app-shells/dash-0.5.4
+		app-shells/ksh
+		app-shells/loksh
+		>=app-shells/mksh-28r
+		>=app-shells/posh-0.3.14
+		>=app-shells/yash-2.29
+		>=app-shells/zsh-3.1.9
+		>=sys-apps/busybox-1.20.0
+	)
+"
+
+BDEPEND="test? ( ${DEPEND} )"
+RDEPEND="${DEPEND}"
 
 DOCS=(
 	CHANGELOG.md
