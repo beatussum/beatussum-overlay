@@ -33,3 +33,7 @@
 
 # --- END OF EXAMPLES --- #
 
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2024-07-07)
+# Masked for removal in 15 days. This package has been moved into the Gentoo
+# overlay called hyprland-overlay.
+gui-libs/ags
