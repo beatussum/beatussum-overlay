@@ -45,7 +45,7 @@
 			<name>Veselin Georgiev</name>
 		</maintainer>
 		<changelog>https://raw.githubusercontent.com/anrieff/libcpuid/master/ChangeLog</changelog>
-		<doc>http://libcpuid.sourceforge.net/doxy/index.html</doc>
+		<doc>https://libcpuid.sourceforge.net/doxy/index.html</doc>
 		<bugs-to>https://github.com/anrieff/libcpuid/issues/</bugs-to>
 		<remote-id type="github">anrieff/libcpuid</remote-id>
 	</upstream>
