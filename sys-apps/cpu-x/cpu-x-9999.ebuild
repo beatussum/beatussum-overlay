@@ -10,7 +10,7 @@ inherit cmake gnome2-utils xdg
 DESCRIPTION="A Free software that gathers information on CPU, motherboard and more"
 HOMEPAGE="https://thetumultuousunicornofdarkness.github.io/CPU-X/"
 
-if [[ ${PV} == *9999 ]]; then
+if [[ "${PV}" = 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/TheTumultuousUnicornOfDarkness/${MY_PN}.git"
 else

@@ -8,7 +8,7 @@ inherit cmake flag-o-matic xdg
 DESCRIPTION="A light GUI editor for SQLite databases"
 HOMEPAGE="https://sqlitebrowser.org/"
 
-if [[ "${PV}" = *9999* ]]; then
+if [[ "${PV}" = 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/${PN}/${PN}.git"
 else
