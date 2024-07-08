@@ -5,12 +5,20 @@ EAPI=8
 
 DESCRIPTION="A full-featured BDD unit testing framework for all POSIX shells"
 HOMEPAGE="https://shellspec.info/"
-SRC_URI="https://github.com/shellspec/shellspec/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+
+if [[ "${PV}" = 9999 ]]; then
+	inherit git-r3
+
+	EGIT_REPO_URI="https://github.com/shellspec/shellspec.git"
+else
+	SRC_URI="https://github.com/shellspec/shellspec/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
+
 LICENSE="MIT-with-advertising"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="doc example test"
-RESTRICT="!test? ( test )"
+IUSE="doc examples test"
+RESTRICT="binchecks strip !test? ( test )"
 
 DEPEND="
 	|| (
@@ -45,7 +53,7 @@ src_install() {
 	einstalldocs
 
 	use doc && dodoc -r docs
-	use example && dodoc -r examples
+	use examples && dodoc -r examples
 
 	emake PREFIX="${ED}/usr" install
 	rm "${ED}/usr/lib/shellspec/LICENSE" || die
