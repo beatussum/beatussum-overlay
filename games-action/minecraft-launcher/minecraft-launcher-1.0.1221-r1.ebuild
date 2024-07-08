@@ -9,9 +9,10 @@ DESCRIPTION="Minecraft's official launcher"
 HOMEPAGE="https://www.minecraft.net/"
 
 MY_SRC_URI_BASE="https://launcher.mojang.com/download"
+
 SRC_URI="
-	${MY_SRC_URI_BASE}/linux/x86_64/${PN}_${PV}.tar.gz -> ${P}.tar.gz
-	${MY_SRC_URI_BASE}/${PN}.svg
+	${MY_SRC_URI_BASE}/linux/x86_64/minecraft-launcher_${PV}.tar.gz -> ${P}.tar.gz
+	${MY_SRC_URI_BASE}/minecraft-launcher.svg
 "
 
 LICENSE="Mojang"

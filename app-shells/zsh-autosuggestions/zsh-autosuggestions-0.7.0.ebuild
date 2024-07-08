@@ -7,7 +7,7 @@ inherit readme.gentoo-r1
 
 DESCRIPTION="Fish-like fast/unobtrusive autosuggestions for zsh"
 HOMEPAGE="https://github.com/zsh-users/zsh-autosuggestions/"
-SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/zsh-users/zsh-autosuggestions/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"

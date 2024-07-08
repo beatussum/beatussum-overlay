@@ -9,7 +9,7 @@ inherit autotools flag-o-matic
 
 DESCRIPTION="A text-based widget toolkit"
 HOMEPAGE="https://github.com/gansm/finalcut/"
-SRC_URI="https://github.com/gansm/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/gansm/finalcut/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="LGPL-3+"
 SLOT="0/0"
 KEYWORDS="~amd64"

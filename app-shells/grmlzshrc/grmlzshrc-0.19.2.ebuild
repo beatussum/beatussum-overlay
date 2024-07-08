@@ -7,7 +7,7 @@ MY_PN="grml-etc-core"
 
 DESCRIPTION="Grmls core configuration files for zsh"
 HOMEPAGE="https://grml.org/zsh/"
-SRC_URI="https://github.com/grml/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/grml/grml-etc-core/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"

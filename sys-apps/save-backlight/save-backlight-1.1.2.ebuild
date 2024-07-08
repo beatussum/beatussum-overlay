@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="An OpenRC service for restoring the last brightness level on reboot"
 HOMEPAGE="https://github.com/beatussum/save-backlight/"
-SRC_URI="https://github.com/beatussum/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/beatussum/save-backlight/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"

@@ -7,7 +7,7 @@ inherit prefix readme.gentoo-r1
 
 DESCRIPTION="ZSH port of Fish history search (up arrow)"
 HOMEPAGE="https://github.com/zsh-users/zsh-history-substring-search/"
-SRC_URI="https://github.com/zsh-users/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/zsh-users/zsh-history-substring-search/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
