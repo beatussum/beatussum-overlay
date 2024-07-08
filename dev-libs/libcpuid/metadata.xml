@@ -48,5 +48,6 @@
 		<doc>https://libcpuid.sourceforge.net/doxy/index.html</doc>
 		<bugs-to>https://github.com/anrieff/libcpuid/issues/</bugs-to>
 		<remote-id type="github">anrieff/libcpuid</remote-id>
+		<remote-id type="sourceforge">libcpuid</remote-id>
 	</upstream>
 </pkgmetadata>
