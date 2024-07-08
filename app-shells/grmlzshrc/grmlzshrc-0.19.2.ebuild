@@ -8,6 +8,7 @@ MY_PN="grml-etc-core"
 DESCRIPTION="Grmls core configuration files for zsh"
 HOMEPAGE="https://grml.org/zsh/"
 SRC_URI="https://github.com/grml/grml-etc-core/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -16,8 +17,6 @@ RESTRICT="binchecks strip test"
 BDEPEND="app-text/txt2tags"
 
 RDEPEND="app-shells/zsh"
-
-S="${WORKDIR}/${MY_PN}-${PV}"
 
 DOCS=(
 	README.md

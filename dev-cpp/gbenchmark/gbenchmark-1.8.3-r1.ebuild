@@ -11,6 +11,7 @@ inherit cmake-multilib python-r1
 DESCRIPTION="A microbenchmark support library"
 HOMEPAGE="https://github.com/google/benchmark/"
 SRC_URI="https://github.com/google/benchmark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -39,8 +40,6 @@ RDEPEND="
 
 	${MY_COMMON_DEPEND}
 "
-
-S="${WORKDIR}/${MY_PN}-${PV}"
 
 DOCS=(
 	AUTHORS

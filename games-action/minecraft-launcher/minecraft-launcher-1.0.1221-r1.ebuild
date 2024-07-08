@@ -15,6 +15,7 @@ SRC_URI="
 	${MY_SRC_URI_BASE}/minecraft-launcher.svg
 "
 
+S="${WORKDIR}/${PN}"
 LICENSE="Mojang"
 SLOT="0"
 KEYWORDS="-* ~amd64"
@@ -46,7 +47,6 @@ RDEPEND="
 	>=x11-libs/pango-1.14.0
 "
 
-S="${WORKDIR}/${PN}"
 QA_PREBUILT="opt/bin/${PN}"
 
 src_install() {

@@ -13,6 +13,7 @@ SRC_URI="
 	https://github.com/Aylur/ags/releases/download/v${PV}/node_modules-v${PV}.tar.gz -> ${P}-node_modules.tar.gz
 "
 
+S="${WORKDIR}/${PN}"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -49,8 +50,6 @@ BDEPEND="
 "
 
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/${PN}"
 
 PATCHES=( "${FILESDIR}/${P}-fix-tsc-call.patch" )
 
