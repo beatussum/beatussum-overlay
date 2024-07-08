@@ -18,11 +18,11 @@ RDEPEND=">=app-shells/zsh-4.3"
 DISABLE_AUTOFORMATTING=true
 DOC_CONTENTS="\
 For use this script, load it into your interactive ZSH session:
-	source ${EROOT}/usr/share/zsh/plugins/${PN}/${PN}.zsh
+	source ${EPREFIX}/usr/share/zsh/plugins/${PN}/${PN}.zsh
 If you want to use zsh-syntax-highlighting along with this script, then make
 sure that you load it before you load this script.
 For further information, please read the README.md file installed in:
-	${EROOT}/usr/share/doc/${PF}"
+	${EPREFIX}/usr/share/doc/${PF}"
 
 src_prepare() {
 	default
