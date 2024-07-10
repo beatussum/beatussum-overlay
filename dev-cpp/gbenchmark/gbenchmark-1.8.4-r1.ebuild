@@ -4,6 +4,8 @@
 EAPI=8
 
 MY_PN="${PN#g}"
+MY_P="${MY_PN}-${PV}"
+
 PYTHON_COMPAT=( python3_{8..13} )
 
 inherit cmake-multilib python-r1
@@ -11,13 +13,14 @@ inherit cmake-multilib python-r1
 DESCRIPTION="A microbenchmark support library"
 HOMEPAGE="https://github.com/google/benchmark/"
 SRC_URI="https://github.com/google/benchmark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/${MY_PN}-${PV}"
+S="${WORKDIR}/${MY_P}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="default-libcxx doc libpfm lto +exceptions test +tools"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
 MY_COMMON_DEPEND="tools? ( ${PYTHON_DEPS} )"
 
 DEPEND="
@@ -41,27 +44,7 @@ RDEPEND="
 	${MY_COMMON_DEPEND}
 "
 
-DOCS=(
-	AUTHORS
-	CONTRIBUTING.md
-	CONTRIBUTORS
-	README.md
-	docs/random_interleaving.md
-	docs/reducing_variance.md
-	docs/tools.md
-	docs/user_guide.md
-)
-
-src_prepare() {
-	if use doc; then
-		sed -i \
-			'162s|${CMAKE_INSTALL_DOCDIR}|${CMAKE_INSTALL_DOCDIR}/html|' \
-			"${S}/src/CMakeLists.txt" \
-			|| die "Cannot fix the HTML documentation installation directory"
-	fi
-
-	cmake_src_prepare
-}
+PATCHES=( "${FILESDIR}/${P}-fix-documentation-installation.patch" )
 
 multilib_src_configure() {
 	local mycmakeargs=(
@@ -87,7 +70,8 @@ python_install() {
 }
 
 multilib_src_install_all() {
-	einstalldocs
+	dodoc CONTRIBUTING.md
+	dodoc CONTRIBUTORS
 
 	use tools && python_foreach_impl python_install
 }
