@@ -39,10 +39,6 @@ src_configure() {
 	econf "$(use_enable static-libs static)"
 }
 
-src_test() {
-	emake test
-}
-
 src_install() {
 	default
 	find "${ED}" -name "*.la" -delete || die
