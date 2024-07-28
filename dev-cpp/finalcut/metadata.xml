@@ -36,12 +36,6 @@
 			(A.B.I.) de libfinal.so
 		</subslots>
 	</slots>
-	<use>
-		<flag name="newfont">Install a graphical text font for X11 and the Linux console</flag>
-	</use>
-	<use lang="fr">
-		<flag name="newfont">Installer une police de texte graphique pour X11 et la console Linux</flag>
-	</use>
 	<upstream>
 		<maintainer status="active">
 			<name>Markus Gans</name>
