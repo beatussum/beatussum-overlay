@@ -34,10 +34,10 @@ BDEPEND="
 
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${P}-fix-tests.ebuild" )
-
 src_prepare() {
 	default
+
+	[[ "${PV}" = 9999 ]] || eapply "${FILESDIR}/${P}-fix-tests.ebuild"
 
 	sed -i "/AM_CPPFLAGS/ s/-Werror//" {examples,final,test}/Makefile.am \
 		|| die 'Failed to remove `-Werror` from `CPPFLAGS`'
@@ -53,10 +53,7 @@ src_prepare() {
 }
 
 src_configure() {
-	if use test; then
-		append-cppflags -DDEBUG
-		append-cxxflags -DDEBUG -DUNIT_TEST
-	fi
+	use test && append-cxxflags -O0 -DDEBUG -DUNIT_TEST
 
 	econf \
 		$(use_enable static-libs static) \
