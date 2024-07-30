@@ -2,6 +2,7 @@ name: Bug report
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug"]
+assignees: ["beatussum"]
 
 body:
   - type: markdown
