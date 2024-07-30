@@ -1,0 +1,59 @@
+name: Version bump
+description: File a version bump report
+title: "[Version bump]: "
+labels: ["version bump"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report that a package need to be updated!
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact details
+      description: How can we get in touch with you if we need more info?
+      placeholder: e.g. email@example.com
+
+  - type: input
+    id: what-package
+
+    attributes:
+      label: What package?
+      placeholder: "<category>/<name>"
+
+    validations:
+      required: true
+
+  - type: input
+    id: what-is-the-latest-release
+
+    attributes:
+      label: What is the latest release?
+      placeholder: "1.2.3"
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+
+    attributes:
+      label: Description
+      placeholder: Do you want to add extra description about this issue?
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+
+      description: |
+        Please check all the boxes that apply:
+
+      options:
+        - label: I agree to follow this project's code of conduct.
+          required: true
+        - label: I can submit this contribution in agreement with the [Copyright Policy](https://www.gentoo.org/glep/glep-0076.html#certificate-of-origin).
+          required: true
+        - label: This contribution has not been created with the assistance of Natural Language Processing artificial intelligence tools, in accordance with the [AI policy](https://wiki.gentoo.org/wiki/Project:Council/AI_policy).
+          required: true
