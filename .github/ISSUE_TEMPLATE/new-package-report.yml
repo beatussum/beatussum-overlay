@@ -42,7 +42,7 @@ body:
         Please check all the boxes that apply:
 
       options:
-        - label: I agree to follow this project's code of conduct.
+        - label: I agree to follow [this project's code of conduct](https://github.com/beatussum/beatussum-overlay/blob/main/CODE_OF_CONDUCT.md).
           required: true
         - label: I can submit this contribution in agreement with the [Copyright Policy](https://www.gentoo.org/glep/glep-0076.html#certificate-of-origin).
           required: true

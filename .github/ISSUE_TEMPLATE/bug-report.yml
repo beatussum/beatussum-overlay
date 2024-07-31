@@ -42,12 +42,15 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of conduct
+      label: Terms
 
       description: |
-        By submitting this issue, you agree to follow our
-        [code of conduct](https://github.com/beatussum/betussum-overlay/blob/develop/CODE_OF_CONDUCT.md).
+        Please check all the boxes that apply:
 
       options:
-        - label: I agree to follow this project's code of conduct
+        - label: I agree to follow [this project's code of conduct](https://github.com/beatussum/beatussum-overlay/blob/main/CODE_OF_CONDUCT.md).
+          required: true
+        - label: I can submit this contribution in agreement with the [Copyright Policy](https://www.gentoo.org/glep/glep-0076.html#certificate-of-origin).
+          required: true
+        - label: This contribution has not been created with the assistance of Natural Language Processing artificial intelligence tools, in accordance with the [AI policy](https://wiki.gentoo.org/wiki/Project:Council/AI_policy).
           required: true
