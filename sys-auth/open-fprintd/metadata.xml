@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>beatussum@protonmail.com</email>
+		<name>Mattéo Rossillol‑‑Laruelle</name>
+	</maintainer>
+	<stabilize-allarches/>
+	<upstream>
+		<maintainer status="inactive">
+			<name>Viktor Dragomiretskyy</name>
+			<email>Viktor.Dragomiretskyy@gmail.com</email>
+		</maintainer>
+		<changelog>https://github.com/uunicorn/open-fprintd/blob/master/debian/changelog</changelog>
+		<bugs-to>https://github.com/uunicorn/open-fprintd/issues/</bugs-to>
+		<remote-id type="github">uunicorn/open-fprintd</remote-id>
+	</upstream>
+</pkgmetadata>
