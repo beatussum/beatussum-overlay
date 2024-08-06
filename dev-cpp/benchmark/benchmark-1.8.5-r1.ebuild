@@ -5,25 +5,21 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{8..13} )
 
-inherit cmake-multilib python-r1
+inherit cmake-multilib python-single-r1
 
 DESCRIPTION="A microbenchmark support library"
 HOMEPAGE="https://github.com/google/benchmark/"
 SRC_URI="https://github.com/google/benchmark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
-SLOT="0"
+SLOT="0/$(ver_cut 1)"
 KEYWORDS="~amd64"
 IUSE="default-libcxx doc libpfm lto +exceptions test +tools"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-MY_COMMON_DEPEND="tools? ( ${PYTHON_DEPS} )"
-
 DEPEND="
 	default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
 	libpfm? ( dev-libs/libpfm:= )
-
-	${MY_COMMON_DEPEND}
 "
 
 BDEPEND="
@@ -33,14 +29,20 @@ BDEPEND="
 
 RDEPEND="
 	tools? (
-		dev-python/numpy[${PYTHON_USEDEP}]
-		>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
-	)
+		$(python_gen_cond_dep '
+			dev-python/numpy[${PYTHON_USEDEP}]
+			>=dev-python/scipy-1.10.0[${PYTHON_USEDEP}]
+		')
 
-	${MY_COMMON_DEPEND}
+		${PYTHON_DEPS}
+	)
 "
 
 PATCHES=( "${FILESDIR}/${P}-fix-documentation-installation.patch" )
+
+pkg_setup() {
+	use tools && python-single-r1_pkg_setup
+}
 
 multilib_src_configure() {
 	local mycmakeargs=(
@@ -59,15 +61,11 @@ multilib_src_configure() {
 	cmake_src_configure
 }
 
-python_install() {
-	python_domodule "${S}/tools/gbench"
-	python_doscript "${S}/tools/compare.py"
-	python_doscript "${S}/tools/strip_asm.py"
-}
-
 multilib_src_install_all() {
 	dodoc CONTRIBUTING.md
 	dodoc CONTRIBUTORS
 
-	use tools && python_foreach_impl python_install
+	python_domodule "${S}/tools/gbench"
+	python_doscript "${S}/tools/compare.py"
+	python_doscript "${S}/tools/strip_asm.py"
 }
