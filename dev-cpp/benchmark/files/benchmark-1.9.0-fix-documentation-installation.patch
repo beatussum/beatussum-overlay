@@ -1,7 +1,7 @@
-From ebc12737ba24be4d373fc314810c6332fdf5eb94 Mon Sep 17 00:00:00 2001
+From 009874342ddcf6446bec308686c54bd387a212a4 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matt=C3=A9o=20Rossillol=E2=80=91=E2=80=91Laruelle?=
  <beatussum@protonmail.com>
-Date: Fri, 19 Jul 2024 12:42:38 +0200
+Date: Mon, 19 Aug 2024 09:12:57 +0200
 Subject: [PATCH] fix documentation installation
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..13} )
+PYTHON_COMPAT=( python3_12 )
 
 inherit cmake-multilib python-single-r1
 
@@ -12,18 +12,19 @@ HOMEPAGE="https://github.com/google/benchmark/"
 SRC_URI="https://github.com/google/benchmark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0/$(ver_cut 1)"
-KEYWORDS="~amd64"
-IUSE="default-libcxx doc libpfm lto +exceptions test +tools"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~loong ~ppc ~ppc64 ~riscv ~x86"
+IUSE="doc +exceptions libcxx libpfm lto test +tools"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
-	default-libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
+	libcxx? ( sys-libs/libcxx[${MULTILIB_USEDEP}] )
 	libpfm? ( dev-libs/libpfm:= )
 "
 
 BDEPEND="
 	>=dev-build/cmake-3.10
+	doc? ( app-text/doxygen )
 	test? ( dev-cpp/gtest[${MULTILIB_USEDEP}] )
 "
 
@@ -55,7 +56,7 @@ multilib_src_configure() {
 		-DBENCHMARK_ENABLE_WERROR=OFF
 		-DBENCHMARK_INSTALL_DOCS="$(usex doc)"
 		-DBENCHMARK_USE_BUNDLED_GTEST=OFF
-		-DBENCHMARK_USE_LIBCXX="$(usex default-libcxx)"
+		-DBENCHMARK_USE_LIBCXX="$(usex libcxx)"
 	)
 
 	cmake_src_configure
@@ -65,7 +66,9 @@ multilib_src_install_all() {
 	dodoc CONTRIBUTING.md
 	dodoc CONTRIBUTORS
 
-	python_domodule "${S}/tools/gbench"
-	python_doscript "${S}/tools/compare.py"
-	python_doscript "${S}/tools/strip_asm.py"
+	if use tools; then
+		python_domodule tools/gbench
+		python_doscript tools/compare.py
+		python_doscript tools/strip_asm.py
+	fi
 }
