@@ -1,8 +1,4 @@
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-03-20)
-# Masked for removal in 15 days. I do not use this package anymore.
-app-shells/zsh-history-substring-search
-
-# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-03-20)
 # Masked for removal in 15 days. This package is present in the main Gentoo tree.
 dev-libs/libcpuid
 sys-apps/cpu-x
