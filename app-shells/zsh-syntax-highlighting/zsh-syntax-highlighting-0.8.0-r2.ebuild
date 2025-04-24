@@ -18,8 +18,6 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="test"
-RESTRICT="binchecks strip !test? ( test )"
 
 RDEPEND=">app-shells/zsh-4.3.11"
 
