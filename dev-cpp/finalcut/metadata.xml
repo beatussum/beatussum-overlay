@@ -41,7 +41,7 @@
 			<name>Markus Gans</name>
 			<email>guru.mail@muenster.de</email>
 		</maintainer>
-		<changelog>https://raw.githubusercontent.com/gansm/finalcut/master/ChangeLog</changelog>
+		<changelog>https://github.com/gansm/finalcut/blob/main/ChangeLog</changelog>
 		<doc>https://github.com/gansm/finalcut/wiki/</doc>
 		<bugs-to>https://github.com/gansm/finalcut/issues/</bugs-to>
 		<remote-id type="github">gansm/finalcut</remote-id>

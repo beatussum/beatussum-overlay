@@ -18,7 +18,7 @@ fi
 
 LICENSE="LGPL-3+"
 SLOT="0/${PV}"
-IUSE="doc examples +gpm static-libs test"
+IUSE="doc examples +gpm test"
 REQUIRED_USE="test? ( !examples )"
 RESTRICT="!test? ( test )"
 
@@ -27,17 +27,30 @@ DEPEND="
 	gpm? ( sys-libs/gpm )
 "
 
+# autoconf-archive needed to eautoreconf
+
 BDEPEND="
+	dev-build/autoconf-archive
 	virtual/pkgconfig
 	test? ( >=dev-util/cppunit-1.12.0 )
 "
 
 RDEPEND="${DEPEND}"
 
+DOCS=(
+	AUTHORS
+	ChangeLog
+	CODE_OF_CONDUCT.md
+	Contributing.md
+	SECURITY.md
+)
+
 src_prepare() {
 	default
 
 	[[ "${PV}" = 9999 ]] || eapply "${FILESDIR}/${P}-fix-tests.ebuild"
+
+	sed -i "/doc_DATA/d" Makefile.am || die
 
 	sed -i "/AM_CPPFLAGS/ s/-Werror//" {examples,final,test}/Makefile.am \
 		|| die 'Failed to remove `-Werror` from `CPPFLAGS`'
@@ -56,14 +69,16 @@ src_configure() {
 	use test && append-cxxflags -O0 -DDEBUG -DUNIT_TEST
 
 	econf \
-		$(use_enable static-libs static) \
 		$(use_with gpm) \
 		$(use_with test unit-test)
 }
 
 src_install() {
+	einstalldocs
+
 	emake DESTDIR="${ED}" PACKAGE="${PF}" install
-	dodoc CODE_OF_CONDUCT.md Contributing.md SECURITY.md
+
+	use doc || dodoc doc/first-steps*
 
 	if use examples; then
 			local examples="/usr/share/doc/${PF}/examples"
