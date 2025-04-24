@@ -16,34 +16,20 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="!test? ( test )"
 
-COMMON_DEPEND="
-	${PYTHON_DEPS}
+BDEPEND="
+	test? ( $(python_gen_cond_dep 'dev-python/pytest-asyncio[${PYTHON_USEDEP}]') )
+"
 
+RDEPEND="
 	$(python_gen_cond_dep '
 		dev-python/cryptography[${PYTHON_USEDEP}]
 		dev-python/distro[${PYTHON_USEDEP}]
-		dev-python/keyring[${PYTHON_USEDEP}]
 		dev-python/proton-core[${PYTHON_USEDEP}]
 		dev-python/pynacl[${PYTHON_USEDEP}]
 		dev-python/sentry-sdk[${PYTHON_USEDEP}]
 	')
-"
-
-BDEPEND="
-	${COMMON_DEPEND}
-
-	test? (
-		$(python_gen_cond_dep '
-			dev-python/flake8[${PYTHON_USEDEP}]
-			dev-python/pylint[${PYTHON_USEDEP}]
-			dev-python/pytest-asyncio[${PYTHON_USEDEP}]
-			dev-python/pytest-cov[${PYTHON_USEDEP}]
-			dev-python/pyyaml[${PYTHON_USEDEP}]
-		')
-	)
 "
 
 RDEPEND="${COMMON_DEPEND}"
@@ -51,6 +37,12 @@ RDEPEND="${COMMON_DEPEND}"
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
 
+src_prepare() {
+	distutils-r1_src_prepare
+
+	sed -i "/--cov/d" setup.cfg || die
+}
+
 python_test() {
-	XDG_RUNTIME_DIR="${T}/python_test" epytest -p flake8 -p pytest_cov
+	XDG_RUNTIME_DIR="${T}/python_test" epytest
 }
