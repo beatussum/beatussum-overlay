@@ -16,18 +16,17 @@ SRC_URI="https://github.com/ProtonVPN/proton-vpn-gtk-app/archive/refs/tags/${PV}
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="test"
 
 RDEPEND="
-	${PYTHON_DEPS}
-
 	$(python_gen_cond_dep '
 		dev-python/dbus-python[${PYTHON_USEDEP}]
 		dev-python/distro[${PYTHON_USEDEP}]
 		dev-python/packaging[${PYTHON_USEDEP}]
 		dev-python/proton-core[${PYTHON_USEDEP}]
+		dev-python/proton-keyring-linux[${PYTHON_USEDEP}]
 		dev-python/proton-vpn-api-core[${PYTHON_USEDEP}]
+		dev-python/proton-vpn-local-agent[${PYTHON_USEDEP}]
 		dev-python/pycairo[${PYTHON_USEDEP}]
 		dev-python/pygobject[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
