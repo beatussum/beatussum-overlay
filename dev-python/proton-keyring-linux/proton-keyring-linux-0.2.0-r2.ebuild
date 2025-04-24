@@ -19,12 +19,9 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
+	dev-python/keyring[${PYTHON_USEDEP}]
+	dev-python/proton-core[${PYTHON_USEDEP}]
 	virtual/secret-service
-
-	$(python_gen_cond_dep '
-		dev-python/keyring[${PYTHON_USEDEP}]
-		dev-python/proton-core[${PYTHON_USEDEP}]
-	')
 "
 
 distutils_enable_tests pytest
