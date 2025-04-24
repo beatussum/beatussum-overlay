@@ -23,16 +23,12 @@ BDEPEND="
 "
 
 RDEPEND="
-	$(python_gen_cond_dep '
-		dev-python/cryptography[${PYTHON_USEDEP}]
-		dev-python/distro[${PYTHON_USEDEP}]
-		dev-python/proton-core[${PYTHON_USEDEP}]
-		dev-python/pynacl[${PYTHON_USEDEP}]
-		dev-python/sentry-sdk[${PYTHON_USEDEP}]
-	')
+	dev-python/cryptography[${PYTHON_USEDEP}]
+	dev-python/distro[${PYTHON_USEDEP}]
+	dev-python/proton-core[${PYTHON_USEDEP}]
+	dev-python/pynacl[${PYTHON_USEDEP}]
+	dev-python/sentry-sdk[${PYTHON_USEDEP}]
 "
-
-RDEPEND="${COMMON_DEPEND}"
 
 distutils_enable_sphinx docs
 distutils_enable_tests pytest
