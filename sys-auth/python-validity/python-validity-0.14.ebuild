@@ -5,7 +5,7 @@ EAPI=8
 
 DISTUTILS_SINGLE_IMPL=true
 DISTUTILS_USE_PEP517="setuptools"
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 systemd udev
 
@@ -27,12 +27,15 @@ RESTRICT="binchecks strip test"
 
 RDEPEND="
 	>=app-arch/innoextract-1.6
-	$(python_gen_cond_dep '>=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep 'dev-python/dbus-python[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep '>=dev-python/pyusb-1.0.0[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep '>=dev-python/pyyaml-3.12[${PYTHON_USEDEP}]')
 	sys-apps/dbus
 	>=sys-auth/open-fprintd-0.6[${PYTHON_SINGLE_USEDEP}]
+
+	$(python_gen_cond_dep '
+		>=dev-python/cryptography-2.1.4[${PYTHON_USEDEP}]
+		dev-python/dbus-python[${PYTHON_USEDEP}]
+		>=dev-python/pyusb-1.0.0[${PYTHON_USEDEP}]
+		>=dev-python/pyyaml-3.12[${PYTHON_USEDEP}]
+	')
 "
 
 DOCS=(
