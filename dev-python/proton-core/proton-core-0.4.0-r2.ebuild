@@ -21,13 +21,11 @@ RESTRICT="!test? ( test )"
 BDEPEND="test? ( $(python_gen_cond_dep 'dev-python/pyotp[${PYTHON_USEDEP}]') )"
 
 RDEPEND="
-	$(python_gen_cond_dep '
-		dev-python/aiohttp[${PYTHON_USEDEP}]
-		dev-python/bcrypt[${PYTHON_USEDEP}]
-		dev-python/pyopenssl[${PYTHON_USEDEP}]
-		dev-python/python-gnupg[${PYTHON_USEDEP}]
-		dev-python/requests[${PYTHON_USEDEP}]
-	')
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/bcrypt[${PYTHON_USEDEP}]
+	dev-python/pyopenssl[${PYTHON_USEDEP}]
+	dev-python/python-gnupg[${PYTHON_USEDEP}]
+	dev-python/requests[${PYTHON_USEDEP}]
 "
 
 distutils_enable_sphinx docs
