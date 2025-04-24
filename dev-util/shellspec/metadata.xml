@@ -39,7 +39,7 @@
 		<maintainer status="active">
 			<name>ShellSpec</name>
 		</maintainer>
-		<changelog>https://raw.githubusercontent.com/shellspec/shellspec/master/CHANGELOG.md</changelog>
+		<changelog>https://github.com/shellspec/shellspec/blob/master/CHANGELOG.md</changelog>
 		<bugs-to>https://github.com/shellspec/shellspec/issues/</bugs-to>
 		<remote-id type="github">shellspec/shellspec</remote-id>
 	</upstream>
