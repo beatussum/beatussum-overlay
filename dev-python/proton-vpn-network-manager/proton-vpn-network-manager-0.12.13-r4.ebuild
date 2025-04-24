@@ -27,9 +27,11 @@ RDEPEND="
 	dev-python/proton-vpn-api-core[${PYTHON_USEDEP}]
 	dev-python/proton-vpn-local-agent[${PYTHON_USEDEP}]
 	dev-python/pygobject[${PYTHON_USEDEP}]
+	net-misc/networkmanager[introspection]
+	net-vpn/networkmanager-openvpn
 "
 
-CONFIG_CHECK="~DUMMY ~TUN ~WIREGUARD"
+CONFIG_CHECK="~DUMMY ~WIREGUARD"
 
 distutils_enable_tests pytest
 
