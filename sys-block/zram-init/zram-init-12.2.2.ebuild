@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -8,12 +8,12 @@ inherit prefix readme.gentoo-r1
 DESCRIPTION="Scripts to support compressed swap devices or ramdisks with zRAM"
 HOMEPAGE="https://github.com/vaeth/zram-init/"
 
-if [[ "${PV}" = 9999 ]]; then
+if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
-	EGIT_REPO_URI="https://github.com/vaeth/zram-init.git"
+	EGIT_REPO_URI="https://github.com/vaeth/${PN}.git"
 else
-	SRC_URI="https://github.com/vaeth/zram-init/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
+	SRC_URI="https://github.com/vaeth/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~riscv ~x86"
 fi
 
 LICENSE="GPL-2"
@@ -25,7 +25,7 @@ BDEPEND="sys-devel/gettext"
 RDEPEND="
 	>=app-shells/push-2.0
 	virtual/libintl
-	|| ( sys-apps/openrc sys-apps/systemd )
+	|| ( sys-apps/openrc sys-apps/openrc-navi sys-apps/systemd )
 "
 
 DISABLE_AUTOFORMATTING=true
