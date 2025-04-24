@@ -23,7 +23,7 @@ fi
 LICENSE="GPL-3+"
 SLOT="0"
 IUSE="+hardlink kde minimal"
-RESTRICT="binchecks strip test"
+RESTRICT="binchecks strip"
 
 BDEPEND="
 	app-shells/bash

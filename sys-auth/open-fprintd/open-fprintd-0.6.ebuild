@@ -23,7 +23,6 @@ fi
 LICENSE="GPL-2+"
 SLOT="0"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-RESTRICT="binchecks strip test"
 
 RDEPEND="
 	dev-libs/gobject-introspection[${PYTHON_SINGLE_USEDEP}]
