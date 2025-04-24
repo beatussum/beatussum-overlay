@@ -1,14 +1,14 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake flag-o-matic xdg
 
-DESCRIPTION="A light GUI editor for SQLite databases"
+DESCRIPTION="Light GUI editor for SQLite databases"
 HOMEPAGE="https://sqlitebrowser.org/"
 
-if [[ "${PV}" = *9999* ]]; then
+if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/sqlitebrowser/sqlitebrowser.git"
 else
@@ -21,68 +21,38 @@ SLOT="0"
 IUSE="sqlcipher test"
 RESTRICT="!test? ( test )"
 
-DEPEND="
-	app-editors/qhexedit2
+RDEPEND="
+	>=app-editors/qhexedit2-0.8.10
 	dev-db/sqlite:3
-	dev-libs/double-conversion:=
-	dev-libs/icu:=
-	dev-libs/libpcre2:=
-	dev-libs/openssl:=
-	dev-libs/qcustomplot
-	>=dev-qt/qtconcurrent-5.15.9:5
-	>=dev-qt/qtcore-5.15.9:5
-	>=dev-qt/qtgui-5.15.9:5
-	>=dev-qt/qtnetwork-5.15.9:5[ssl]
-	>=dev-qt/qtprintsupport-5.15.9:5
-	>=dev-qt/qtwidgets-5.15.9:5
-	>=dev-qt/qtxml-5.15.9:5
-	media-gfx/graphite2
-	media-libs/freetype:2
-	media-libs/harfbuzz:=
-	media-libs/libglvnd
-	media-libs/libpng:=
-	sys-libs/zlib:=
-	x11-libs/libX11
-	x11-libs/libXau
-	x11-libs/libxcb:=
-	x11-libs/libXdmcp
-	>=x11-libs/qscintilla-2.8.10:=[qt5(+)]
+	>=dev-libs/qcustomplot-2.1.1-r10
+	dev-qt/qtbase:6[gui,network,ssl,widgets,xml]
+	>=x11-libs/qscintilla-2.14.1-r1:=[qt6(+)]
+
 	sqlcipher? ( dev-db/sqlcipher )
 "
 
-BDEPEND="
-	>=dev-qt/linguist-tools-5.15.9:5
-	test? ( >=dev-qt/qttest-5.15.9:5 )
+DEPEND="
+	${RDEPEND}
+	dev-qt/qtbase:6[concurrent]
 "
 
-RDEPEND="${DEPEND}"
+BDEPEND="dev-qt/qttools:6[linguist]"
 
 DOCS=(
 	images/
 	BUILDING.md
 	CHANGELOG.md
 	README.md
-	SECURITY.md
 )
-
-src_prepare() {
-	cmake_src_prepare
-
-	if ! use test; then
-		sed -i CMakeLists.txt \
-			-e "/find_package/ s/ Test//" \
-			-e "/set/ s/ Qt5::Test//" \
-			|| die "Cannot remove Qt Test from CMake dependencies"
-	fi
-}
 
 src_configure() {
 	local mycmakeargs=(
-		-DENABLE_TESTING=$(usex test)
+		-DQT_MAJOR=Qt6
 		-DFORCE_INTERNAL_QSCINTILLA=OFF
 		-DFORCE_INTERNAL_QCUSTOMPLOT=OFF
 		-DFORCE_INTERNAL_QHEXEDIT=OFF
 		-Dsqlcipher=$(usex sqlcipher)
+		-DENABLE_TESTING=$(usex test)
 	)
 
 	# https://bugs.gentoo.org/855254
@@ -90,4 +60,9 @@ src_configure() {
 	filter-lto
 
 	cmake_src_configure
+}
+
+src_install() {
+	[[ ${PV} == *9999* ]] && DOCS+=( SECURITY.md )
+	cmake_src_install
 }
