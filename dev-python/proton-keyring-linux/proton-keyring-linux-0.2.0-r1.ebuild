@@ -16,11 +16,10 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RESTRICT="!test? ( test )"
 
-COMMON_DEPEND="
-	${PYTHON_DEPS}
+RDEPEND="
+	virtual/secret-service
 
 	$(python_gen_cond_dep '
 		dev-python/keyring[${PYTHON_USEDEP}]
@@ -28,22 +27,10 @@ COMMON_DEPEND="
 	')
 "
 
-BDEPEND="
-	${COMMON_DEPEND}
-
-	test? (
-		$(python_gen_cond_dep '
-			dev-python/flake8[${PYTHON_USEDEP}]
-			dev-python/pylint[${PYTHON_USEDEP}]
-			dev-python/pytest-cov[${PYTHON_USEDEP}]
-		')
-	)
-"
-
-RDEPEND="${COMMON_DEPEND}"
-
 distutils_enable_tests pytest
 
-python_test() {
-	epytest -p flake8 -p pytest_cov
+src_prepare() {
+	distutils-r1_src_prepare
+
+	sed -i "/--cov/d" setup.cfg || die
 }
