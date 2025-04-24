@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-BDEPEND="test? ( $(python_gen_cond_dep 'dev-python/pyotp[${PYTHON_USEDEP}]') )"
+BDEPEND="test? ( dev-python/pyotp[${PYTHON_USEDEP}] )"
 
 RDEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
