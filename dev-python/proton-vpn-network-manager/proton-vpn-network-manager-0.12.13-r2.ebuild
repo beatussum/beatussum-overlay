@@ -23,14 +23,12 @@ BDEPEND="
 "
 
 RDEPEND="
-	$(python_gen_cond_dep '
-		dev-python/jinja2[${PYTHON_USEDEP}]
-		dev-python/packaging[${PYTHON_USEDEP}]
-		dev-python/proton-core[${PYTHON_USEDEP}]
-		dev-python/proton-vpn-api-core[${PYTHON_USEDEP}]
-		dev-python/proton-vpn-local-agent[${PYTHON_USEDEP}]
-		dev-python/pygobject[${PYTHON_USEDEP}]
-	')
+	dev-python/jinja2[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
+	dev-python/proton-core[${PYTHON_USEDEP}]
+	dev-python/proton-vpn-api-core[${PYTHON_USEDEP}]
+	dev-python/proton-vpn-local-agent[${PYTHON_USEDEP}]
+	dev-python/pygobject[${PYTHON_USEDEP}]
 "
 
 CONFIG_CHECK="~DUMMY ~TUN ~WIREGUARD"
