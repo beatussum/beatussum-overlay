@@ -27,6 +27,7 @@ RDEPEND="
 		dev-python/proton-keyring-linux[${PYTHON_USEDEP}]
 		dev-python/proton-vpn-api-core[${PYTHON_USEDEP}]
 		dev-python/proton-vpn-local-agent[${PYTHON_USEDEP}]
+		dev-python/proton-vpn-network-manager[${PYTHON_USEDEP}]
 		dev-python/pycairo[${PYTHON_USEDEP}]
 		dev-python/pygobject[${PYTHON_USEDEP}]
 		dev-python/requests[${PYTHON_USEDEP}]
