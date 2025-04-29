@@ -1,4 +1,8 @@
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-04-29)
+# Masked for removal in 15 days as dependency of sys-auth/python-validity.
+sys-auth/open-fprintd
+
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-04-29)
 # Masked for removal in 15 days. I do not use this package anymore and upstream is
 # a bit dead.
 sys-auth/python-validity
