@@ -2,6 +2,12 @@
 # Masked for removal in 7 days. I moved these package to GURU. Please see
 # https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users if you want
 # to use this package.
+dev-util/shellspec
+
+# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-05-07)
+# Masked for removal in 7 days. I moved these package to GURU. Please see
+# https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users if you want
+# to use this package.
 net-misc/ffsend
 
 # Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-05-07)
