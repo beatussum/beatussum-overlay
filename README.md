@@ -5,7 +5,9 @@
 
 ## About this
 
-My **Gentoo** overlay aims to provide some packages that are not (yet) in the main **Gentoo** tree.
+I use this **Gentoo** overlay to maintain the packages whose I am proxied maintainer on the main tree.
+All new packages I maintain are now on the [GURU repository](https://wiki.gentoo.org/wiki/Project:GURU).
+If you want to use some of my packages that are now missing on this overlay, please see [this page](https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users) in order to _enable_ **GURU** on your computer..
 
 ## Add this overlay
 
