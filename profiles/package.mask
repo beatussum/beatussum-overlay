@@ -42,7 +42,3 @@ sys-auth/open-fprintd
 # Masked for removal in 15 days. I do not use this package anymore and upstream is
 # a bit dead.
 sys-auth/python-validity
-
-# Mattéo Rossillol‑‑Laruelle <beatussum@protonmail.com> (2025-04-24)
-# Masked for removal in 15 days. This package is present in the main Gentoo tree.
-games-action/minecraft-launcher
